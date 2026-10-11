@@ -1,0 +1,17 @@
+.logo {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.size_sm {
+  font-size: var(--fs-sm);
+}
+
+.sige_lg {
+  font-size: var(--fs-lg);
+}
+
+.size_xl {
+  font-size: 1.1rem;
+}

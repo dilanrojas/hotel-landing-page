@@ -1,111 +1,195 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* Rounding */
+  --rounded-3xs: 2px;
+  --rounded-2xs: 4px;
+  --rounded-xs: 6px;
+  --rounded-sm: 8px;
+  --rounded-md: 10px;
+  --rounded-lg: 14px;
+  --rounded-xl: 18px;
+  --rounded-2xl: 20px;
+  --rounded-3xl: 25px;
+  --rounded-4xl: 40px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  --rounded: var(--rounded-md);
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Font size */
+  --fs-3xs: 0.7rem;
+  --fs-2xs: 0.8rem;
+  --fs-xs: 0.85rem;
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  --fs-sm: 0.94rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.18rem;
+
+  --fs-xl: 1.44rem;
+  --fs-2xl: 1.728rem;
+  --fs-3xl: 2.074rem;
+  --fs-4xl: 2.488rem;
+  --fs-5xl: 2.8rem;
+  --fs-6xl: 3.4rem;
+  --fs-7xl: 5rem;
+  --fs-8xl: 6rem;
+
+  /* Box shadow */
+  --bs-sm: 0 2px 2px rgba(0 0 0 / 0.04);
+  --bs-md: 0 3px 8px rgba(0 0 0 / 0.23);
+  --bs-lg: 0 7px 13px rgba(0 0 0 / 0.39);
+
+  --accent-100: rgb(48, 12, 8);
+  --accent-200: rgb(77, 24, 18);
+  --accent-300: rgb(106, 35, 27);
+  --accent-400: rgb(135, 47, 36);
+  --accent-500: rgb(163, 59, 46);
+  --accent-600: rgb(186, 98, 87);
+  --accent-700: rgb(209, 137, 129);
+  --accent-800: rgb(232, 176, 170);
+  --accent-900: rgb(245, 215, 212);
+
+  --slate-ice-100: rgb(255 255 255);
+  --slate-ice-150: rgb(252 252 252);
+  --slate-ice-200: rgb(248 248 248);
+  --slate-ice-250: rgb(242 242 242);
+  --slate-ice-300: rgb(240 240 240);
+  --slate-ice-350: rgb(235 235 237);
+  --slate-ice-400: rgb(228 228 228);
+  --slate-ice-450: rgb(222 222 224);
+  --slate-ice-500: rgb(217 217 218);
+  --slate-ice-550: rgb(213 213 213);
+  --slate-ice-600: rgb(208 208 208);
+  --slate-ice-650: rgb(203 203 203);
+  --slate-ice-700: rgb(198 198 198);
+  --slate-ice-750: rgb(193 193 193);
+  --slate-ice-800: rgb(188 188 188);
+  --slate-ice-850: rgb(183 183 183);
+  --slate-ice-900: rgb(178 178 178);
+
+  --ink-slate-100: rgb(0 0 0);
+  --ink-slate-200: rgb(50 50 50);
+  --ink-slate-300: rgb(80 80 80);
+  --ink-slate-400: rgb(130 130 130);
+  --ink-slate-500: rgb(150 150 150);
+
+  --bg-100: var(--slate-ice-100);
+  --bg-150: var(--slate-ice-150);
+  --bg-200: var(--slate-ice-200);
+  --bg-250: var(--slate-ice-250);
+  --bg-300: var(--slate-ice-300);
+  --bg-350: var(--slate-ice-350);
+  --bg-400: var(--slate-ice-400);
+  --bg-450: var(--slate-ice-450);
+  --bg-500: var(--slate-ice-500);
+  --bg-550: var(--slate-ice-550);
+  --bg-600: var(--slate-ice-600);
+  --bg-650: var(--slate-ice-650);
+  --bg-700: var(--slate-ice-700);
+  --bg-750: var(--slate-ice-750);
+  --bg-800: var(--slate-ice-800);
+  --bg-850: var(--slate-ice-850);
+  --bg-900: var(--slate-ice-900);
+
+  --text-100: var(--ink-slate-100);
+  --text-200: var(--ink-slate-200);
+  --text-300: var(--ink-slate-300);
+  --text-400: var(--ink-slate-400);
+  --text-500: var(--ink-slate-500);
+
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+* {
+  margin: 0;
+  padding: 0;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
+html {
+  font-size: 15px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
 body {
-  margin: 0;
+  background-color: var(--bg-100);
+  color: var(--text-100);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+  text-decoration: none;
 }
 
 h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+input,
+button {
+  background: transparent;
+  font-weight: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+  color: currentColor
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+input:focus {
+  outline: none;
+  border: none;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+button {
+  cursor: pointer;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--accent-500);
+  outline-offset: 2px
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+svg,
+img,
+picture {
+  display: block;
+}
+
+/* Utility classes */
+.wrapper {
+  --width: var(--custom-width, 1380px);
+  --padding: var(--custom-padding, 2rem);
+
+  width: min(var(--width), 100% - var(--padding) * 2);
+  margin-inline: auto;
+}
+
+.flow>*+* {
+  margin-top: var(--flow-space, 1rem);
 }

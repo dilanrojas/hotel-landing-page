@@ -1,0 +1,33 @@
+.card {
+  display: flex;
+  gap: .7rem;
+  padding: .2rem;
+  align-items: center;
+  background-color: var(--bg-100);
+  border-radius: var(--rounded);
+  color: black;
+  width: min(380px, 100%);
+}
+
+.picture img {
+  border-radius: calc(var(--rounded) - .15rem);
+}
+
+.content h4 {
+  font-weight: 400;
+  font-size: var(--fs-lg);
+}
+
+.content p {
+  font-size: var(--fs-sm);
+  opacity: .7;
+  max-width: 20ch;
+  margin-bottom: .4rem;
+}
+
+.contentBtn {
+  display: flex;
+  gap: .2rem;
+  text-transform: uppercase;
+  align-items: center;
+}

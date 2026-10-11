@@ -1,0 +1,55 @@
+.header {
+  position: fixed;
+  top: 1.5rem;
+  left: 0;
+  z-index: 90;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.header>div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pmNav {
+  display: flex;
+  gap: .8rem
+}
+
+.pmNavPill {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  background-color: rgb(144 143 140);
+  border-radius: var(--rounded-4xl);
+  padding: .5rem;
+  padding-left: 1.2rem;
+}
+
+.pmNavPillBtn {
+  --size: 41px;
+
+  width: var(--size);
+  height: var(--size);
+
+  border-radius: 50%;
+
+  background-color: white;
+  color: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.pmNav {
+  display: flex;
+}

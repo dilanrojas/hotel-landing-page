@@ -1,0 +1,73 @@
+.hero {
+  height: 850px;
+  background-image: url('/hero-bg.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: end;
+
+  color: white;
+}
+
+.hero>div {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+}
+
+.article h1 {
+  font-size: var(--fs-8xl);
+  font-weight: 600;
+  margin-bottom: .1rem;
+}
+
+.article p {
+  font-size: var(--fs-lg);
+  opacity: .9;
+  max-width: 60ch;
+  font-weight: 500;
+}
+
+.heroBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .8rem;
+  background-color: var(--bg-100);
+  color: black;
+  height: fit-content;
+  width: fit-content;
+  border-radius: var(--rounded-4xl);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.07rem;
+  padding: 1.1rem;
+  padding-left: 1.7rem;
+}
+
+.heroBtnChevron {
+  --size: 38px;
+
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--size);
+  height: var(--size);
+}
+
+.footer {
+  padding-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding-bottom: 7rem;
+}
