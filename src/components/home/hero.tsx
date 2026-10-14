@@ -1,6 +1,6 @@
-import { ChevronRight } from 'lucide-react';
 import HeroCard from './hero-card';
 import styles from './hero.module.css';
+import Button from '../ui/button';
 
 export default function Hero() {
   return (
@@ -13,12 +13,14 @@ export default function Hero() {
           </p>
         </article>
         <footer className={styles.footer}>
-          <button className={styles.heroBtn}>
+          <Button
+            variant='primary'
+            chevronRightSize={22}
+            chevronRight={true}
+            size='lg'
+          >
             <span>Book Your Stay</span>
-            <span className={styles.heroBtnChevron}>
-              <ChevronRight size={22} strokeWidth={1.5} />
-            </span>
-          </button>
+          </Button>
           <HeroCard />
         </footer>
       </div>
