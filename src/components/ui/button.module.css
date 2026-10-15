@@ -1,29 +1,23 @@
 .button {
-  --gap: .7rem;
-
   display: flex;
   align-items: center;
-  gap: var(--gap);
   font-weight: 600;
   text-transform: uppercase;
 }
 
 .button.variant_primary {
-  background-color: white;
+  background-color: black;
+  color: white;
   border-radius: var(--rounded-4xl);
-  color: black;
-
   position: relative;
+  padding: .4rem;
 }
 
 .button.size_lg {
-  --py: 1.2rem;
-
   height: 72px;
-  padding-inline: var(--py);
   font-size: 1.1rem;
+  padding-inline: 1.2rem;
 }
-
 
 .button.variant_primary {
   background-color: black;
@@ -31,16 +25,22 @@
 }
 
 .button.variant_primary .chevron {
+  --size: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background-color: white;
   color: black;
+  border-radius: 50%;
+  width: var(--size);
+  height: var(--size);
 }
 
 .button.variant_primary.scheme_dark .chevron {
   background-color: black;
-  border-radius: 50%;
   color: white;
-  padding: .6rem;
-  font-size: .7rem;
 
   transition: opacity var(--ti-lg) ease, transform var(--ti-lg) ease;
 }
@@ -58,15 +58,14 @@
 .button.variant_primary .chevron:first-child {
   display: flex;
   position: absolute;
-  left: var(--py);
   opacity: 0;
-  transform: translateX(-8px);
   pointer-events: none;
   transition: opacity var(--ti-xl) ease, transform var(--ti-xl) ease;
 }
 
 .content {
   transition: transform var(--ti-xl) ease;
+  padding-inline: .4rem;
 }
 
 .button.variant_primary:has(.chevron):hover {
@@ -76,7 +75,7 @@
   }
 
   & .content {
-    transform: translateX(calc(var(--py) * 2 + var(--gap)))
+    transform: translateX(calc(40px))
   }
 
   & .chevron:last-child {
