@@ -5,18 +5,20 @@ import { ChevronRight } from 'lucide-react';
 
 type ButtonProps = ComponentProps<'button'> & {
   children: ReactNode;
-  variant: 'primary' | 'secondary' | 'tertiary';
+  variant: 'primary' | 'secondary';
   size?: 'sm' | 'md' | 'lg' | 'xl'
-  chevronRight?: boolean;
-  chevronRightSize?: number;
+  chevron?: boolean;
+  chevronSize?: number;
+  scheme?: 'light' | 'dark';
 };
 
 export default function Button({
   children,
   size,
   variant,
-  chevronRight,
-  chevronRightSize,
+  chevron,
+  chevronSize,
+  scheme,
   ...props }: ButtonProps) {
   return (
     <button
@@ -24,23 +26,45 @@ export default function Button({
         styles.button,
         styles[`variant_${variant}`],
         styles[`size_${size}`],
-        styles[`chevron_right_${chevronRight}`],
+        styles[`chevron_right_${chevron}`],
+        styles[`scheme_${scheme}`],
         props.className
       )}
       {...props}
     >
-      {chevronRight && (
-        <span className={styles.chevron}>
-          <ChevronRight size={chevronRightSize} />
-        </span>
+      {variant === 'primary' && chevron && (
+        <>
+          <span className={styles.chevron}>
+            <ChevronRight size={chevronSize} />
+          </span>
+
+          <span className={styles.content}>
+            {children}
+          </span>
+
+          <span className={styles.chevron}>
+            <ChevronRight size={chevronSize} />
+          </span>
+        </>
       )}
 
-      {children}
+      {variant === 'secondary' && chevron && (
+        <>
+          <span className={styles.content}>{children}</span>
+          <div className={styles.secondaryChevrons}>
+            <span className={styles.chevron}>
+              <ChevronRight size={chevronSize} />
+            </span>
+            <span className={styles.chevron}>
+              <ChevronRight size={chevronSize} />
+            </span>
+          </div>
 
-      {chevronRight && (
-        <span className={styles.chevron}>
-          <ChevronRight size={chevronRightSize} />
-        </span>
+        </>
+      )}
+
+      {!chevron && (
+        <span className={styles.content}>{children}</span>
       )}
     </button>
   )

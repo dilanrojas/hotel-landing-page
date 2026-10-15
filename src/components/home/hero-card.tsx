@@ -1,5 +1,5 @@
-import { ChevronRight } from 'lucide-react';
 import styles from './hero-card.module.css';
+import Button from '../ui/button';
 
 export default function HeroCard() {
   return (
@@ -10,10 +10,9 @@ export default function HeroCard() {
       <div className={styles.content}>
         <h4>Horizon Residence</h4>
         <p>Where Architecture Meets Modern Living</p>
-        <button className={styles.contentBtn}>
+        <Button variant='secondary' chevron chevronSize={15}>
           <span>VIEW</span>
-          <span><ChevronRight size={16} strokeWidth={2.5} /></span>
-        </button>
+        </Button>
       </div>
     </article>
   )

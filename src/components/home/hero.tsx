@@ -15,9 +15,10 @@ export default function Hero() {
         <footer className={styles.footer}>
           <Button
             variant='primary'
-            chevronRightSize={22}
-            chevronRight={true}
+            chevronSize={22}
+            chevron={true}
             size='lg'
+            scheme='dark'
           >
             <span>Book Your Stay</span>
           </Button>

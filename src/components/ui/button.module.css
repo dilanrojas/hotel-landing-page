@@ -1,23 +1,117 @@
 .button {
+  --gap: .7rem;
+
   display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: var(--gap);
   font-weight: 600;
   text-transform: uppercase;
 }
 
 .button.variant_primary {
   background-color: white;
-  padding: .8rem;
   border-radius: var(--rounded-4xl);
   color: black;
+
+  position: relative;
 }
 
 .button.size_lg {
-  padding: 1.5rem;
+  --py: 1.2rem;
+
+  height: 72px;
+  padding-inline: var(--py);
   font-size: 1.1rem;
 }
 
-.chevron {
+
+.button.variant_primary {
   background-color: black;
+  color: white;
+}
+
+.button.variant_primary .chevron {
+  background-color: white;
+  color: black;
+}
+
+.button.variant_primary.scheme_dark .chevron {
+  background-color: black;
+  border-radius: 50%;
+  color: white;
+  padding: .6rem;
+  font-size: .7rem;
+
+  transition: opacity var(--ti-lg) ease, transform var(--ti-lg) ease;
+}
+
+.button.button.variant_primary.scheme_dark {
+  background-color: white;
+  color: black;
+}
+
+.button.variant_primary .chevron:last-child {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.button.variant_primary .chevron:first-child {
+  display: flex;
+  position: absolute;
+  left: var(--py);
+  opacity: 0;
+  transform: translateX(-8px);
+  pointer-events: none;
+  transition: opacity var(--ti-xl) ease, transform var(--ti-xl) ease;
+}
+
+.content {
+  transition: transform var(--ti-xl) ease;
+}
+
+.button.variant_primary:has(.chevron):hover {
+  & .chevron:first-child {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  & .content {
+    transform: translateX(calc(var(--py) * 2 + var(--gap)))
+  }
+
+  & .chevron:last-child {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+}
+
+.button.variant_secondary {
+  gap: .1rem;
+}
+
+.button.variant_secondary .secondaryChevrons {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+
+  & .chevron:first-child {
+    position: absolute;
+    left: -100%;
+
+    transition: left var(--ti-xl) ease;
+  }
+
+  & .chevron:last-child {
+    transition: transform var(--ti-xl) ease;
+  }
+}
+
+.button.variant_secondary:has(.secondaryChevrons):hover {
+  & .chevron:first-child {
+    left: 0;
+  }
+
+  & .chevron:last-child {
+    transform: translateX(100%);
+  }
 }
