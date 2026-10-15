@@ -13,13 +13,6 @@ export default function HeroCard() {
         <Button variant='secondary' chevron chevronSize={15}>
           <span>VIEW</span>
         </Button>
-        <Button
-          variant='primary'
-          chevronSize={22}
-          chevron={true}
-        >
-          <span>Testing</span>
-        </Button>
       </div>
     </article>
   )
