@@ -1,17 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
 .logo {
   display: block;
-  text-transform: uppercase;
-  font-weight: 500;
+
+  font-family: "Kaushan Script", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .size_sm {
   font-size: var(--fs-sm);
 }
 
-.sige_lg {
+.size_lg {
   font-size: var(--fs-lg);
 }
 
 .size_xl {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }

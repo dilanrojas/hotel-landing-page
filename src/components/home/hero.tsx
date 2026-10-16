@@ -7,7 +7,7 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className='wrapper'>
         <article className={styles.article}>
-          <h1>"WE SHAPE SPACES <br /> FOR TOMORROW"</h1>
+          <h1>"WE SHAPE SPACES FOR TOMORROW"</h1>
           <p>
             We shape spaces for tomorrow by blending visionary design with purposeful functionality creating environments that inspire and endure.
           </p>

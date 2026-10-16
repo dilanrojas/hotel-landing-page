@@ -28,7 +28,7 @@
   --fs-3xl: 2.074rem;
   --fs-4xl: 2.488rem;
   --fs-5xl: 2.8rem;
-  --fs-6xl: 3.4rem;
+  --fs-6xl: 3.6rem;
   --fs-7xl: 5rem;
   --fs-8xl: 6rem;
 
@@ -43,15 +43,15 @@
   --bs-md: 0 3px 8px rgba(0 0 0 / 0.23);
   --bs-lg: 0 7px 13px rgba(0 0 0 / 0.39);
 
-  --accent-100: rgb(48, 12, 8);
-  --accent-200: rgb(77, 24, 18);
-  --accent-300: rgb(106, 35, 27);
-  --accent-400: rgb(135, 47, 36);
-  --accent-500: rgb(163, 59, 46);
-  --accent-600: rgb(186, 98, 87);
-  --accent-700: rgb(209, 137, 129);
-  --accent-800: rgb(232, 176, 170);
-  --accent-900: rgb(245, 215, 212);
+  --accent-100: rgb(15, 12, 2);
+  --accent-200: rgb(25, 20, 4);
+  --accent-300: rgb(35, 28, 7);
+  --accent-400: rgb(45, 36, 10);
+  --accent-500: rgb(58, 46, 13);
+  --accent-600: rgb(75, 60, 18);
+  --accent-700: rgb(95, 76, 25);
+  --accent-800: rgb(120, 96, 35);
+  --accent-900: rgb(150, 120, 45);
 
   --slate-ice-100: rgb(255 255 255);
   --slate-ice-150: rgb(252 252 252);
@@ -139,6 +139,7 @@ body {
 
 a {
   text-decoration: none;
+  color: currentColor
 }
 
 h1,
@@ -195,6 +196,12 @@ picture {
 
   width: min(var(--width), 100% - var(--padding) * 2);
   margin-inline: auto;
+}
+
+@media (width <=528px) {
+  .wrapper {
+    --padding: var(--custom-padding, 1.2rem);
+  }
 }
 
 .flow>*+* {

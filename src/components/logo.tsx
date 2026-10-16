@@ -2,7 +2,7 @@ import { clsx } from 'clsx';
 import styles from './logo.module.css';
 
 interface Props {
-  size: 'sm' | 'md' | 'lg' | 'xl'
+  size?: 'sm' | 'md' | 'lg' | 'xl'
 }
 
 export default function Logo(props: Props) {
