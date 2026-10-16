@@ -8,7 +8,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 100%;
 }
 
@@ -16,6 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: fit-content;
 }
 
 .pmNav {
@@ -37,6 +37,9 @@
 .pmNavPillBtn {
   --size: 41px;
 
+  position: relative;
+  overflow: hidden;
+
   width: var(--size);
   height: var(--size);
 
@@ -49,6 +52,23 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.pmNavPillBtn img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  pointer-events: none;
+}
+
+.iconVisible {
+  opacity: 1;
+  animation: var(--anim-fade-in);
+}
+
+.iconHidden {
+  opacity: 0;
+  animation: var(--anim-fade-out);
 }
 
 .pmNav {
@@ -71,6 +91,19 @@
   overflow: hidden;
   border-radius: var(--rounded-xl);
   box-shadow: var(--bs-md);
+  opacity: 0;
+  visibility: hidden;
+  width: min(400px, 100% - 1rem);
+}
+
+.dropdownOpen {
+  pointer-events: auto;
+  animation: var(--anim-dropdown-in);
+}
+
+.dropdownClosed {
+  pointer-events: none;
+  animation: var(--anim-dropdown-out);
 }
 
 .dropdownNav {

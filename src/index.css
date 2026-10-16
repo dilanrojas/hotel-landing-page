@@ -38,6 +38,12 @@
   --ti-lg: .28s;
   --ti-xl: .4s;
 
+  /* Animations */
+  --anim-fade-in: fade-in var(--ti-md) ease both;
+  --anim-fade-out: fade-out var(--ti-sm) ease both;
+  --anim-dropdown-in: dropdown-in var(--ti-md) ease both;
+  --anim-dropdown-out: dropdown-out var(--ti-md) ease both;
+
   /* Box shadow */
   --bs-sm: 0 2px 2px rgba(0 0 0 / 0.04);
   --bs-md: 0 3px 8px rgba(0 0 0 / 0.23);
@@ -206,4 +212,59 @@ picture {
 
 .flow>*+* {
   margin-top: var(--flow-space, 1rem);
+}
+
+/* Keyframes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes dropdown-in {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  1% {
+    opacity: 0;
+    visibility: visible;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes dropdown-out {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  99% {
+    opacity: 0;
+    visibility: visible;
+  }
+
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
