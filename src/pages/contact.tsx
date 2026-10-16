@@ -1,5 +1,9 @@
+import Layout from "../layouts/layout";
+
 export default function Contact() {
   return (
-    <h1>Contact page</h1>
+    <Layout>
+      <h1>Contact page</h1>
+    </Layout>
   )
 }

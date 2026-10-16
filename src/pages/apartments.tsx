@@ -1,5 +1,9 @@
+import Layout from "../layouts/layout";
+
 export default function Apartments() {
   return (
-    <h1>Apartments page</h1>
+    <Layout>
+      <h1>Apartments page</h1>
+    </Layout>
   )
 }

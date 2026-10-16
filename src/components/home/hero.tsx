@@ -1,15 +1,21 @@
-import HeroCard from './hero-card';
 import styles from './hero.module.css';
 import Button from '../ui/button';
+import type { ReactElement } from 'react';
 
-export default function Hero() {
+interface Props {
+  title: string;
+  desc: string;
+  card?: ReactElement;
+}
+
+export default function Hero(props: Props) {
   return (
     <section className={styles.hero}>
       <div className='wrapper'>
         <article className={styles.article}>
-          <h1>"WE SHAPE SPACES FOR TOMORROW"</h1>
+          <h1>{props.title}</h1>
           <p>
-            We shape spaces for tomorrow by blending visionary design with purposeful functionality creating environments that inspire and endure.
+            {props.desc}
           </p>
         </article>
         <footer className={styles.footer}>
@@ -22,7 +28,9 @@ export default function Hero() {
           >
             <span>Book Your Stay</span>
           </Button>
-          <HeroCard />
+          {props.card && (
+            props.card
+          )}
         </footer>
       </div>
     </section>

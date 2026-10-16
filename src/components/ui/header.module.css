@@ -71,6 +71,10 @@
   animation: var(--anim-fade-out);
 }
 
+.noAnim {
+  animation: none;
+}
+
 .pmNav {
   display: flex;
 }
@@ -83,7 +87,7 @@
 
 .dropdown {
   position: absolute;
-  top: 110%;
+  top: 115%;
   background-color: var(--bg-100);
   color: black;
   font-size: var(--fs-lg);

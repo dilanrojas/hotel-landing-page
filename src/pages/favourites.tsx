@@ -1,5 +1,9 @@
+import Layout from "../layouts/layout";
+
 export default function Favourites() {
   return (
-    <h1>Favourites page</h1>
+    <Layout>
+      <h1>Favourites page</h1>
+    </Layout>
   )
 }
