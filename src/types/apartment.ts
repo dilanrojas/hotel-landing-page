@@ -1,4 +1,4 @@
-export type Environment = 'Forest' | 'Coastal' | 'Desert' | 'Lake';
+export type Environment = 'Forest' | 'Coastal' | 'Desert' | 'Lake' | 'Urban';
 
 export interface Apartment {
   id: string,
