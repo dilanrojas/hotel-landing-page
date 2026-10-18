@@ -16,14 +16,14 @@ export const useApartments = (url: string) => {
         const response = await fetch(url);
 
         if (!response.ok) {
-          throw new Error("Error al obtener los datos");
+          throw new Error("Could'nt get apartments data");
         }
 
         const apartments: Apartment[] = await response.json();
 
         setApartments(apartments);
       } catch (error) {
-        setError(error instanceof Error ? error.message : "Ocurrió un error");
+        setError(error instanceof Error ? error.message : "Could'nt get apartments data");
       } finally {
         setIsLoading(false);
       }
