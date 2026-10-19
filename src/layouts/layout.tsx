@@ -1,13 +1,19 @@
-import type { ReactNode } from "react";
 import Footer from "../components/home/footer";
 import Header from "../components/ui/header";
+import { Outlet } from "react-router-dom";
+import { FavouriteContextProvider } from "../context/favourite-context";
 
-export default function Layout({ children }: { children: ReactNode }) {
+export default function Layout() {
   return (
     <>
-      <Header />
-      {children}
-      <Footer />
+
+      <FavouriteContextProvider>
+
+        <Header />
+        <Outlet></Outlet>
+        <Footer />
+
+      </FavouriteContextProvider>
     </>
   )
 }
