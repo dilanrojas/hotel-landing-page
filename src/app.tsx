@@ -4,15 +4,19 @@ import Apartments from './pages/apartments';
 import Favourites from './pages/favourites';
 import Contact from './pages/contact';
 import NotFound from './pages/not-found';
+import Layout from './layouts/layout';
 
 export default function App() {
   return (
     <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/apartments' element={<Apartments />} />
-      <Route path='/apartments/:id' element={<Apartments />} />
-      <Route path='/favourites' element={<Favourites />} />
-      <Route path='/contact' element={<Contact />} />
+
+      <Route element={<Layout />}>
+        <Route path='/' element={<Home />} />
+        <Route path='/apartments' element={<Apartments />} />
+        <Route path='/apartments/:id' element={<Apartments />} />
+        <Route path='/favourites' element={<Favourites />} />
+        <Route path='/contact' element={<Contact />} />
+      </Route>
       <Route path='*' element={<NotFound />} />
     </Routes>
   )
