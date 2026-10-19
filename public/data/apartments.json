@@ -1,0 +1,542 @@
+[
+  {
+    "id": "hemlock-hollow",
+    "name": "Hemlock Hollow",
+    "environment": "Forest",
+    "location": {
+      "neighborhood": "Rich Mountain",
+      "city": "Asheville",
+      "country": "United States"
+    },
+    "price": 780,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "areaM2": 245,
+    "image": "/apartments/hemlock-hollow.webp",
+    "amenities": [
+      "Hot Tub",
+      "Wood Deck",
+      "Outdoor Lounge",
+      "Outdoor Dining",
+      "Floor-to-Ceiling Windows",
+      "Wood Stove"
+    ],
+    "summary": "Log A-frame on a wooded ridge, with an irregular hot tub sunk into the cedar deck.",
+    "description": "Hemlock Hollow is a log A-frame built into a hardwood ridge west of Asheville. The gable end is glass on both levels, so the rooms above and below open onto the canopy. An irregular hot tub sits sunk into the cedar deck, beside a dining table for six and four lounge chairs.",
+    "featured": true
+  },
+  {
+    "id": "casa-umbria",
+    "name": "Casa Umbría",
+    "environment": "Urban",
+    "location": {
+      "neighborhood": "Laurel Canyon",
+      "city": "Los Angeles",
+      "country": "United States"
+    },
+    "price": 1450,
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "areaM2": 320,
+    "image": "/apartments/casa-umbria.webp",
+    "amenities": [
+      "Private Pool",
+      "Native Garden",
+      "Open Plan",
+      "Floor-to-Ceiling Windows",
+      "Outdoor Lounge",
+      "Covered Terrace"
+    ],
+    "summary": "Raw concrete volumes wrapped around a shaded courtyard pool under mature canyon trees.",
+    "description": "Casa Umbría is built in raw concrete with deep overhangs that keep the whole plan in shade. Full-height pivot doors fold away to connect the living room with the courtyard pool. Monstera, alocasia and yucca fill the beds, and two mature trees rise through the deck beside the water.",
+    "featured": false
+  },
+  {
+    "id": "the-white-dune",
+    "name": "The White Dune",
+    "environment": "Coastal",
+    "location": {
+      "neighborhood": "La Barra",
+      "city": "Punta del Este",
+      "country": "Uruguay"
+    },
+    "price": 1120,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "areaM2": 240,
+    "image": "/apartments/the-white-dune.webp",
+    "amenities": [
+      "Private Pool",
+      "Balcony",
+      "Outdoor Lounge",
+      "Floor-to-Ceiling Windows",
+      "Open Plan",
+      "Outdoor Dining"
+    ],
+    "summary": "Two white cubic volumes above a shallow pool, laid out in white gravel and low planting.",
+    "description": "The White Dune is two stacked white volumes with no ornament at all. The upper floor opens onto a glass-railed balcony, and the ground floor slides wide onto a shallow pool. A gravel yard with yucca and prickly pear keeps the planting low, and palms stand just beyond the boundary.",
+    "featured": false
+  },
+  {
+    "id": "desert-light-house",
+    "name": "Desert Light House",
+    "environment": "Desert",
+    "location": {
+      "neighborhood": "Old Las Palmas",
+      "city": "Palm Springs",
+      "country": "United States"
+    },
+    "price": 980,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "areaM2": 265,
+    "image": "/apartments/desert-light-house.webp",
+    "amenities": [
+      "Infinity Pool",
+      "Mountain View",
+      "Native Garden",
+      "Outdoor Lounge",
+      "Floor-to-Ceiling Windows",
+      "Open Plan",
+      "Chef Kitchen"
+    ],
+    "summary": "Board-formed concrete and warm timber facing an infinity pool and the valley at dusk.",
+    "description": "Desert Light House is framed by two board-formed concrete walls with a timber ceiling between them. The interior opens completely to an infinity pool that catches the last light over the valley. Agave and echeveria fill the gravel beds, and two wire chairs wait on the concrete pad.",
+    "featured": true
+  },
+  {
+    "id": "lawn-and-line-house",
+    "name": "Lawn and Line House",
+    "environment": "Urban",
+    "location": {
+      "neighborhood": "Tarrytown",
+      "city": "Austin",
+      "country": "United States"
+    },
+    "price": 720,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "areaM2": 295,
+    "image": "/apartments/lawn-and-line-house.webp",
+    "amenities": [
+      "Private Pool",
+      "Lawn",
+      "Outdoor Lounge",
+      "Outdoor Dining",
+      "Floor-to-Ceiling Windows",
+      "Open Plan"
+    ],
+    "summary": "A long white house behind a lap pool, set between a clipped hedge and open lawn.",
+    "description": "Lawn and Line House runs along one edge of the lot as a single low white bar. Every room faces the pool, which sits in a broad lawn edged by a clipped hedge and stepping stones. The whole interior is one continuous space, with the living room opening straight onto the water.",
+    "featured": false
+  },
+  {
+    "id": "the-ember-cabin",
+    "name": "The Ember Cabin",
+    "environment": "Forest",
+    "location": {
+      "neighborhood": "Barnett Mountain",
+      "city": "Blue Ridge",
+      "country": "United States"
+    },
+    "price": 460,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "areaM2": 58,
+    "image": "/apartments/the-ember-cabin.webp",
+    "amenities": [
+      "Fire Pit",
+      "Wood Deck",
+      "Outdoor Lounge",
+      "Floor-to-Ceiling Windows",
+      "Wood Stove"
+    ],
+    "summary": "A charred timber cabin on blackened posts, with a steel fire bowl in the gravel clearing.",
+    "description": "The Ember Cabin is a single charred-timber room raised off the ground on blackened posts. The glazed gable end frames the forest, and a wood stove warms the one open interior. Outside, four chairs and a steel bowl on the gravel are all the furniture the clearing needs.",
+    "featured": false
+  },
+  {
+    "id": "casa-manglar",
+    "name": "Casa Manglar",
+    "environment": "Forest",
+    "location": {
+      "neighborhood": "Punta Uva",
+      "city": "Puerto Viejo",
+      "country": "Costa Rica"
+    },
+    "price": 690,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "areaM2": 210,
+    "image": "/apartments/casa-manglar.webp",
+    "amenities": [
+      "Private Pool",
+      "Covered Terrace",
+      "Native Garden",
+      "Outdoor Lounge",
+      "Floor-to-Ceiling Windows",
+      "Open Plan"
+    ],
+    "summary": "Limewashed walls opening onto a jungle pool, shaded by a deep veranda and a ceiling fan.",
+    "description": "Casa Manglar is a limewashed house on the Caribbean slope where the garden is the room. A deep veranda with a ceiling fan shades the open living area, which slides out to the pool. A wall of rough local stone runs along one side, and schefflera and palms lean in over the water.",
+    "featured": false
+  },
+  {
+    "id": "the-long-field",
+    "name": "The Long Field",
+    "environment": "Lake",
+    "location": {
+      "neighborhood": "Port Carling",
+      "city": "Muskoka",
+      "country": "Canada"
+    },
+    "price": 540,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "areaM2": 155,
+    "image": "/apartments/the-long-field.webp",
+    "amenities": [
+      "Fire Pit",
+      "Wood Stove",
+      "Wood Deck",
+      "Open Plan",
+      "Outdoor Lounge",
+      "Floor-to-Ceiling Windows"
+    ],
+    "summary": "A single-storey bar of glass and steel on a gravel shore, lit by a sunken steel fire bowl.",
+    "description": "The Long Field is one long room with glass on three sides and a wood stove burning at the centre. It sits on a low concrete pad above the lake, reached by a raised deck. A sunken steel bowl burns in the gravel, with a driftwood log and a boulder for seats.",
+    "featured": false
+  },
+  {
+    "id": "amber-ridge",
+    "name": "Amber Ridge",
+    "environment": "Forest",
+    "location": {
+      "neighborhood": "Phoenicia",
+      "city": "New York",
+      "country": "United States"
+    },
+    "price": 1050,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "areaM2": 210,
+    "image": "/apartments/amber-ridge.webp",
+    "amenities": [
+      "Floor-to-Ceiling Windows",
+      "Double Height",
+      "Open Plan",
+      "Wood Stove",
+      "Lawn"
+    ],
+    "summary": "A glass box held above a steep hillside in peak autumn, glowing warm against the maples.",
+    "description": "Amber Ridge is a glazed rectangle set on piers and cantilevered over a falling slope. The upper volume is entirely glass with a timber-lined ceiling; below it, a wood-clad level steps down to the lawn. It is built for October, when the maples around it turn.",
+    "featured": false
+  },
+  {
+    "id": "casa-mirante",
+    "name": "Casa Mirante",
+    "environment": "Forest",
+    "location": {
+      "neighborhood": "Itaipava",
+      "city": "Rio de Janeiro",
+      "country": "Brazil"
+    },
+    "price": 1380,
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "areaM2": 350,
+    "image": "/apartments/casa-mirante.webp",
+    "amenities": [
+      "Infinity Pool",
+      "Forest View",
+      "Double Height",
+      "Outdoor Lounge",
+      "Floor-to-Ceiling Windows",
+      "Open Plan",
+      "Chef Kitchen"
+    ],
+    "summary": "Double-height living space under a three-blade fan, opening onto a pool above the valley.",
+    "description": "Casa Mirante looks out from a double-height room where clerestory windows bring light in above the main glass wall. A three-blade timber fan turns under the high ceiling. The living area runs the length of an infinity pool set on the edge of the forest, with two loungers at the far end.",
+    "featured": true
+  },
+  {
+    "id": "black-creek-house",
+    "name": "Black Creek House",
+    "environment": "Forest",
+    "location": {
+      "neighborhood": "Chimney Tops",
+      "city": "Gatlinburg",
+      "country": "United States"
+    },
+    "price": 1250,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "areaM2": 140,
+    "image": "/apartments/black-creek-house.webp",
+    "amenities": [
+      "Creek Access",
+      "Wood Deck",
+      "Native Garden",
+      "Outdoor Lounge",
+      "Floor-to-Ceiling Windows",
+      "Open Plan"
+    ],
+    "summary": "Blackened timber and a stone chimney, built on the bank above a rocky creek.",
+    "description": "Black Creek House sits directly on the stream, its deck carried out over the water on steel posts. Two storeys of glass face the bank, and a stone chimney rises through the metal roof. A cable-railed deck holds a low sectional sofa; below, the creek runs over granite boulders.",
+    "featured": false
+  },
+  {
+    "id": "stillwater-house",
+    "name": "Stillwater House",
+    "environment": "Lake",
+    "location": {
+      "neighborhood": "Shelburne Shores",
+      "city": "Burlington",
+      "country": "United States"
+    },
+    "price": 890,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "areaM2": 225,
+    "image": "/apartments/stillwater-house.webp",
+    "amenities": [
+      "Lake Frontage",
+      "Fire Pit",
+      "Stone Fireplace",
+      "Wood Deck",
+      "Outdoor Lounge",
+      "Chef Kitchen",
+      "Floor-to-Ceiling Windows"
+    ],
+    "summary": "Glass walls and a stone hearth on a deck that runs out over a still lake at dusk.",
+    "description": "Stillwater House is a glass box with a stone hearth and a stove burning behind it. The deck runs out over the water on a low ledge, with mature trees growing straight through the boards. A fire bowl sits on the pebble shore below, and the far bank closes the view.",
+    "featured": false
+  },
+  {
+    "id": "nordic-light-house",
+    "name": "Nordic Light House",
+    "environment": "Forest",
+    "location": {
+      "neighborhood": "Kerrisdale",
+      "city": "Vancouver",
+      "country": "Canada"
+    },
+    "price": 1150,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "areaM2": 305,
+    "image": "/apartments/nordic-light-house.webp",
+    "amenities": [
+      "Double Height",
+      "Mezzanine",
+      "Open Plan",
+      "Chef Kitchen",
+      "Floor-to-Ceiling Windows"
+    ],
+    "summary": "A double-height living room under a pale timber ceiling, with a mezzanine above the stair.",
+    "description": "Nordic Light House is a light-filled double-height room with a continuous pale timber ceiling. A glass-railed mezzanine runs along one side, reached by an open stair with white treads. Sheer curtains temper the full-height glazing, and the kitchen sits at the far end of the open plan behind an island.",
+    "featured": false
+  },
+  {
+    "id": "casa-frangipan",
+    "name": "Casa Frangipan",
+    "environment": "Coastal",
+    "location": {
+      "neighborhood": "Playa Mamitas",
+      "city": "Quintana Roo",
+      "country": "Mexico"
+    },
+    "price": 1720,
+    "bedrooms": 5,
+    "bathrooms": 5,
+    "areaM2": 480,
+    "image": "/apartments/casa-frangipan.webp",
+    "amenities": [
+      "Private Pool",
+      "Balcony",
+      "Double Height",
+      "Covered Terrace",
+      "Outdoor Lounge",
+      "Outdoor Dining",
+      "Floor-to-Ceiling Windows"
+    ],
+    "summary": "Two concrete storeys above a turquoise pool, with daybeds on a platform inside the water.",
+    "description": "Casa Frangipan stacks two concrete volumes above a deep pool shaded at the edges. Daybeds sit on a submerged platform inside the water, and a shaded veranda holds the dining table. A perforated screen filters the upper floor, and a frangipani grows straight out of the pool deck.",
+    "featured": false
+  },
+  {
+    "id": "the-still-pool",
+    "name": "The Still Pool",
+    "environment": "Urban",
+    "location": {
+      "neighborhood": "Alto de Pinheiros",
+      "city": "São Paulo",
+      "country": "Brazil"
+    },
+    "price": 640,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "areaM2": 260,
+    "image": "/apartments/the-still-pool.webp",
+    "amenities": [
+      "Private Pool",
+      "Lawn",
+      "Outdoor Lounge",
+      "Floor-to-Ceiling Windows"
+    ],
+    "summary": "Board-formed concrete panels reflected in a black pool, with lawn and forest beyond.",
+    "description": "The Still Pool is a single-storey pavilion of vertical concrete panels under a thin dark steel roof. A black reflecting pool doubles the elevation in the water, and pale stepping stones cross it. Two loungers sit on a concrete pad between the pool and a clipped lawn.",
+    "featured": false
+  },
+  {
+    "id": "oakline-residence",
+    "name": "Oakline Residence",
+    "environment": "Forest",
+    "location": {
+      "neighborhood": "Cerro Punta",
+      "city": "Boquete",
+      "country": "Panama"
+    },
+    "price": 580,
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "areaM2": 330,
+    "image": "/apartments/oakline-residence.webp",
+    "amenities": [
+      "Balcony",
+      "Floor-to-Ceiling Windows",
+      "Outdoor Lounge",
+      "Covered Terrace",
+      "Open Plan"
+    ],
+    "summary": "A dark timber and glass two-storey house behind a rain-washed drive in the highlands.",
+    "description": "Oakline Residence is a two-storey house in dark timber with a pitched roof and deep eaves. Glass runs the full height on both levels, and a clear balcony overlooks the drive. Rain trees and palms fill the beds, and the warm interior is still lit at dusk.",
+    "featured": false
+  },
+  {
+    "id": "sunset-ledge",
+    "name": "Sunset Ledge",
+    "environment": "Forest",
+    "location": {
+      "neighborhood": "Flagstaff Mountain",
+      "city": "Boulder",
+      "country": "United States"
+    },
+    "price": 960,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "areaM2": 250,
+    "image": "/apartments/sunset-ledge.webp",
+    "amenities": [
+      "Mountain View",
+      "Wood Deck",
+      "Outdoor Lounge",
+      "Floor-to-Ceiling Windows"
+    ],
+    "summary": "A dark cabin cantilevered over a dry hillside, with terraces on two levels facing the valley.",
+    "description": "Sunset Ledge is a dark-clad cabin pushed out over a steep, dry slope. The upper glass box carries a wraparound terrace with two loungers, and a second deck sits below it with a rattan sofa. Golden grass and turning leaves fill the hillside, and the valley is visible past the corner.",
+    "featured": false
+  },
+  {
+    "id": "casa-adobe",
+    "name": "Casa Adobe",
+    "environment": "Forest",
+    "location": {
+      "neighborhood": "Avándaro",
+      "city": "Valle de Bravo",
+      "country": "Mexico"
+    },
+    "price": 520,
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "areaM2": 340,
+    "image": "/apartments/casa-adobe.webp",
+    "amenities": [
+      "Plunge Pool",
+      "Wood Deck",
+      "Covered Terrace",
+      "Outdoor Dining",
+      "Outdoor Lounge",
+      "Chef Kitchen"
+    ],
+    "summary": "Whitewashed walls and clay tile roofs around a courtyard pool and an outdoor kitchen.",
+    "description": "Casa Adobe is a whitewashed house with clay tile roofs carried on heavy timber beams. String lights run across the veranda, where a built-in bench and two cane chairs sit beside the plunge pool. An outdoor kitchen with a steel grill and a long wooden table opens onto the deck.",
+    "featured": false
+  },
+  {
+    "id": "travertine-court",
+    "name": "Travertine Court",
+    "environment": "Desert",
+    "location": {
+      "neighborhood": "Sabino Springs",
+      "city": "Tucson",
+      "country": "United States"
+    },
+    "price": 610,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "areaM2": 235,
+    "image": "/apartments/travertine-court.webp",
+    "amenities": [
+      "Plunge Pool",
+      "Covered Terrace",
+      "Outdoor Lounge",
+      "Open Plan",
+      "Stone Fireplace",
+      "Lawn"
+    ],
+    "summary": "A cream plastered courtyard where the plunge pool steps down into a bed of desert stone.",
+    "description": "Travertine Court is a low cream box arranged around a sunken plunge pool. A black steel pergola shelters a teak lounger and a low daybed on the terrace. Through the wide opening, the living room reads as one volume, with a fireplace, floating shelves and a built-in bench.",
+    "featured": false
+  },
+  {
+    "id": "casa-horizonte",
+    "name": "Casa Horizonte",
+    "environment": "Coastal",
+    "location": {
+      "neighborhood": "Icacos",
+      "city": "Acapulco",
+      "country": "Mexico"
+    },
+    "price": 1860,
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "areaM2": 410,
+    "image": "/apartments/casa-horizonte.webp",
+    "amenities": [
+      "Ocean View",
+      "Rooftop Terrace",
+      "Outdoor Lounge",
+      "Floor-to-Ceiling Windows",
+      "Open Plan"
+    ],
+    "summary": "A retracted glass wall that turns the living room into a terrace over the Pacific.",
+    "description": "Casa Horizonte opens on its seaward side with the sliding wall fully retracted into the wall pocket. The roof terrace carries sun loungers behind a glass balustrade, and the horizon runs unbroken from the pool edge to the sky. Inside, three low armchairs face a brass table on a hide rug.",
+    "featured": true
+  },
+  {
+    "id": "ridge-pavilion",
+    "name": "Ridge Pavilion",
+    "environment": "Forest",
+    "location": {
+      "neighborhood": "La California",
+      "city": "Bogotá",
+      "country": "Colombia"
+    },
+    "price": 1980,
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "areaM2": 390,
+    "image": "/apartments/ridge-pavilion.webp",
+    "amenities": [
+      "Infinity Pool",
+      "Mountain View",
+      "Outdoor Lounge",
+      "Covered Terrace",
+      "Floor-to-Ceiling Windows"
+    ],
+    "summary": "A concrete slab cantilevered over a ridge, with a long pool above the city lights.",
+    "description": "Ridge Pavilion is a single concrete plate pushed out past the edge of the mountain. A narrow infinity pool runs along the terrace under the cantilever, with a low grey sectional facing the valley. Far below, the city lights spread out; the stone wall opposite holds a lit fire.",
+    "featured": true
+  }
+]
