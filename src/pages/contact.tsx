@@ -1,9 +1,18 @@
 
+import ContactHero from '../components/contact/ContactHero'
+import ContactInfo from '../components/contact/ContactInfo'
+import ContactForm from '../components/contact/ContactForm'
+import ContactContent from '../components/contact/ContactContent'
+
 export default function Contact() {
   return (
-    <>
+    <main>
+      <ContactHero/>
 
-      <h1>Contact page</h1>
-    </>
+      <ContactContent>
+        <ContactInfo />
+        <ContactForm />
+      </ContactContent>
+    </main>
   )
 }
