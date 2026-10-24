@@ -3,7 +3,7 @@
   top: 1.5rem;
   left: 0;
   z-index: 90;
-  color: white;
+  color: black;
 
   display: flex;
   align-items: center;
@@ -11,27 +11,31 @@
   width: 100%;
 }
 
+.onHome {
+  color: white;
+}
+
+.offHome {
+  color: black;
+}
+
 .header>div {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: fit-content;
+  width: 100%;
 }
 
 .pmNav {
   display: flex;
   align-items: center;
-  gap: .5rem
-}
-
-.pmNavPill {
-  display: flex;
-  align-items: center;
-  gap: .8rem;
-  background-color: rgb(144 143 140);
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: rgb(200 200 200 / .2);
   border-radius: var(--rounded-4xl);
   padding: .5rem;
   padding-left: 1.2rem;
+  width: min(380px, 100% - 2rem);
 }
 
 .pmNavPillBtn {
@@ -80,61 +84,42 @@
 }
 
 .heartBtn {
-  padding: .3rem;
-  height: fit-content;
-  border-radius: var(--rounded);
-}
-
-.dropdown {
-  position: absolute;
-  top: 115%;
-  background-color: var(--bg-100);
+  border-radius: 50%;
+  background-color: white;
   color: black;
-  font-size: var(--fs-lg);
-  font-weight: 500;
-  overflow: hidden;
-  border-radius: var(--rounded-xl);
-  box-shadow: var(--bs-md);
-  opacity: 0;
-  visibility: hidden;
-  width: min(400px, 100% - 1rem);
-}
-
-.dropdownOpen {
-  pointer-events: auto;
-  animation: var(--anim-dropdown-in);
-}
-
-.dropdownClosed {
-  pointer-events: none;
-  animation: var(--anim-dropdown-out);
-}
-
-.dropdownNav {
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+
+  height: 38px;
+  width: 38px;
 }
 
-.dropdownNavList {
-  padding: 1.2rem;
-  padding-right: 0;
+.pmNavList {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+}
 
-  &>*+*+* {
-    margin-top: .4rem;
+.pmNavList a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-size: 1.05rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: currentColor;
+    transition: width var(--ti-md) ease;
   }
 }
 
-.dropdownNavList h3 {
-  font-size: var(--fs-lg);
-  font-weight: 700;
-  margin-bottom: .5rem;
-}
-
-.dropdownNavList a {
-  opacity: .7;
-  transition: opacity var(--ti-sm) ease;
-
-  &:hover {
-    opacity: 1;
-  }
+.pmNavList a:hover::before {
+  width: 100%;
 }
