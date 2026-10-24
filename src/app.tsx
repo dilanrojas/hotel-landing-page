@@ -16,8 +16,8 @@ export default function App() {
         <Route path='/apartments/:id' element={<Apartments />} />
         <Route path='/favourites' element={<Favourites />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='*' element={<NotFound />} />
       </Route>
-      <Route path='*' element={<NotFound />} />
     </Routes>
   )
 }

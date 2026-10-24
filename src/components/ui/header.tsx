@@ -2,12 +2,14 @@ import { Heart } from 'lucide-react';
 import Logo from '../logo';
 import styles from './header.module.css';
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Header() {
   const [open, setOpen] = useState<boolean>(false);
-  const [hasInteracted, setHasInteracted] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const { pathname } = useLocation();
+
+  const isHome = pathname === '/';
 
   useEffect(() => {
     if (!open) return;
@@ -23,30 +25,18 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isHome ? styles.onHome : styles.offHome}`}>
       <div className='wrapper' ref={containerRef} >
         <nav className={styles.pmNav}>
-          <div className={styles.pmNavPill}>
-            <Logo size='xl' />
-            <button className={styles.pmNavPillBtn} onClick={() => { setHasInteracted(true); setOpen((prev) => !prev); }} aria-expanded={open} aria-label={open ? 'Close menu' : 'Open menu'}>
-              <img src='/close.svg' alt='X' aria-hidden={!open} width={15} className={`${open ? styles.iconVisible : styles.iconHidden}${hasInteracted ? '' : ` ${styles.noAnim}`}`} />
-              <img src='/menu-line-horizontal.svg' alt='Hamburger menu' aria-hidden={open} className={`${open ? styles.iconHidden : styles.iconVisible}${hasInteracted ? '' : ` ${styles.noAnim}`}`} />
-            </button>
-          </div>
+          <Logo size='xl' />
+          <ul className={styles.pmNavList}>
+            <li><Link to={'/apartments'}><span>Apartments</span></Link></li>
+            <li><Link to={'/contact'}><span>Contact</span></Link></li>
+          </ul>
           <Link to={'/favourites'} className={styles.heartBtn}>
             <span><Heart size={24} /></span>
           </Link>
         </nav>
-        <div className={`${styles.dropdown} ${open ? styles.dropdownOpen : hasInteracted ? styles.dropdownClosed : ''}`}>
-          <nav className={styles.dropdownNav} aria-hidden={!open}>
-            <ul className={styles.dropdownNavList}>
-              <h3>PAGES</h3>
-              <li><Link to={'/apartments'}><span>Apartments</span></Link></li>
-              <li><Link to={'/contact'}><span>Contact</span></Link></li>
-            </ul>
-            <img src='/header-dropdown-image.jpg' alt='Upstairs house' width={256} />
-          </nav>
-        </div>
       </div>
     </header>
   )
