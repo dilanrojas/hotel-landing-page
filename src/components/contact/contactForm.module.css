@@ -1,0 +1,151 @@
+.formContainer {
+    background-color: #ffffff;
+    padding: 45px;
+    border-radius: 18px;
+    border: 1px solid #e9e9e5;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.035);
+}
+
+.formContainer h2 {
+    font-size: 26px;
+    color: #212724;
+    margin: 0 0 10px;
+}
+
+.formDescription {
+    font-size: 14px;
+    color: #737c76;
+    line-height: 1.7;
+    margin: 0 0 30px;
+}
+
+/* Form */
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+}
+
+.formGroup label {
+    font-size: 13px;
+    color: #323c35;
+    font-weight: 600;
+}
+
+/* Form fields */
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+    width: 100%;
+    padding: 15px 16px;
+
+    background-color: #fafaf8;
+    border: 1px solid #e5e7e2;
+    border-radius: 9px;
+
+    font-family: inherit;
+    font-size: 14px;
+    color: #212724;
+
+    outline: none;
+    box-sizing: border-box;
+
+    transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+    border-color: #64776a;
+}
+
+.formGroup textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+    color: #a2a9a3;
+}
+
+/* Submit button */
+
+.submitButton {
+    width: 100%;
+    padding: 17px 22px;
+    gap: 10px;
+
+    background-color: #000000;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 50px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+
+    cursor: pointer;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.3s ease;
+}
+
+.submitButton span {
+    font-size: 20px;
+}
+
+.submitButton:hover {
+    background-color: #3e5245;
+    transform: translateY(-2px);
+}
+
+.submitButton:focus-visible {
+    outline: 3px solid #8da997;
+    outline-offset: 3px;
+}
+
+/* Confirmation */
+
+.successMessage {
+    margin: 0;
+    padding: 14px 16px;
+
+    background-color: #e9f3ec;
+    color: #286541;
+    border-radius: 9px;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.successMessage:empty {
+    display: none;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+    .formContainer {
+        padding: 25px;
+    }
+
+    .formContainer h2 {
+        font-size: 23px;
+    }
+}
