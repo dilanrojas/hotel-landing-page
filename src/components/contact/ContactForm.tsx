@@ -1,7 +1,13 @@
 
 import { useState } from 'react'
 import type { FormEvent } from 'react'
-import { Send } from 'lucide-react'
+import {
+    Send,
+    UserRound,
+    Mail,
+    List,
+    MessageSquareText
+} from 'lucide-react'
 import styles from './contactForm.module.css'
 
 export default function ContactForm() {
@@ -9,9 +15,6 @@ export default function ContactForm() {
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-
-        // Academic demonstration.
-        // No data is sent or stored.
         event.currentTarget.reset()
         setSubmitted(true)
     }
@@ -42,6 +45,13 @@ export default function ContactForm() {
                         Full name
                     </label>
 
+                    <UserRound
+                        className={styles.fieldIcon}
+                        size={18}
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                    />
+
                     <input
                         type="text"
                         id="contact-name"
@@ -58,6 +68,13 @@ export default function ContactForm() {
                         Email address
                     </label>
 
+                    <Mail
+                        className={styles.fieldIcon}
+                        size={18}
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                    />
+
                     <input
                         type="email"
                         id="contact-email"
@@ -73,6 +90,13 @@ export default function ContactForm() {
                     <label htmlFor="contact-subject">
                         Subject
                     </label>
+
+                    <List
+                        className={styles.fieldIcon}
+                        size={18}
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                    />
 
                     <select
                         id="contact-subject"
@@ -107,6 +131,13 @@ export default function ContactForm() {
                     <label htmlFor="contact-message">
                         Message
                     </label>
+
+                    <MessageSquareText
+                        className={styles.fieldIcon}
+                        size={18}
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                    />
 
                     <textarea
                         id="contact-message"

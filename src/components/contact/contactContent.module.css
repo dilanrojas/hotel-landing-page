@@ -2,21 +2,81 @@
     background-color: #f7f6f2;
 
     padding-inline: max(8%, calc((100% - 1200px) / 2));
-    padding-block: 10rem;
+    padding-block: 9rem;
+    gap: 60px;
 
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 90px;
+
     align-items: start;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* Decorative leaves */
+
+.contactSection::before,
+.contactSection::after {
+    content: "";
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    background-image: url("/decorative-leaf.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    opacity: 1;
+    filter: none;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Upper-right leaves */
+.contactSection::before {
+    top: -40px;
+    right: -80px;
+}
+
+/* Lower-left leaves */
+.contactSection::after {
+    bottom: -80px;
+    left: -80px;
+    transform: rotate(180deg);
+}
+
+
+/* Keep content above decorative elements */
+
+.contactSection>* {
+    position: relative;
+    z-index: 1;
 }
 
 /* Tablet */
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
     .contactSection {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 50px;
-        padding: 70px 6%;
+        padding: 100px 6% 70px;
+    }
+
+    .contactSection>* {
+        width: 100%;
+        max-width: 720px;
+        margin-inline: auto;
+        box-sizing: border-box;
+    }
+
+    .contactSection::before,
+    .contactSection::after {
+        display: none;
     }
 }
 
@@ -24,7 +84,7 @@
 
 @media (max-width: 600px) {
     .contactSection {
-        padding: 50px 5%;
+        padding: 90px 5% 50px;
         gap: 40px;
     }
 }
