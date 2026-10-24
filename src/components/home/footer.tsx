@@ -1,4 +1,5 @@
 import styles from './footer.module.css'
+import Logo from '../logo.tsx'
 
 export default function Footer() {
   return (
@@ -9,15 +10,15 @@ export default function Footer() {
 
           {/* Hotel Information */}
           <section className={styles.footerBrand} aria-labelledby="brand-heading">
-            <h2 id="brand-heading">Hotelry</h2>
+            <Logo size="xl" />
           </section>
 
           {/* Navigation */}
           <nav className={styles.footerNav} aria-label="Footer navigation">
             <ul>
               <li><a href="/">Home</a></li>
-              <li><a href="/apartments">Our Apartments</a></li>
-              <li><a href="/contact">Contact us</a></li>
+              <li><a href="/apartments">Apartments</a></li>
+              <li><a href="/contact">Contact Us</a></li>
             </ul>
           </nav>
 

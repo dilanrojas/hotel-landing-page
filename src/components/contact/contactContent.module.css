@@ -1,29 +1,28 @@
-
 .contactSection {
-  background-color: #f7f6f2;
-  padding: 100px max(8%, calc((100% - 1200px) / 2));
+    background-color: #f7f6f2;
+    padding: 100px max(8%, calc((100% - 1200px) / 2));
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 90px;
-  align-items: start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    align-items: start;
 }
 
 /* Tablet */
 
 @media (max-width: 900px) {
-  .contactSection {
-    grid-template-columns: 1fr;
-    gap: 50px;
-    padding: 70px 6%;
-  }
+    .contactSection {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding: 70px 6%;
+    }
 }
 
 /* Mobile */
 
 @media (max-width: 600px) {
-  .contactSection {
-    padding: 50px 5%;
-    gap: 40px;
-  }
+    .contactSection {
+        padding: 50px 5%;
+        gap: 40px;
+    }
 }
