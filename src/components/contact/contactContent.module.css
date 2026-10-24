@@ -1,9 +1,11 @@
 .contactSection {
     background-color: #f7f6f2;
-    padding: 100px max(8%, calc((100% - 1200px) / 2));
+
+    padding-inline: max(8%, calc((100% - 1200px) / 2));
+    padding-block: 10rem;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 90px;
     align-items: start;
 }
