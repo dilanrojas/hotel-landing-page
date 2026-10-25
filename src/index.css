@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Kaushan+Script&display=swap');
+
 :root {
+  --ff-script: "Kaushan Script", cursive;
+  --ff-heading: "EB Garamond", serif;
+  ;
+
   /* Rounding */
   --rounded-3xs: 2px;
   --rounded-2xs: 4px;
