@@ -1,5 +1,6 @@
+
 .formContainer {
-    background-color: #ffffff;
+    background-color: #f7f6f2;
     padding: 45px;
     border-radius: 18px;
     min-width: 0;
@@ -45,32 +46,13 @@
     font-weight: 600;
 }
 
-.formGroup select {
-    appearance: none;
-    padding-right: 48px;
-}
-
-.formGroup:has(select)::after {
-    content: "";
-    position: absolute;
-
-    right: 20px;
-    bottom: 21px;
-
-    width: 8px;
-    height: 8px;
-
-    border-right: 2px solid #34483f;
-    border-bottom: 2px solid #34483f;
-
-    transform: rotate(45deg);
-    pointer-events: none;
-}
+/* Field icons */
 
 .fieldIcon {
     position: absolute;
     left: 16px;
     top: 44px;
+
     color: #737c76;
     pointer-events: none;
     z-index: 1;
@@ -98,6 +80,34 @@
     transition: border-color 0.3s ease;
 }
 
+/* Select fields */
+
+.formGroup select {
+    appearance: none;
+    padding-right: 48px;
+}
+
+/* Custom select arrow */
+
+.formGroup:has(select)::after {
+    content: "";
+    position: absolute;
+
+    right: 20px;
+    top: 49px;
+
+    width: 8px;
+    height: 8px;
+
+    border-right: 2px solid #34483f;
+    border-bottom: 2px solid #34483f;
+
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+/* Focus states */
+
 .formGroup input:focus,
 .formGroup select:focus,
 .formGroup textarea:focus {
@@ -114,46 +124,16 @@
     color: #a2a9a3;
 }
 
-/* Submit button */
 
-.submitButton {
+
+/* Contact form submit button */
+
+.contactForm > button {
     width: 100%;
-    padding: 17px 22px;
-    gap: 10px;
+    min-height: 54px;
 
-    background-color: #34483f;
-    color: #ffffff;
-
-    border: none;
-    border-radius: 50px;
-
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.8px;
-
-    cursor: pointer;
-
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    transition: all 0.3s ease;
-}
-
-.submitButton span {
-    font-size: 20px;
-}
-
-.submitButton:hover {
-    background-color: #263a31;
-    transform: translateY(-2px);
-}
-
-.submitButton:focus-visible {
-    outline: 3px solid #8da997;
-    outline-offset: 3px;
+    justify-content: space-between;
+    padding-inline: 18px;
 }
 
 /* Confirmation */
