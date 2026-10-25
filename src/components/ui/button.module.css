@@ -42,6 +42,9 @@
   background-color: black;
   color: white;
 
+}
+
+.button.variant_primary .chevron {
   transition: opacity var(--ti-lg) ease, transform var(--ti-lg) ease;
 }
 
@@ -65,7 +68,7 @@
 
 .content {
   transition: transform var(--ti-xl) ease;
-  padding-inline: .4rem;
+  padding-inline: .7rem;
 }
 
 .button.variant_primary:has(.chevron):hover {
