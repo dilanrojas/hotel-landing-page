@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom';
 import { useApartments } from '../../hooks/use-apartments';
 import type { FormEvent } from 'react'
+import Button from '../ui/button';
 import {
-    Send,
     UserRound,
     Mail,
     List,
@@ -267,14 +267,17 @@ export default function ContactForm() {
                     />
                 </p>
 
+
                 {/* Submit button */}
-                <button
+                <Button
+                    variant="primary"
                     type="submit"
-                    className={styles.submitButton}
+                    chevron
+                    chevronSize={15}
                 >
-                    SEND MESSAGE
-                    <Send size={18} strokeWidth={1.8} aria-hidden="true" />
-                </button>
+                    <span>SEND MESSAGE</span>
+                </Button>
+
 
 
                 {/* Confirmation message */}

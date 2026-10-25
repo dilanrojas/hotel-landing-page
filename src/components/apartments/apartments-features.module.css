@@ -2,7 +2,7 @@
 /* Featured apartments section */
 
 .featuredSection {
-    background-color: #f7f6f2;
+    background-color: #ffffff;
 
     padding-inline: max(5%, calc((100% - 1200px) / 2));
     padding-block: 100px 120px;
@@ -75,6 +75,9 @@
 /* Apartment cards */
 
 .apartmentCard {
+    display: flex;
+    flex-direction: column;
+
     height: 100%;
     box-sizing: border-box;
 
@@ -84,51 +87,31 @@
     overflow: hidden;
 
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.035);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
 }
 
-.apartmentCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.09);
-}
-
-.cardLink {
-    display: flex;
-    flex-direction: column;
-
-    height: 100%;
-    min-width: 0;
-
-    color: inherit;
-    text-decoration: none;
-}
-
-.cardLink:focus-visible {
-    outline: 3px solid #64776a;
-    outline-offset: -3px;
-}
-
-/* Apartment images */
+/* Apartment images - Portrait orientation */
 
 .imageContainer {
     position: relative;
 
     width: 100%;
-    height: 250px;
+    aspect-ratio: 4 / 5;
+    flex-shrink: 0;
 
     margin: 0;
     overflow: hidden;
 }
 
 .imageContainer img {
-    display: block;
+    position: absolute;
+    inset: 0;
 
+    display: block;
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+    object-position: center;
 
     transform: scale(1);
     transform-origin: center center;
@@ -138,59 +121,14 @@
         filter 0.6s ease;
 }
 
-/* Cinematic zoom effect */
+/* Zoom only on image hover */
 
-.apartmentCard:hover .imageContainer img,
-.apartmentCard:focus-within .imageContainer img {
+.imageContainer:hover img {
     transform: scale(1.12);
     filter: brightness(1.05) saturate(1.08);
 }
 
-/* Image gradient overlay */
-
-.imageContainer::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.18),
-        transparent 55%
-    );
-
-    opacity: 0;
-    transition: opacity 0.5s ease;
-
-    pointer-events: none;
-}
-
-.apartmentCard:hover .imageContainer::after,
-.apartmentCard:focus-within .imageContainer::after {
-    opacity: 1;
-}
-
-/* Environment badge */
-
-.imageBadge {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    z-index: 1;
-
-    padding: 8px 13px;
-    border-radius: 30px;
-
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(8px);
-
-    color: #34483f;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.6px;
-}
-
-/* Card header */
+/* Apartment information */
 
 .cardHeader {
     padding: 22px 22px 0;
@@ -219,119 +157,25 @@
     margin: 0;
 }
 
-/* Apartment description */
-
-.summary {
-    font-size: 13px;
-    line-height: 1.8;
-    color: #626d66;
-
-    margin: 12px 0 20px;
-    padding-inline: 22px;
-
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-
-    overflow: hidden;
-}
-
-/* Card footer */
+/* View button container */
 
 .cardFooter {
-    margin-top: auto;
-    padding: 18px 22px 22px;
-
-    border-top: 1px solid #efefeb;
-}
-
-/* Apartment details */
-
-.details {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 14px;
+    justify-content: flex-start;
 
-    list-style: none;
-    padding: 0;
-    margin: 0 0 18px;
+    margin-top: auto;
+    padding: 22px;
 }
 
-.details li {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-
-    font-size: 12px;
-    color: #626d66;
-}
-
-.details svg {
-    flex-shrink: 0;
-}
-
-/* View property */
-
-.viewDetails {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.6px;
-    color: #34483f;
-}
-
-.viewDetails svg {
-    transition: transform 0.3s ease;
-}
-
-.apartmentCard:hover .viewDetails svg,
-.apartmentCard:focus-within .viewDetails svg {
-    transform: translate(3px, -3px);
-}
-
-/* Explore all apartments button */
+/* Explore all apartments button container */
 
 .sectionFooter {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
-}
-
-.exploreButton {
-    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
 
-    padding: 17px 28px;
-    border-radius: 50px;
-
-    background-color: #34483f;
-    color: #ffffff;
-    text-decoration: none;
-
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.8px;
-
-    transition:
-        background-color 0.3s ease,
-        transform 0.3s ease;
-}
-
-.exploreButton:hover {
-    background-color: #263a31;
-    transform: translateY(-2px);
-}
-
-.exploreButton:focus-visible {
-    outline: 3px solid #8da997;
-    outline-offset: 3px;
+    margin-top: 50px;
 }
 
 /* Loading and error messages */
@@ -371,46 +215,34 @@
 
     .gridItem {
         flex-basis: 100%;
+        max-width: 420px;
     }
 
-    .imageContainer {
-        height: 230px;
+    .cardHeader {
+        padding: 20px 20px 0;
     }
 
     .cardHeader h3 {
         font-size: 22px;
     }
 
-    .sectionFooter {
-        margin-top: 40px;
+    .cardFooter {
+        padding: 18px 20px 22px;
     }
 
-    .exploreButton {
-        width: 100%;
-        box-sizing: border-box;
+    .sectionFooter {
+        margin-top: 40px;
     }
 }
 
 /* Small mobile */
 
 @media (max-width: 380px) {
-    .imageContainer {
-        height: 200px;
-    }
-
     .cardHeader {
         padding: 18px 18px 0;
     }
 
-    .summary {
-        padding-inline: 18px;
-    }
-
     .cardFooter {
-        padding: 16px 18px 20px;
-    }
-
-    .details {
-        gap: 10px;
+        padding: 18px;
     }
 }
