@@ -1,0 +1,41 @@
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  padding: .5rem;
+}
+
+.icon {
+  color: var(--text-100);
+}
+
+.searchBar input {
+  height: 44px;
+  font-size: var(--fs-sm);
+  color: var(--text-100);
+  flex: 1;
+  appearance: none;
+}
+
+.searchBar input::-webkit-search-cancel-button,
+.searchBar input::-webkit-search-decoration {
+  appearance: none;
+}
+
+.searchBar input::placeholder {
+  color: var(--text-300);
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: var(--fs-md);
+}
+
+
+
+
+
+@media (width <=528px) {
+  .searchBar input {
+    font-size: 16px;
+  }
+}
