@@ -19,3 +19,6 @@ export interface Apartment {
   description: string,
   featured: boolean
 }
+
+
+export const DATA_URL = '/data/apartments.json';

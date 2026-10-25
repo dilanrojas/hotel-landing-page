@@ -58,7 +58,7 @@
     "location": {
       "neighborhood": "La Barra",
       "city": "Punta del Este",
-      "country": "Uruguay"
+      "country": "Mexico"
     },
     "price": 1120,
     "bedrooms": 3,
@@ -160,9 +160,9 @@
     "name": "Casa Manglar",
     "environment": "Forest",
     "location": {
-      "neighborhood": "Punta Uva",
-      "city": "Puerto Viejo",
-      "country": "Costa Rica"
+      "neighborhood": "Chapalita",
+      "city": "Guadalajara",
+      "country": "Mexico"
     },
     "price": 690,
     "bedrooms": 3,
@@ -362,7 +362,7 @@
     ],
     "summary": "Two concrete storeys above a turquoise pool, with daybeds on a platform inside the water.",
     "description": "Casa Frangipan stacks two concrete volumes above a deep pool shaded at the edges. Daybeds sit on a submerged platform inside the water, and a shaded veranda holds the dining table. A perforated screen filters the upper floor, and a frangipani grows straight out of the pool deck.",
-    "featured": false
+    "featured": true
   },
   {
     "id": "the-still-pool",
@@ -395,7 +395,7 @@
     "location": {
       "neighborhood": "Cerro Punta",
       "city": "Boquete",
-      "country": "Panama"
+      "country": "Canada"
     },
     "price": 580,
     "bedrooms": 4,
@@ -521,7 +521,7 @@
     "location": {
       "neighborhood": "La California",
       "city": "Bogotá",
-      "country": "Colombia"
+      "country": "Mexico"
     },
     "price": 1980,
     "bedrooms": 4,

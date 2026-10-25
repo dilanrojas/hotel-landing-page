@@ -113,7 +113,13 @@
   --text-400: var(--ink-slate-400);
   --text-500: var(--ink-slate-500);
 
+  --error-100: rgb(178 34 34);
+
   color-scheme: light;
+
+
+  /* Filters*/
+  --filter-label-w: 6.5rem;
 }
 
 * {
