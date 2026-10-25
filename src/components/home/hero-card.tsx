@@ -5,11 +5,11 @@ export default function HeroCard() {
   return (
     <article className={styles.card}>
       <picture className={styles.picture}>
-        <img src='/hero-card.webp' alt='Apartment' width={134} />
+        <img src='/apartments/the-ember-cabin.webp' alt='The Ember Cabin' height={100} />
       </picture>
       <div className={styles.content}>
-        <h4>Horizon Residence</h4>
-        <p>Where Architecture Meets Modern Living</p>
+        <h4>The Ember Cabin</h4>
+        <p>Forest</p>
         <Button variant='secondary' chevron chevronSize={15}>
           <span>VIEW</span>
         </Button>
