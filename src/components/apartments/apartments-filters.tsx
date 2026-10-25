@@ -21,13 +21,14 @@ export const ApartmentsFilters = ({ filters, apartments, onSearch, onEnvironment
   const countriesOptions = getCountryOptions(apartments);
   const priceBounds = getPriceBounds(apartments);
   const activeFilters = countActiveFilters(filters);
+  const isMobile = window.matchMedia('(width <=575px)').matches
 
   return (
     <div className={styles.filters} aria-label="Apartments Filters Bar">
       <div className={styles.filterBar}>
         <SearchBar
           value={filters.search}
-          placeholder='Searh by name or country...'
+          placeholder={isMobile ? 'Search apartments' : 'Search apartments by name or country...'}
           handleOnChange={onSearch}
         />
 

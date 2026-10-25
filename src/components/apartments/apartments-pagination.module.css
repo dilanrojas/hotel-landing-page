@@ -40,7 +40,7 @@
 
 
 
-@media (width <=528px) {
+@media (width <=575px) {
   .nav {
     gap: .5rem;
   }

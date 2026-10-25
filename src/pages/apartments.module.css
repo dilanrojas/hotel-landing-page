@@ -13,7 +13,7 @@
 
 .headerTitle {
   font-size: var(--fs-7xl);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.02em;
 }
 
@@ -25,7 +25,7 @@
   font-weight: 200;
 }
 
-.apartmentsPageBody {
+.body {
   margin-top: 3rem;
   display: flex;
   flex-direction: column;
@@ -43,7 +43,12 @@
     font-size: var(--fs-4xl);
   }
 
-  .apartmentsPageBody {
+  .body {
     gap: 2rem;
+  }
+
+  .headerDescription {
+    text-align: center;
+
   }
 }

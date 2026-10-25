@@ -8,7 +8,7 @@
 .filterBar {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   border: 2px solid var(--bg-400);
   border-radius: 50px;
   transition: border-color var(--ti-xl) ease;
@@ -30,9 +30,7 @@
   padding: 3rem;
   border: 2px solid var(--bg-400);
   border-radius: 8px;
-
-  box-shadow:
-    0 12px 24px rgb(0 0 0 / 0.20);
+  box-shadow: 0 12px 24px rgb(0 0 0 / 0.20);
 }
 
 .clearButton {
@@ -60,4 +58,24 @@
   border-color: var(--bg-400);
   color: var(--text-400);
   cursor: default;
+}
+
+
+@media(width <=575px) {
+  .clearButton {
+    padding: 0.6rem 0.8rem;
+    font-size: var(--fs-2xs);
+  }
+
+
+  .groups {
+    margin: 1.4rem 0.1rem;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+
+  .optionButton {
+    padding: 0.4rem;
+  }
 }

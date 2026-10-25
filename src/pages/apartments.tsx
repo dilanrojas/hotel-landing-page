@@ -72,7 +72,7 @@ const Apartments = () => {
         </p>
       </header>
 
-      <section className={styles.apartmentsPageBody}>
+      <section className={styles.body}>
         {isLoading
           ? (
             <ApartmentListSkeleton />

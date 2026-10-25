@@ -29,7 +29,7 @@
   min-width: 0;
   height: 2.6rem;
   padding-inline: 1rem;
-  background-color: var(--bg-250);
+  background-color: var(--bg-150);
   border-radius: var(--rounded-md);
   transition: border-color var(--ti-xl) ease;
   border: 2px solid var(--text-400);
@@ -68,4 +68,15 @@
 }
 
 
-@media(width <=570px) {}
+@media(width <=570px) {
+
+  .currency,
+  .separator,
+  .fieldLabel,
+  .input {
+    font-size: var(--fs-2xs);
+  }
+
+
+
+}
