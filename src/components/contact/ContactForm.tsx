@@ -1,23 +1,51 @@
 
 import { useState } from 'react'
+import { useSearchParams } from 'react-router-dom';
+import { useApartments } from '../../hooks/use-apartments';
 import type { FormEvent } from 'react'
+import Button from '../ui/button';
 import {
-    Send,
     UserRound,
     Mail,
     List,
-    MessageSquareText
+    MessageSquareText,
+    Phone,
+    House
 } from 'lucide-react'
 import styles from './contactForm.module.css'
 
 export default function ContactForm() {
     const [submitted, setSubmitted] = useState(false)
 
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    const { apartments, isLoading, error } = useApartments(
+        '/data/apartments.json',
+    );
+    const requestedId = searchParams.get('apartment') ?? '';
+
+    const selectedApartmentId = apartments.some(
+        (apartment) => apartment.id === requestedId,
+    )
+        ? requestedId
+        : '';
+
+
+
+
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
-        event.currentTarget.reset()
-        setSubmitted(true)
-    }
+        event.preventDefault();
+        event.currentTarget.reset();
+
+        const nextParams = new URLSearchParams(searchParams);
+        nextParams.delete('apartment');
+
+        setSearchParams(nextParams, { replace: true });
+
+        setSubmitted(true);
+    };
+
+
 
     return (
         <section
@@ -85,6 +113,29 @@ export default function ContactForm() {
                     />
                 </p>
 
+
+                {/* Phone Number */}
+                <p className={styles.formGroup}>
+                    <label htmlFor="contact-phone">
+                        Phone Number (optional)
+                    </label>
+
+                    <Phone
+                        className={styles.fieldIcon}
+                        size={18}
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                    />
+
+                    <input
+                        type="tel"
+                        id="contact-phone"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                        autoComplete="tel"
+                    />
+                </p>
+
                 {/* Subject */}
                 <p className={styles.formGroup}>
                     <label htmlFor="contact-subject">
@@ -126,6 +177,73 @@ export default function ContactForm() {
                     </select>
                 </p>
 
+                {/* Property of interest */}
+                <p className={styles.formGroup}>
+                    <label htmlFor="contact-apartment">
+                        Property of interest (optional)
+                    </label>
+
+                    <House
+                        className={styles.fieldIcon}
+                        size={18}
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                    />
+
+                    <select
+                        id="contact-apartment"
+                        name="apartment"
+                        value={selectedApartmentId}
+                        disabled={isLoading || Boolean(error)}
+                        onChange={(event) => {
+                            const nextParams = new URLSearchParams(searchParams);
+
+                            if (event.target.value) {
+                                nextParams.set('apartment', event.target.value);
+                            } else {
+                                nextParams.delete('apartment');
+                            }
+
+                            setSearchParams(nextParams, { replace: true });
+                            setSubmitted(false);
+                        }}
+                    >
+                        <option value="">
+                            {isLoading
+                                ? 'Loading properties...'
+                                : 'No property selected'}
+                        </option>
+
+                        {apartments.map((apartment) => (
+                            <option key={apartment.id} value={apartment.id}>
+                                {apartment.name}
+                            </option>
+                        ))}
+                    </select>
+
+                    {isLoading && (
+                        <span role="status">Loading available properties...</span>
+                    )}
+
+                    {error && (
+                        <span role="alert">
+                            Unable to load properties. Please try again later.
+                        </span>
+                    )}
+
+                    {!isLoading && !error && apartments.length === 0 && (
+                        <span role="status">
+                            No properties are currently available.
+                        </span>
+                    )}
+
+                    {!isLoading && !error && requestedId && !selectedApartmentId && (
+                        <span role="status">
+                            The requested property was not found. Please select another.
+                        </span>
+                    )}
+                </p>
+
                 {/* Message */}
                 <p className={styles.formGroup}>
                     <label htmlFor="contact-message">
@@ -149,15 +267,18 @@ export default function ContactForm() {
                     />
                 </p>
 
-                {/* Submit button */}
-                <button
-                    type="submit"
-                    className={styles.submitButton}
-                >
-                    SEND MESSAGE
-                    <Send size={18} strokeWidth={1.8} aria-hidden="true" />
 
-                </button>
+                {/* Submit button */}
+                <Button
+                    variant="primary"
+                    type="submit"
+                    chevron
+                    chevronSize={15}
+                >
+                    <span>SEND MESSAGE</span>
+                </Button>
+
+
 
                 {/* Confirmation message */}
                 <p
@@ -165,9 +286,10 @@ export default function ContactForm() {
                     role="status"
                 >
                     {submitted
-                        ? 'Message send successfully!.'
+                        ? 'Demo submission completed. No message was actually sent.'
                         : ''}
                 </p>
+
 
             </form>
         </section>
