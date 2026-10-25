@@ -64,6 +64,14 @@ export default function ContactInfo() {
                 </li>
 
             </ul>
+
+            <figure className={styles.contactVisual}>
+                <img
+                    src="/img_izq_contact.avif"
+                    alt="Interior elegante de un hotel"
+                    loading="lazy"
+                />
+            </figure>
         </section>
     )
 }
