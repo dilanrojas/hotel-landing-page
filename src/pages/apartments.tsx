@@ -10,6 +10,7 @@ import { ApartmentStatus } from '../components/apartments/apartment-status';
 import { ApartmentsFilters } from '../components/apartments/apartments-filters';
 import { ApartmentList } from '../components/apartments/apartment-list';
 import { Pagination } from '../components/apartments/apartments-pagination';
+import { Link } from 'react-router-dom';
 
 
 const Apartments = () => {
@@ -61,7 +62,10 @@ const Apartments = () => {
   return (
     <main className={`wrapper ${styles.apartmentsPage}`}>
       <header className={styles.header}>
-        <h1 className={styles.headerTitle}>Apartments.</h1>
+        <Link to={'/apartments'}>
+          <h1 className={styles.headerTitle}>Apartments.</h1>
+        </Link>
+
         <p className={styles.headerDescription}>
           A curated index of minimalist apartments, pavilions and architectural
           monographs selected for their spatial purity and terrain resonance.
