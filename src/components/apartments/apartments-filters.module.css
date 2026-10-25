@@ -1,0 +1,62 @@
+.filters {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 2px solid var(--bg-400);
+  border-radius: 25px;
+  transition: border-color var(--ti-xl) ease;
+  padding: .4rem;
+
+}
+
+.filterBar:hover {
+  border-color: var(--text-100);
+}
+
+
+.groups {
+  margin: 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 3rem;
+  padding: 3rem;
+  border: 2px solid var(--bg-400);
+  border-radius: 8px;
+
+  box-shadow:
+    0 12px 24px rgb(0 0 0 / 0.20);
+}
+
+.clearButton {
+
+  padding: 0.9rem;
+  border: 2px solid var(--text-100);
+  font-size: var(--fs-md);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--text-100);
+  border-radius: 10px;
+  transition:
+    color var(--ti-xl) ease,
+    border-color var(--ti-xl) ease,
+    background-color var(--ti-xl) ease;
+}
+
+.clearButton:hover:not(:disabled) {
+  background-color: var(--text-100);
+  color: var(--bg-400);
+}
+
+.clearButton:disabled {
+  border-color: var(--bg-400);
+  color: var(--text-400);
+  cursor: default;
+}
