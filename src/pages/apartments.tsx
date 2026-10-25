@@ -5,7 +5,6 @@ import styles from './apartments.module.css'
 import { DEFAULT_FILTERS, type ApartmentFilters, type PriceRange } from '../types/filters';
 import { filterApartments } from '../utils/filter-apartments';
 import { getCurrentElements, getPageNumbers, getTotalPages } from '../utils/pagination';
-import { ApartmentListSkeleton } from '../components/apartments/apartment-list-skeleton';
 import { ApartmentStatus } from '../components/apartments/apartment-status';
 import { ApartmentsFilters } from '../components/apartments/apartments-filters';
 import { ApartmentList } from '../components/apartments/apartment-list';
@@ -15,7 +14,7 @@ import { Link } from 'react-router-dom';
 
 const Apartments = () => {
 
-  const { apartments, isLoading, error, retry } = useApartments(DATA_URL);
+  const { apartments, error, retry } = useApartments(DATA_URL);
   const [search, setSearch] = useState<string>(DEFAULT_FILTERS.search);
   const [environment, setEnvironment] = useState<string>(DEFAULT_FILTERS.environment);
   const [country, setCountry] = useState<string>(DEFAULT_FILTERS.country);
@@ -73,62 +72,57 @@ const Apartments = () => {
       </header>
 
       <section className={styles.body}>
-        {isLoading
+        {error
           ? (
-            <ApartmentListSkeleton />
+            <ApartmentStatus
+              title='Unable to load the apartments'
+              description='The connection to the archive failed while retrieving the apartments. The data is currently unreachable.'
+              buttonLabel='RETRY CONNECTION'
+              onClick={retry}
+            />
           )
 
-          : error
-            ? (
-              <ApartmentStatus
-                title='Unable to load the apartments'
-                description='The connection to the archive failed while retrieving the apartments. The data is currently unreachable.'
-                buttonLabel='RETRY CONNECTION'
-                onClick={retry}
+          : (
+            <>
+
+              <ApartmentsFilters
+                filters={filters}
+                apartments={apartments}
+                onClear={handleClear}
+                onSearch={handleSearch}
+                onEnvironment={handleEnvironment}
+                onPrice={handlePrice}
+                onCountry={handleCountry}
               />
-            )
-
-            : (
-              <>
-
-                <ApartmentsFilters
-                  filters={filters}
-                  apartments={apartments}
-                  onClear={handleClear}
-                  onSearch={handleSearch}
-                  onEnvironment={handleEnvironment}
-                  onPrice={handlePrice}
-                  onCountry={handleCountry}
-                />
 
 
-                {filteredApartments.length === 0
-                  ? (
-                    <ApartmentStatus
-                      title='No apartments match your criteria.'
-                      description='No apartments found for the selected environment, country or price. Reset the filters to view the full index'
-                      buttonLabel='RESET FILTERS'
-                      onClick={handleClear}
+              {filteredApartments.length === 0
+                ? (
+                  <ApartmentStatus
+                    title='No apartments match your criteria.'
+                    description='No apartments found for the selected environment, country or price. Reset the filters to view the full index'
+                    buttonLabel='RESET FILTERS'
+                    onClick={handleClear}
+                  />
+                )
+
+                : (
+
+                  <>
+                    <ApartmentList apartments={currentApartments} />
+                    <Pagination
+                      currentPage={page}
+                      totalPages={totalPages}
+                      pages={pageNumbers}
+                      onPrevious={() => setPage((currentPage) => currentPage - 1)}
+                      onNext={() => setPage((currentPage) => currentPage + 1)}
+                      onPageChange={setPage}
                     />
-                  )
-
-                  : (
-
-                    <>
-                      <ApartmentList apartments={currentApartments} />
-                      <Pagination
-                        currentPage={page}
-                        totalPages={totalPages}
-                        pages={pageNumbers}
-                        onPrevious={() => setPage((currentPage) => currentPage - 1)}
-                        onNext={() => setPage((currentPage) => currentPage + 1)}
-                        onPageChange={setPage}
-                      />
-                    </>
-                  )
-                }
-              </>
-            )
+                  </>
+                )
+              }
+            </>
+          )
         }
       </section>
     </main>

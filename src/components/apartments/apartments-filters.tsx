@@ -28,7 +28,7 @@ export const ApartmentsFilters = ({ filters, apartments, onSearch, onEnvironment
       <div className={styles.filterBar}>
         <SearchBar
           value={filters.search}
-          placeholder={isMobile ? 'Search apartments' : 'Search apartments by name or country...'}
+          placeholder={isMobile ? 'Search apartments' : 'Search by name or country...'}
           handleOnChange={onSearch}
         />
 

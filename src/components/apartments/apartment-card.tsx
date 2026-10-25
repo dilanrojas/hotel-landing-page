@@ -22,8 +22,6 @@ export const ApartmentCard = ({ apartment, isFavourite, onToggleFavourite }: Apa
         <Link to={`/apartments/${id}`}>
           <img src={image} alt={name} className={styles.cardImage} loading='lazy' />
         </Link>
-
-
       </div>
 
       <p className={styles.cardCaption}>
@@ -63,7 +61,7 @@ export const ApartmentCard = ({ apartment, isFavourite, onToggleFavourite }: Apa
           onClick={onToggleFavourite}
         >
           <Heart
-            size={18}
+            size={19}
             strokeWidth={1.5}
             fill={isFavourite ? 'black' : 'none'}
             aria-hidden="true"
