@@ -94,6 +94,12 @@
     height: 800px;
   }
 
+  .hero>div {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   .footer {
     flex-direction: column-reverse;
     align-items: start;
