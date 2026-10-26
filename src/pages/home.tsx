@@ -7,7 +7,7 @@ export default function Home() {
 
     <>
       <Hero
-        title="WHERE EVERY STAY FEELS LIKE ARRIVAL"
+        title='"WHERE COMFORT MEETS CRAFT"'
         desc="Beautiful design meets quiet functionality, creating spaces that are a pleasure to stay in and hard to forget."
         card={<HeroCard />}
       />
