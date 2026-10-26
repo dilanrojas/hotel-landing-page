@@ -80,7 +80,7 @@ const Apartments = () => {
     <main className={`wrapper ${styles.apartmentsPage}`}>
       <header className={styles.header}>
         <Link to={'/apartments'}>
-          <h1 className={styles.headerTitle}>Apartments.</h1>
+          <h2 className={styles.headerTitle}>Apartments.</h2>
         </Link>
 
         <p className={styles.headerDescription}>
