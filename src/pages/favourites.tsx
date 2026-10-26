@@ -10,6 +10,8 @@ import { Pagination } from '../components/apartments/apartments-pagination';
 
 import { DATA_URL } from "../types/apartment";
 import { getCurrentElements, getPageNumbers, getTotalPages } from '../utils/pagination';
+import Button from '../components/ui/button';
+import { SummaryBar } from '../components/favourites/favourites-summary-bar';
 
 export default function Favourites() {
   const { apartments, error, retry } = useApartments(DATA_URL);
@@ -22,6 +24,11 @@ export default function Favourites() {
   const currentFavourites = getCurrentElements(favouritesApartments, page);
   const totalPages = getTotalPages(favouritesApartments.length);
   const pageNumbers = getPageNumbers(totalPages);
+
+
+  const favouritesCount = favouritesApartments.length;
+  const locationsCount = new Set(favouritesApartments.map((apartment) => apartment.location.country)).size
+
 
   const handleScroll = () => apartmentsRef.current?.scrollIntoView({ block: 'start' })
   const handlePrevious = () => {
@@ -36,6 +43,8 @@ export default function Favourites() {
     setPage(page);
     handleScroll();
   }
+
+  const isEmpty = favouritesApartments.length === 0
   return (
 
     <main className={`wrapper ${styles.favouritesPage}`}>
@@ -43,9 +52,11 @@ export default function Favourites() {
         <Link to={'/favourites'}>
           <h2 className={styles.headerTitle}>Favourites.</h2>
         </Link>
-        <p className={styles.headerDescription}>
-          Your personal selection of the minimalist apartments and pavilions, gathered here for closer comparison.
-        </p>
+
+        {isEmpty
+          ? <p className={styles.headerDescription}>Your personal selection of the minimalist apartments and pavilions, gathered here for closer comparison.</p>
+          : <SummaryBar savedCount={favouritesCount} locationsCount={locationsCount} onClear={() => console.log('hi')} ></SummaryBar>
+        }
       </header>
 
       <section className={styles.body}>
@@ -54,13 +65,13 @@ export default function Favourites() {
 
           ? (
             <ApartmentStatus
-              title='Unable to load the apartments'
-              description='The connection to the archive failed while retrieving the apartments. The data is currently unreachable.'
+              title='Unable to load your favourites'
+              description='The connection to the archive failed while retrieving your favourites. The data is currently unreachable.'
               buttonLabel='RETRY CONNECTION'
               onClick={retry}
             />
           )
-          : favourites.length === 0 ? (
+          : isEmpty ? (
             <ApartmentStatus
               title='No favourites saved yet.'
               description='Save the apartments you like from the index and they will appear here, so you can compare them in one place.'

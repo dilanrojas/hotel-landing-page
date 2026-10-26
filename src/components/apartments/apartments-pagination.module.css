@@ -25,6 +25,7 @@
 
 .navButton:disabled {
   opacity: 0.35;
+  color: var(--bg-500);
   cursor: not-allowed;
 }
 

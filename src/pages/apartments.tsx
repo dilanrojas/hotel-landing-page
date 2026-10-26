@@ -13,7 +13,6 @@ import { Link } from 'react-router-dom';
 
 
 const Apartments = () => {
-  const apartmentsRef = useRef<HTMLDivElement>(null);
   const { apartments, error, retry } = useApartments(DATA_URL);
   const [search, setSearch] = useState<string>(DEFAULT_FILTERS.search);
   const [environment, setEnvironment] = useState<string>(DEFAULT_FILTERS.environment);
@@ -58,7 +57,7 @@ const Apartments = () => {
     setPage(1);
   }
 
-  const handleScroll = () => apartmentsRef.current?.scrollIntoView({ block: 'start' })
+  const handleScroll = () => window.scrollTo({ top: 0 })
 
   const handlePrevious = () => {
     setPage((current) => current - 1);
@@ -127,9 +126,7 @@ const Apartments = () => {
                 : (
 
                   <>
-                    <div ref={apartmentsRef}>
-                      <ApartmentList apartments={currentApartments} />
-                    </div>
+                    <ApartmentList apartments={currentApartments} />
                     <Pagination
                       currentPage={page}
                       totalPages={totalPages}
