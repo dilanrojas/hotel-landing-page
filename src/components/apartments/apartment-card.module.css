@@ -38,7 +38,8 @@
 }
 
 .cardTitle {
-  font-size: var(--fs-xl);
+  font-family: var(--ff-heading);
+  font-size: var(--fs-3xl);
   font-weight: 600;
 
 
