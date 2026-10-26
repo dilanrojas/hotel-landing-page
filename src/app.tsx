@@ -7,8 +7,10 @@ import NotFound from './pages/not-found';
 import Layout from './layouts/layout';
 import ApartmentDetail from './pages/apartment-detail';
 
+
 export default function App() {
   return (
+    
     <Routes>
 
       <Route element={<Layout />}>

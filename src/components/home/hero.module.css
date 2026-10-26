@@ -21,15 +21,15 @@
 
 .article h1 {
   font-size: 6rem;
-  font-weight: 600;
-  margin-bottom: .1rem;
+  font-weight: 700;
+  margin-bottom: .15rem;
   max-width: 18ch;
 }
 
 .article p {
   font-size: var(--fs-lg);
-  opacity: .9;
-  max-width: 60ch;
+  opacity: .8;
+  max-width: 50ch;
   font-weight: 500;
 }
 
@@ -90,6 +90,10 @@
 }
 
 @media (width <=768px) {
+  .hero {
+    height: 800px;
+  }
+
   .footer {
     flex-direction: column-reverse;
     align-items: start;
@@ -111,6 +115,10 @@
 @media (width <=528px) {
   .article {
     gap: 0;
+  }
+
+  .article h1 {
+    font-size: 2.25rem;
   }
 
   .hero>div {
