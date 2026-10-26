@@ -16,8 +16,6 @@
 .picture img {
   border-radius: calc(var(--rounded) - .15rem);
   width: 134px;
-  height: 100%;
-  min-height: 118px;
   object-fit: cover;
 }
 
