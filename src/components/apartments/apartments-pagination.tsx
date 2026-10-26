@@ -19,7 +19,7 @@ export const Pagination = ({ currentPage, totalPages, pages, onPrevious, onNext,
         onClick={onPrevious}
         disabled={currentPage <= 1}
       >
-        <ChevronLeft size={16} strokeWidth={2}></ChevronLeft>
+        <ChevronLeft size={16} strokeWidth={3}></ChevronLeft>
       </button>
 
       <ul className={styles.navList} >
@@ -43,7 +43,7 @@ export const Pagination = ({ currentPage, totalPages, pages, onPrevious, onNext,
         onClick={onNext}
         disabled={currentPage >= totalPages}
       >
-        <ChevronRight size={16} strokeWidth={2}></ChevronRight>
+        <ChevronRight size={16} strokeWidth={3}></ChevronRight>
       </button>
 
 

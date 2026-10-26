@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useApartments } from '../hooks/use-apartments'
 import { DATA_URL } from '../types/apartment'
 import styles from './apartments.module.css'
@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 
 
 const Apartments = () => {
-
+  const apartmentsRef = useRef<HTMLDivElement>(null);
   const { apartments, error, retry } = useApartments(DATA_URL);
   const [search, setSearch] = useState<string>(DEFAULT_FILTERS.search);
   const [environment, setEnvironment] = useState<string>(DEFAULT_FILTERS.environment);
@@ -57,6 +57,24 @@ const Apartments = () => {
     setPrice(DEFAULT_FILTERS.price);
     setPage(1);
   }
+
+  const handleScroll = () => apartmentsRef.current?.scrollIntoView({ block: 'start' })
+
+  const handlePrevious = () => {
+    setPage((current) => current - 1);
+    handleScroll();
+  }
+
+  const handleNext = () => {
+    setPage((current) => current + 1);
+    handleScroll();
+  }
+
+  const handlePageChange = (page: number) => {
+    setPage(page);
+    handleScroll();
+  }
+
 
   return (
     <main className={`wrapper ${styles.apartmentsPage}`}>
@@ -109,14 +127,16 @@ const Apartments = () => {
                 : (
 
                   <>
-                    <ApartmentList apartments={currentApartments} />
+                    <div ref={apartmentsRef}>
+                      <ApartmentList apartments={currentApartments} />
+                    </div>
                     <Pagination
                       currentPage={page}
                       totalPages={totalPages}
                       pages={pageNumbers}
-                      onPrevious={() => setPage((currentPage) => currentPage - 1)}
-                      onNext={() => setPage((currentPage) => currentPage + 1)}
-                      onPageChange={setPage}
+                      onPrevious={handlePrevious}
+                      onNext={handleNext}
+                      onPageChange={handlePageChange}
                     />
                   </>
                 )
