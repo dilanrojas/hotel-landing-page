@@ -13,7 +13,8 @@
 }
 
 .headerTitle {
-  font-size: var(--fs-7xl);
+  font-family: var(--ff-heading);
+  font-size: var(--fs-8xl);
   font-weight: 600;
   letter-spacing: -0.02em;
 }
