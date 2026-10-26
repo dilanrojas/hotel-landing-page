@@ -6,9 +6,11 @@ import Contact from './pages/contact';
 import NotFound from './pages/not-found';
 import Layout from './layouts/layout';
 import ApartmentDetail from './pages/apartment-detail';
+import ScrollToTop from './hooks/scroll-to-top'
 
 export default function App() {
   return (
+    
     <Routes>
 
       <Route element={<Layout />}>
