@@ -98,7 +98,7 @@ export default function ApartmentsFeatured() {
                                             navigate(`/apartments/${apartment.id}`)
                                         }
                                     >
-                                        <span>VIEW</span>
+                                        <span>VIEW DETAILS</span>
                                     </Button>
                                 </footer>
 
