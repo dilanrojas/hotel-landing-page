@@ -20,7 +20,7 @@ export default function Favourites() {
 
   const favouritesApartments = apartments.filter((apartment) => favourites.includes(apartment.id));
   const currentFavourites = getCurrentElements(favouritesApartments, page);
-  const totalPages = getTotalPages(favourites.length);
+  const totalPages = getTotalPages(favouritesApartments.length);
   const pageNumbers = getPageNumbers(totalPages);
 
   const handleScroll = () => apartmentsRef.current?.scrollIntoView({ block: 'start' })

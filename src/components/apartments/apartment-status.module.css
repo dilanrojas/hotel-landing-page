@@ -10,15 +10,16 @@
 }
 
 .statusTitle {
-  font-size: var(--fs-4xl);
+  font-family: var(--ff-heading);
+  font-size: var(--fs-6xl);
   line-height: 1.1;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .statusDescription {
   max-width: 62ch;
   font-weight: 200;
-  font-size: var(--fs-md);
+  font-size: var(--fs-lg);
   line-height: 1.6;
   color: var(--text-100);
 }

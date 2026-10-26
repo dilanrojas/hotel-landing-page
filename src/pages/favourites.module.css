@@ -23,7 +23,7 @@
 
 .headerDescription {
   max-width: 55ch;
-  font-size: var(--fs-md);
+  font-size: var(--fs-lg);
   line-height: 1.6;
   color: var(--text-100);
   font-weight: 200;
