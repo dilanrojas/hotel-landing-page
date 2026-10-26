@@ -1,33 +1,141 @@
-import styles from './footer.module.css'
+
+import { Link, useNavigate } from 'react-router-dom'
 import Logo from '../logo.tsx'
+import Button from '../ui/button'
+import styles from './footer.module.css'
 
 export default function Footer() {
-  return (
-    <footer className={styles.pmFooter} id="contact">
-      <section className={styles.footerContainer} aria-label="Footer">
+    const navigate = useNavigate()
 
-        <section className={styles.footerContent} aria-label="Footer Content">
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    }
 
-          {/* Hotel Information */}
-          <section className={styles.footerBrand} aria-labelledby="brand-heading">
-            <Logo size="xl" />
-          </section>
+    return (
+        <footer className={styles.pmFooter} id="footer">
+            <section className={styles.footerContainer}>
 
-          {/* Navigation */}
-          <nav className={styles.footerNav} aria-label="Footer navigation">
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/apartments">Apartments</a></li>
-              <li><a href="/contact">Contact Us</a></li>
-            </ul>
-          </nav>
+                {/* Main footer content */}
+                <section className={styles.footerContent}>
 
-          {/* Copyright */}
-          <p className={styles.footerCopy}>&copy; 2026 Hotelry. All rights reserved.</p>
+                    {/* Hotel branding */}
+                    <section
+                        className={styles.footerBrand}
+                        aria-label="Hotelry"
+                    >
+                        <span className={styles.brandLogo}>
+                            <Logo size="xl" />
+                        </span>
 
-        </section>
+                        {/* Brand description */}
+                        <p className={styles.brandDescription}>
+                            Exceptional stays, thoughtfully curated.
+                            Discover spaces designed to inspire
+                            unforgettable experiences.
+                        </p>
 
-      </section>
-    </footer>
-  )
+                        {/* Main CTA */}
+                        <Button
+                            variant="primary"
+                            chevronSize={22}
+                            chevron={true}
+                            size="lg"
+                            scheme="dark"
+                            type="button"
+                            onClick={() => navigate('/apartments')}
+                        >
+                            <span>Explore Apartments</span>
+                        </Button>
+                    </section>
+
+                    {/* Navigation */}
+                    <nav
+                        className={styles.footerNav}
+                        aria-label="Footer navigation"
+                    >
+                        <p className={styles.columnLabel}>
+                            Explore
+                        </p>
+
+                        <ul>
+                            <li>
+                                <Link to="/">
+                                    Home
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link to="/apartments">
+                                    Apartments
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link to="/contact">
+                                    Contact
+                                </Link>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    {/* Featured property */}
+                    <section
+                        className={styles.footerShowcase}
+                        aria-label="Featured property"
+                    >
+                        <figure className={styles.showcaseFigure}>
+                            <img
+                                src="/apartments/hemlock-hollow.webp"
+                                alt="Hemlock Hollow, a featured Hotelry property"
+                                loading="lazy"
+                                decoding="async"
+                            />
+
+                            <figcaption className={styles.showcaseCaption}>
+                                <span>HEMLOCK HOLLOW</span>
+                                <span>ASHEVILLE, USA</span>
+                            </figcaption>
+                        </figure>
+                    </section>
+
+                </section>
+
+                {/* Footer bottom */}
+                <section
+                    className={styles.footerBottom}
+                    aria-label="Footer information"
+                >
+                    {/* Copyright */}
+                    <p className={styles.footerCopy}>
+                        &copy; 2026 Hotelry. All rights reserved.
+                    </p>
+
+                    {/* Back to top */}
+                    <button
+                        type="button"
+                        className={styles.backToTop}
+                        onClick={scrollToTop}
+                        aria-label="Back to top"
+                    >
+                        <span
+                            className={styles.backToTopLabel}
+                            aria-hidden="true"
+                        >
+                            <span className={styles.labelCurrent}>
+                                Back to Top
+                            </span>
+
+                            <span className={styles.labelNext}>
+                                Back to Top
+                            </span>
+                        </span>
+                    </button>
+                </section>
+
+            </section>
+        </footer>
+    )
 }
