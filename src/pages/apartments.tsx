@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useApartments } from '../hooks/use-apartments'
-import { DATA_URL } from '../types/apartment'
+import { DATA_URL } from '../constants/apartments.ts'
 import styles from './apartments.module.css'
 import { DEFAULT_FILTERS, type ApartmentFilters, type PriceRange } from '../types/filters';
 import { filterApartments } from '../utils/filter-apartments';

@@ -121,6 +121,7 @@
   }
 }
 
+.pmNavList a.active::before,
 .pmNavList a:hover::before {
   width: 100%;
 }
