@@ -6,7 +6,8 @@ const LOCAL_STORAGE_KEY = 'favourites';
 interface FavouritesContextProps {
   favourites: string[],
   isFavourite: (id: string) => boolean,
-  toggleFavourite: (id: string) => void
+  toggleFavourite: (id: string) => void,
+  clearFavourites: () => void
 }
 
 const FavouritesContext = createContext<FavouritesContextProps | null>(null);
@@ -28,9 +29,13 @@ export const FavouriteContextProvider = ({ children }: { children: ReactNode }) 
     setFavourites(prev => prev.includes(id) ? prev.filter(favourite => favourite !== id) : [...prev, id])
   }
 
+  const clearFavourites = () => {
+    setFavourites([])
+  }
 
 
-  return (<FavouritesContext value={{ favourites, isFavourite, toggleFavourite }}>{children}</FavouritesContext >)
+
+  return (<FavouritesContext value={{ favourites, isFavourite, toggleFavourite, clearFavourites }}>{children}</FavouritesContext >)
 
 
 }

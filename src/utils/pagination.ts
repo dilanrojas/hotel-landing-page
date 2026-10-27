@@ -1,4 +1,4 @@
-export const ELEMENTS_PER_PAGE = 6;
+export const ELEMENTS_PER_PAGE = 9;
 
 export const getTotalPages = (amountOfElements: number): number => Math.max(1, Math.ceil(amountOfElements / ELEMENTS_PER_PAGE))
 

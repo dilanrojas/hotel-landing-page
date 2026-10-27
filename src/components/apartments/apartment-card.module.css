@@ -7,8 +7,7 @@
   padding: 1.8rem;
   transition: box-shadow var(--ti-md) ease-in-out;
   border-radius: var(--rounded-md);
-
-
+  box-shadow: 0 12px 24px rgb(0 0 0 / 0.10);
 }
 
 .cardMedia {
@@ -34,7 +33,15 @@
 .cardTitleRow {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 1rem;
+}
+
+.cardBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
 }
 
 .cardTitle {
@@ -59,9 +66,17 @@
 }
 
 .cardPrice {
-  font-size: var(--fs-md);
+  font-size: var(--fs-lg);
   color: var(--text-100);
-  font-weight: 700;
+  font-weight: 500;
+}
+
+.cardPriceUnit {
+  font-size: var(--fs-xs);
+  font-weight: 300;
+  color: var(--text-300);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .cardSummaryRow {
@@ -99,7 +114,7 @@
     }
 
 
-    box-shadow: 0 12px 24px rgb(0 0 0 / 0.25);
+    box-shadow: 0 12px 24px rgb(0 0 0 / 0.18);
 
   }
 }
