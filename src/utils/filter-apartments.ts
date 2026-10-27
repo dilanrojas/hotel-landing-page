@@ -1,5 +1,7 @@
+import { ALL } from "../constants/filters";
 import type { Apartment } from "../types/apartment";
-import { ALL, type ApartmentFilters } from "../types/filters";
+import { type ApartmentFilters } from "../types/filters";
+
 
 
 const normalize = (text: string): string => text.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim()

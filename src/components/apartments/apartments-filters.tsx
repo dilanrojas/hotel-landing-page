@@ -1,10 +1,11 @@
 import styles from './apartments-filters.module.css'
 import type { Apartment } from "../../types/apartment"
-import { ALL, type ApartmentFilters, type PriceRange } from "../../types/filters"
+import { type ApartmentFilters, type PriceRange } from "../../types/filters"
 import { countActiveFilters, getCountryOptions, getEnvironmentOptions, getPriceBounds } from "../../utils/filter-apartments"
 import SearchBar from './apartments-search-bar'
 import { FilterGroup } from './apartments-filter-group'
 import { FilterPrice } from './apartments-filter-price'
+import { ALL } from '../../constants/filters'
 
 interface ApartmentsFiltersProps {
   filters: ApartmentFilters

@@ -7,7 +7,7 @@ import { ApartmentList } from "../components/apartments/apartment-list";
 import { ApartmentStatus } from "../components/apartments/apartment-status";
 import { Pagination } from '../components/apartments/apartments-pagination';
 import { SummaryBar } from '../components/favourites/favourites-summary-bar';
-import { DATA_URL } from "../types/apartment";
+import { DATA_URL } from "../constants/apartments.ts";
 import { getCurrentElements, getPageNumbers, getTotalPages } from '../utils/pagination';
 
 export default function Favourites() {
