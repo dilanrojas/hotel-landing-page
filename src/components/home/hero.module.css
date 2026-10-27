@@ -16,7 +16,7 @@
 .hero>div {
   display: flex;
   flex-direction: column;
-  gap: 4.5rem;
+  gap: 3rem;
 }
 
 .article h1 {
@@ -100,6 +100,14 @@
     gap: 2rem;
   }
 
+  .article h1 {
+    font-size: 3rem;
+  }
+
+  .article p {
+    max-width: 40ch;
+  }
+
   .footer {
     flex-direction: column-reverse;
     align-items: start;
@@ -108,15 +116,6 @@
   }
 }
 
-@media (width <=678px) {
-  .article h1 {
-    font-size: 3rem;
-  }
-
-  .article p {
-    max-width: 40ch;
-  }
-}
 
 @media (width <=528px) {
   .article {
