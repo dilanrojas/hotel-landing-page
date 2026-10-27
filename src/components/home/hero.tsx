@@ -1,6 +1,7 @@
 import styles from './hero.module.css';
 import Button from '../ui/button';
 import type { ReactElement } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
   title: string;
@@ -9,6 +10,8 @@ interface Props {
 }
 
 export default function Hero(props: Props) {
+  const navigate = useNavigate()
+
   return (
     <section className={styles.hero}>
       <div className='wrapper'>
@@ -25,6 +28,7 @@ export default function Hero(props: Props) {
             chevron={true}
             size='lg'
             scheme='dark'
+            onClick={() => navigate('/contact')}
           >
             <span>Book Your Stay</span>
           </Button>
