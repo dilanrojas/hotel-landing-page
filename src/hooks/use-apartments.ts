@@ -6,6 +6,7 @@ export const useApartments = (url: string) => {
   const [apartments, setApartments] = useState<Apartment[] | []>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [reload, setReload] = useState<number>(0);
 
   useEffect(() => {
     const getApartments = async () => {
@@ -30,12 +31,15 @@ export const useApartments = (url: string) => {
     };
 
     getApartments();
-  }, [url]);
+  }, [url, reload]);
+
+  const retry = () => setReload((reload) => reload + 1);
 
   return {
     apartments,
     isLoading,
     error,
+    retry,
   };
 }
 

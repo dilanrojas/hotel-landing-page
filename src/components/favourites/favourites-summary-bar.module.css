@@ -1,0 +1,40 @@
+.bar {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: var(--rounded-md);
+  border: 1px solid var(--bg-500);
+  gap: 1.5rem;
+}
+
+.stats {
+  display: flex;
+  gap: 1rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.50rem;
+  padding: 0 1rem;
+}
+
+.stat:first-child {
+  padding-left: 0;
+}
+
+.label {
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  color: var(--text-100);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.value {
+  font-size: var(--fs-2xs);
+  font-weight: 300;
+  color: var(--text-100);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}

@@ -7,8 +7,8 @@ export default function Home() {
 
     <>
       <Hero
-        title="WE SHAPE SPACES FOR TOMORROW"
-        desc="We shape spaces for tomorrow by blending visionary design with purposeful functionality creating environments that inspire and endure."
+        title='"DESIGNED FOR THE WAY YOU REST"'
+        desc="Beautiful design meets quiet functionality, creating spaces that are a pleasure to stay in and hard to forget."
         card={<HeroCard />}
       />
       <ApartmentsFeatured />

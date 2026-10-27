@@ -1,0 +1,13 @@
+.apartmentList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 440px));
+  column-gap: 25px;
+  row-gap: 40px;
+  justify-content: center;
+}
+
+.apartmentList>li {
+  display: flex;
+  min-width: 0;
+
+}
