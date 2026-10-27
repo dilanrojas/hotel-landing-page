@@ -20,7 +20,7 @@ export default function ApartmentActions({
             <p>Price</p>
 
             <p className={styles.price}>
-                {apartment.price.toLocaleString('en-US')}
+                ${apartment.price.toLocaleString('en-US')}
             </p>
 
             <p>Contact us for pricing details and availability.</p>
