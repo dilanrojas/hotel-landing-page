@@ -8,7 +8,7 @@ export default function HeroCard() {
   return (
     <article className={styles.card}>
       <picture className={styles.picture}>
-        <img src='/apartments/the-ember-cabin.webp' alt='The Ember Cabin' height={130} />
+        <img src='/apartments/the-ember-cabin/exterior.webp' alt='The Ember Cabin' height={130} />
       </picture>
       <div className={styles.content}>
         <h4>The Ember Cabin</h4>

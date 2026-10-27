@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  margin-top: 2rem;
 }
 
 .navList {
@@ -24,6 +25,7 @@
 
 .navButton:disabled {
   opacity: 0.35;
+  color: var(--bg-500);
   cursor: not-allowed;
 }
 

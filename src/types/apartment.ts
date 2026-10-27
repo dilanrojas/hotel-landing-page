@@ -15,6 +15,13 @@ export interface Apartment {
   areaM2: number,
   image: string,
   amenities: string[],
+  galleryImages: {
+    exterior: string,
+    bedroom: string,
+    bathroom: string,
+    kitchen: string,
+    livingRoom: string
+  },
   summary: string,
   description: string,
   featured: boolean
