@@ -5,8 +5,9 @@
   min-width: 0;
   flex: 1;
   transition: box-shadow var(--ti-md) ease-in-out;
-  border-radius: var(--rounded-md);
+  border-radius: var(--rounded);
   border: 1px solid var(--bg-300);
+  overflow: hidden;
 }
 
 .cardMedia {
@@ -20,8 +21,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: var(--rounded-xs);
   transition: transform var(--ti-xl) ease-in-out;
+  overflow: hidden;
+
 
 }
 
@@ -124,7 +126,7 @@
     }
 
 
-    box-shadow: 0 12px 24px rgb(0 0 0 / 0.12);
+    box-shadow: 0 8px 18px rgb(0 0 0 / 0.07);
 
   }
 }

@@ -64,13 +64,4 @@
     padding: 0.6rem 0.8rem;
     font-size: var(--fs-2xs);
   }
-
-
-  .groups {
-    margin: 1.4rem 0.1rem;
-    padding: 2rem;
-    gap: 1.5rem;
-  }
-
-
 }
