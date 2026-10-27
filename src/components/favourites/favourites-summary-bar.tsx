@@ -16,7 +16,7 @@ export const SummaryBar = ({ savedCount, locationsCount, onClear }: SummaryBarPr
 
         <li className={styles.stat}>
           <h4 className={styles.label}>Saved Apartments</h4>
-          <span className={styles.value}  >{`${savedCount} apartments`}</span>
+          <span className={styles.value}>{savedCount} {savedCount === 1 ? ' apartment' : ' apartments'}</span>
         </li>
 
         <li className={styles.stat}>
