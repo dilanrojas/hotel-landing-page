@@ -36,19 +36,24 @@ export const ApartmentCard = ({ apartment, isFavourite, onToggleFavourite }: Apa
             <ChevronRight size={18} strokeWidth={3} className={styles.cardArrow} aria-hidden="true" />
           </Link>
         </h2>
+      </div>
 
+      <div className={styles.cardSummaryRow}>
+        <p className={styles.cardSummary}>{summary}</p>
+
+      </div>
+
+
+      <div className={styles.cardBottom}>
         <p className={styles.cardPrice}>
           {price.toLocaleString('en-US', {
             maximumFractionDigits: 0,
             style: 'currency',
             currency: 'USD'
           })}
+
+          <span className={styles.cardPriceUnit}> / NIGHT</span>
         </p>
-      </div>
-
-      <div className={styles.cardSummaryRow}>
-        <p className={styles.cardSummary}>{summary}</p>
-
         <button
           type="button"
           className={styles.cardFavouriteButton}
@@ -68,6 +73,7 @@ export const ApartmentCard = ({ apartment, isFavourite, onToggleFavourite }: Apa
           />
         </button>
       </div>
+
 
 
 

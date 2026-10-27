@@ -1,10 +1,11 @@
 .bar {
   display: flex;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2rem;
   border-radius: var(--rounded-md);
   border: 1px solid var(--bg-500);
-  gap: 1.5rem;
+  gap: 2rem;
+
 }
 
 .stats {
@@ -17,10 +18,7 @@
   flex-direction: column;
   gap: 0.50rem;
   padding: 0 1rem;
-}
-
-.stat:first-child {
-  padding-left: 0;
+  white-space: nowrap;
 }
 
 .label {
@@ -29,6 +27,7 @@
   color: var(--text-100);
   text-transform: uppercase;
   letter-spacing: 0.12em;
+  white-space: nowrap;
 }
 
 .value {
@@ -37,4 +36,25 @@
   color: var(--text-100);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+
+
+
+@media(width <=575px) {
+  .bar {
+    flex-direction: column;
+    padding: 1.75rem 2rem;
+  }
+
+  .stats {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stat {
+    align-items: center;
+  }
+
+
 }
