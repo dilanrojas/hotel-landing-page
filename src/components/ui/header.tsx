@@ -26,7 +26,7 @@ export default function Header() {
 
   return (
     <header className={`${styles.header} ${isHome ? styles.onHome : styles.offHome}`}>
-      <div className='wrapper' ref={containerRef} >
+      <div ref={containerRef} >
         <nav className={styles.pmNav}>
           <Logo size='xl' />
           <ul className={styles.pmNavList}>
