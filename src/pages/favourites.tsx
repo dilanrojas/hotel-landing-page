@@ -3,18 +3,16 @@ import { Link, useNavigate } from "react-router-dom";
 import { useFavouritesContext } from "../context/favourite-context";
 import { useApartments } from "../hooks/use-apartments"
 import { useState } from 'react';
-
 import { ApartmentList } from "../components/apartments/apartment-list";
 import { ApartmentStatus } from "../components/apartments/apartment-status";
 import { Pagination } from '../components/apartments/apartments-pagination';
-
+import { SummaryBar } from '../components/favourites/favourites-summary-bar';
 import { DATA_URL } from "../types/apartment";
 import { getCurrentElements, getPageNumbers, getTotalPages } from '../utils/pagination';
-import { SummaryBar } from '../components/favourites/favourites-summary-bar';
 
 export default function Favourites() {
   const { apartments, error, retry } = useApartments(DATA_URL);
-  const { favourites } = useFavouritesContext();
+  const { favourites, clearFavourites } = useFavouritesContext();
   const navigate = useNavigate();
   const [page, setPage] = useState<number>(1);
 
@@ -53,7 +51,7 @@ export default function Favourites() {
 
         {isEmpty
           ? <p className={styles.headerDescription}>Your personal selection of the minimalist apartments and pavilions, gathered here for closer comparison.</p>
-          : <SummaryBar savedCount={favouritesCount} locationsCount={locationsCount} onClear={() => console.log('hi')} ></SummaryBar>
+          : <div className={styles.summaryBar}><SummaryBar savedCount={favouritesCount} locationsCount={locationsCount} onClear={clearFavourites} ></SummaryBar></div>
         }
       </header>
 
