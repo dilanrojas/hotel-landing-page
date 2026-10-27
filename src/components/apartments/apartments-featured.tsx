@@ -59,11 +59,11 @@ export default function ApartmentsFeatured() {
                         >
                             <article className={styles.apartmentCard}>
 
-                                {/* Apartment image */}
+                                 {/* Apartment image */}
                                 <figure className={styles.imageContainer}>
                                     <img
                                         src={apartment.image}
-                                        alt={`View of ${apartment.name}`}
+                                        alt={'View of ${apartment.name}'}
                                         loading="lazy"
                                         decoding="async"
                                     />
