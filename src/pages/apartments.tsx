@@ -13,7 +13,6 @@ import { Link } from 'react-router-dom';
 
 
 const Apartments = () => {
-
   const { apartments, error, retry } = useApartments(DATA_URL);
   const [search, setSearch] = useState<string>(DEFAULT_FILTERS.search);
   const [environment, setEnvironment] = useState<string>(DEFAULT_FILTERS.environment);
@@ -58,11 +57,29 @@ const Apartments = () => {
     setPage(1);
   }
 
+  const handleScroll = () => window.scrollTo({ top: 0 })
+
+  const handlePrevious = () => {
+    setPage((current) => current - 1);
+    handleScroll();
+  }
+
+  const handleNext = () => {
+    setPage((current) => current + 1);
+    handleScroll();
+  }
+
+  const handlePageChange = (page: number) => {
+    setPage(page);
+    handleScroll();
+  }
+
+
   return (
     <main className={`wrapper ${styles.apartmentsPage}`}>
       <header className={styles.header}>
         <Link to={'/apartments'}>
-          <h1 className={styles.headerTitle}>Apartments.</h1>
+          <h2 className={styles.headerTitle}>Apartments.</h2>
         </Link>
 
         <p className={styles.headerDescription}>
@@ -114,9 +131,9 @@ const Apartments = () => {
                       currentPage={page}
                       totalPages={totalPages}
                       pages={pageNumbers}
-                      onPrevious={() => setPage((currentPage) => currentPage - 1)}
-                      onNext={() => setPage((currentPage) => currentPage + 1)}
-                      onPageChange={setPage}
+                      onPrevious={handlePrevious}
+                      onNext={handleNext}
+                      onPageChange={handlePageChange}
                     />
                   </>
                 )
