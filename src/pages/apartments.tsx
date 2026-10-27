@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { useApartments } from '../hooks/use-apartments'
 import { DATA_URL } from '../types/apartment'
 import styles from './apartments.module.css'

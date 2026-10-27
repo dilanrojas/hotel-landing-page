@@ -2,7 +2,7 @@ import styles from './favourites.module.css'
 import { Link, useNavigate } from "react-router-dom";
 import { useFavouritesContext } from "../context/favourite-context";
 import { useApartments } from "../hooks/use-apartments"
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import { ApartmentList } from "../components/apartments/apartment-list";
 import { ApartmentStatus } from "../components/apartments/apartment-status";
@@ -17,7 +17,6 @@ export default function Favourites() {
   const { favourites } = useFavouritesContext();
   const navigate = useNavigate();
   const [page, setPage] = useState<number>(1);
-  const apartmentsRef = useRef<HTMLDivElement>(null);
 
   const favouritesApartments = apartments.filter((apartment) => favourites.includes(apartment.id));
   const currentFavourites = getCurrentElements(favouritesApartments, page);
@@ -29,7 +28,7 @@ export default function Favourites() {
   const locationsCount = new Set(favouritesApartments.map((apartment) => apartment.location.country)).size
 
 
-  const handleScroll = () => apartmentsRef.current?.scrollIntoView({ block: 'start' })
+  const handleScroll = () => window.scrollTo({ top: 0 })
   const handlePrevious = () => {
     setPage((current) => current - 1);
     handleScroll();
@@ -82,9 +81,7 @@ export default function Favourites() {
             : (
 
               <>
-                <div ref={apartmentsRef}>
-                  <ApartmentList apartments={currentFavourites} />
-                </div>
+                <ApartmentList apartments={currentFavourites} />
                 <Pagination
                   currentPage={page}
                   totalPages={totalPages}
