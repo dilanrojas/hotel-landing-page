@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useApartments } from '../hooks/use-apartments'
 import { DATA_URL } from '../constants/apartments.ts'
 import styles from './apartments.module.css'
@@ -19,6 +19,7 @@ const Apartments = () => {
   const [country, setCountry] = useState<string>(DEFAULT_FILTERS.country);
   const [price, setPrice] = useState<PriceRange>(DEFAULT_FILTERS.price);
   const [page, setPage] = useState<number>(1);
+  const apartmentsRef = useRef<HTMLDivElement>(null)
 
   const filters: ApartmentFilters = { search, environment, country, price };
   const filteredApartments = filterApartments(apartments, filters);
@@ -57,7 +58,7 @@ const Apartments = () => {
     setPage(1);
   }
 
-  const handleScroll = () => window.scrollTo({ top: 0 })
+  const handleScroll = () => apartmentsRef?.current?.scrollIntoView({ block: 'start' })
 
   const handlePrevious = () => {
     setPage((current) => current - 1);
@@ -79,7 +80,7 @@ const Apartments = () => {
     <main className={`wrapper ${styles.apartmentsPage}`}>
       <header className={styles.header}>
         <Link to={'/apartments'}>
-          <h2 className={styles.headerTitle}>Apartments.</h2>
+          <h2 className={styles.headerTitle}>Apartments</h2>
         </Link>
 
         <p className={styles.headerDescription}>
@@ -126,7 +127,10 @@ const Apartments = () => {
                 : (
 
                   <>
-                    <ApartmentList apartments={currentApartments} />
+                    <div ref={apartmentsRef}>
+
+                      <ApartmentList apartments={currentApartments} />
+                    </div>
                     <Pagination
                       currentPage={page}
                       totalPages={totalPages}
