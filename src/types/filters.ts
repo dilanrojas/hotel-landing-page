@@ -1,4 +1,4 @@
-export const ALL = 'All'
+import { ALL } from "../constants/filters"
 
 export interface PriceRange {
   min: number | null,
