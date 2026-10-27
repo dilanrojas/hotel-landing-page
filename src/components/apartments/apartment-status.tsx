@@ -17,7 +17,10 @@ export const ApartmentStatus = ({ title, description, buttonLabel, onClick }: Ap
       <p className={styles.statusDescription}>{description}</p>
       <Button
         variant='primary'
+        chevron
+        chevronSize={15}
         onClick={onClick}
+        scheme='light'
       >
 
         {buttonLabel}

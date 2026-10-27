@@ -18,7 +18,7 @@
   justify-content: center;
   gap: 0.9rem;
   width: 100%;
-  max-width: 26rem;
+  max-width: 22rem;
 }
 
 .field {
@@ -32,7 +32,7 @@
   background-color: var(--bg-150);
   border-radius: var(--rounded-md);
   transition: border-color var(--ti-xl) ease;
-  border: 2px solid var(--text-400);
+  border: 1px solid var(--bg-500);
 
 
 }
