@@ -88,15 +88,15 @@ export default function Footer() {
                     >
                         <figure className={styles.showcaseFigure}>
                             <img
-                                src="/apartments/hemlock-hollow.webp"
+                                src="/apartments/casa-manglar/exterior.webp"
                                 alt="Hemlock Hollow, a featured Hotelry property"
                                 loading="lazy"
                                 decoding="async"
                             />
 
                             <figcaption className={styles.showcaseCaption}>
-                                <span>HEMLOCK HOLLOW</span>
-                                <span>ASHEVILLE, USA</span>
+                                <span>CASA MANGLAR</span>
+                                <span>GUADALAJARA, MEXICO</span>
                             </figcaption>
                         </figure>
                     </section>

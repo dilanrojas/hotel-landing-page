@@ -95,7 +95,7 @@
     position: relative;
 
     width: 100%;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 9 / 10;
     flex-shrink: 0;
 
     margin: 0;
@@ -124,8 +124,8 @@
 /* Zoom only on image hover */
 
 .imageContainer:hover img {
-    transform: scale(1.12);
-    filter: brightness(1.05) saturate(1.08);
+    transform: scale(1.07);
+    filter: brightness(1.04) saturate(1.05);
 }
 
 /* Apartment information */
