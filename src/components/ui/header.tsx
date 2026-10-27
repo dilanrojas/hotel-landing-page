@@ -2,7 +2,7 @@ import { Heart } from 'lucide-react';
 import Logo from '../logo';
 import styles from './header.module.css';
 import { useEffect, useRef, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 export default function Header() {
   const [open, setOpen] = useState<boolean>(false);
@@ -30,8 +30,22 @@ export default function Header() {
         <nav className={styles.pmNav}>
           <Logo size='xl' />
           <ul className={styles.pmNavList}>
-            <li><Link to={'/apartments'}><span>Apartments</span></Link></li>
-            <li><Link to={'/contact'}><span>Contact</span></Link></li>
+            <li>
+              <NavLink
+                to={'/apartments'}
+                className={({ isActive }) => (isActive ? styles.active : '')}
+              >
+                <span>Apartments</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to={'/contact'}
+                className={({ isActive }) => (isActive ? styles.active : '')}
+              >
+                <span>Contact</span>
+              </NavLink>
+            </li>
           </ul>
           <Link to={'/favourites'} className={styles.heartBtn}>
             <span><Heart size={24} /></span>
