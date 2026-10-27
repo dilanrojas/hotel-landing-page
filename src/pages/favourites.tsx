@@ -10,7 +10,6 @@ import { Pagination } from '../components/apartments/apartments-pagination';
 
 import { DATA_URL } from "../types/apartment";
 import { getCurrentElements, getPageNumbers, getTotalPages } from '../utils/pagination';
-import Button from '../components/ui/button';
 import { SummaryBar } from '../components/favourites/favourites-summary-bar';
 
 export default function Favourites() {
