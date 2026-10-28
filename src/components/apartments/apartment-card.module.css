@@ -1,12 +1,15 @@
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: .75rem;
   min-width: 0;
   flex: 1;
   transition: box-shadow var(--ti-md) ease-in-out;
-  border-radius: var(--rounded-md);
+  border-radius: var(--rounded);
   border: 1px solid var(--bg-300);
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .cardMedia {
@@ -20,8 +23,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: var(--rounded-xs);
   transition: transform var(--ti-xl) ease-in-out;
+  overflow: hidden;
+
 
 }
 
@@ -35,9 +39,9 @@
 
 
 .cardCaption {
-  font-size: var(--fs-xs);
-  color: var(--text-100);
-  text-transform: uppercase;
+  font-size: var(--fs-sm);
+  color: var(--text-300);
+  text-transform: capitalize;
 }
 
 .cardTitleRow {
@@ -60,13 +64,34 @@
   font-weight: 600;
 
 
-  a {
+  & span {
     display: inline-flex;
     align-items: center;
     gap: .5rem;
   }
 
 
+}
+
+.cardTitleLink {
+  display: inline-flex;
+}
+
+.cardTitleLink::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: var(--rounded);
+}
+
+.cardTitleLink:focus-visible {
+  outline: none;
+}
+
+.cardTitleLink:focus-visible::after {
+  outline: 2px solid var(--accent-500);
+  outline-offset: -2px;
 }
 
 .cardArrow {
@@ -103,6 +128,8 @@
 }
 
 .cardFavouriteButton {
+  position: relative;
+  z-index: 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -123,14 +150,13 @@
       transform: translateX(0);
     }
 
+    .cardImage {
+      transform: scale(1.02);
+    }
 
-    box-shadow: 0 12px 24px rgb(0 0 0 / 0.12);
+    box-shadow: 0 8px 18px rgb(0 0 0 / 0.07);
 
   }
-}
-
-.cardImage:hover {
-  transform: scale(1.02);
 }
 
 @media (width <=528px) {

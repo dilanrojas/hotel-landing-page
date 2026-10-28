@@ -3,11 +3,13 @@ import Logo from '../logo';
 import styles from './header.module.css';
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import { useFavouritesContext } from '../../context/favourite-context';
 
 export default function Header() {
   const [open, setOpen] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const { pathname } = useLocation();
+  const { favourites } = useFavouritesContext();
 
   const isHome = pathname === '/';
 
@@ -47,8 +49,9 @@ export default function Header() {
               </NavLink>
             </li>
           </ul>
-          <Link to={'/favourites'} className={styles.heartBtn}>
+          <Link className={styles.heart} to={'/favourites'}>
             <span><Heart size={24} /></span>
+            <span className={styles.counter} aria-hidden={true}>{favourites.length}</span>
           </Link>
         </nav>
       </div>

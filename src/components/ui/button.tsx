@@ -22,6 +22,7 @@ export default function Button({
   ...props }: ButtonProps) {
   return (
     <button
+      {...props}
       className={clsx(
         styles.button,
         styles[`variant_${variant}`],
@@ -30,7 +31,6 @@ export default function Button({
         styles[`scheme_${scheme}`],
         props.className
       )}
-      {...props}
     >
       {variant === 'primary' && chevron && (
         <>
