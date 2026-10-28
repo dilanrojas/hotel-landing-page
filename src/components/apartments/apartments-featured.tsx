@@ -106,7 +106,6 @@ export default function ApartmentsFeatured() {
         <Button
           variant="primary"
           chevron
-          chevronSize={15}
           type="button"
           onClick={() => navigate('/apartments')}
         >
