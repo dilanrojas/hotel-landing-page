@@ -3,7 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { MapPin } from 'lucide-react'
 import { useApartments } from '../../hooks/use-apartments'
 import Button from '../ui/button'
-import styles from './apartments-features.module.css'
+import styles from './apartments-featured.module.css'
+import SectionHeader from '../section-header'
 
 export default function ApartmentsFeatured() {
   const navigate = useNavigate()
@@ -22,16 +23,10 @@ export default function ApartmentsFeatured() {
       aria-labelledby="featured-title"
     >
       {/* Section header */}
-      <header className={styles.sectionHeader}>
-        <h2 id="featured-title">
-          Featured Apartments
-        </h2>
-
-        <p className={styles.description}>
-          Discover exceptional spaces where thoughtful
-          architecture meets unforgettable experiences.
-        </p>
-      </header>
+      <SectionHeader
+        title='Featured Apartments'
+        desc='Describe exceptional spaces where thoughtful arquitecture meets unforgettable experiences.'
+      />
 
       {/* Featured apartments */}
       {isLoading ? (
@@ -115,7 +110,7 @@ export default function ApartmentsFeatured() {
           type="button"
           onClick={() => navigate('/apartments')}
         >
-          <span>EXPLORE ALL APARTMENTS</span>
+          <span>VIEW ALL APARTMENTS</span>
         </Button>
       </footer>
     </section>

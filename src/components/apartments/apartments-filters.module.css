@@ -1,5 +1,4 @@
 .filters {
-  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -12,7 +11,7 @@
   align-items: center;
   gap: 2rem;
   border: 1px solid var(--bg-400);
-  border-radius: var(--rounded-lg);
+  border-radius: var(--rounded);
   transition: border-color var(--ti-sm) ease;
   padding: .3rem;
 
@@ -30,7 +29,7 @@
   gap: 3rem;
   padding: 2rem;
   border: 1px solid var(--bg-400);
-  border-radius: var(--rounded-lg);
+  border-radius: var(--rounded);
 }
 
 .clearButton {

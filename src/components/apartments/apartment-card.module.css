@@ -37,9 +37,9 @@
 
 
 .cardCaption {
-  font-size: var(--fs-xs);
-  color: var(--text-100);
-  text-transform: uppercase;
+  font-size: var(--fs-sm);
+  color: var(--text-300);
+  text-transform: capitalize;
 }
 
 .cardTitleRow {
@@ -62,7 +62,7 @@
   font-weight: 600;
 
 
-  a {
+  & span {
     display: inline-flex;
     align-items: center;
     gap: .5rem;

@@ -12,7 +12,6 @@
   background-color: var(--bg-200);
 }
 
-.mainImage,
 .thumbnailImage {
   display: block;
   width: 100%;
@@ -21,6 +20,7 @@
 
 .mainImage {
   object-fit: contain;
+  width: 100%;
 }
 
 .controls {
@@ -120,6 +120,7 @@
 }
 
 @media (hover: hover) {
+
   .thumbnail:hover,
   .controls button:not(:disabled):hover {
     border-color: var(--accent-600);

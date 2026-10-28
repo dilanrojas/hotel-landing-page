@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   --ff-script: "Kaushan Script", cursive;
-  --ff-heading: "EB Garamond", serif;
+  --ff-heading: "Montserrat", sans-serif;
 
   /* Rounding */
   --rounded-3xs: 2px;
   --rounded-2xs: 4px;
   --rounded-xs: 6px;
   --rounded-sm: 8px;
-  --rounded-md: 10px;
+  --rounded-md: 12px;
   --rounded-lg: 14px;
   --rounded-xl: 18px;
   --rounded-2xl: 20px;

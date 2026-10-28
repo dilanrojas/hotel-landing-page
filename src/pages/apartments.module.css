@@ -1,8 +1,7 @@
 .apartmentsPage {
-  margin-top: 5rem;
-  padding-top: 7rem;
-  padding-bottom: 5rem;
+  padding-block: 11rem 5rem;
 }
+
 
 .header {
   display: flex;
@@ -29,8 +28,6 @@
 }
 
 .body {
-  margin-top: 3rem;
-  margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
