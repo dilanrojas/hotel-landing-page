@@ -3,7 +3,7 @@ import { useApartments } from '../hooks/use-apartments'
 import { DATA_URL } from '../constants/apartments.ts'
 import styles from './apartments.module.css'
 import { DEFAULT_FILTERS, type ApartmentFilters, type PriceRange } from '../types/filters';
-import { filterApartments } from '../utils/filter-apartments';
+import { filterApartments, getCountryOptions, getEnvironmentOptions, toggleFilterValue } from '../utils/filter-apartments';
 import { getCurrentElements, getPageNumbers, getTotalPages } from '../utils/pagination';
 import { ApartmentStatus } from '../components/apartments/apartment-status';
 import { ApartmentsFilters } from '../components/apartments/apartments-filters';
@@ -15,14 +15,16 @@ import SectionHeader from '../components/section-header.tsx';
 const Apartments = () => {
   const { apartments, error, retry } = useApartments(DATA_URL);
   const [search, setSearch] = useState<string>(DEFAULT_FILTERS.search);
-  const [environment, setEnvironment] = useState<string>(DEFAULT_FILTERS.environment);
-  const [country, setCountry] = useState<string>(DEFAULT_FILTERS.country);
+  const [environment, setEnvironment] = useState<string[]>(DEFAULT_FILTERS.environment);
+  const [country, setCountry] = useState<string[]>(DEFAULT_FILTERS.country);
   const [price, setPrice] = useState<PriceRange>(DEFAULT_FILTERS.price);
   const [page, setPage] = useState<number>(1);
   const apartmentsRef = useRef<HTMLDivElement>(null)
 
   const filters: ApartmentFilters = { search, environment, country, price };
   const filteredApartments = filterApartments(apartments, filters);
+  const environmentOptions = getEnvironmentOptions(apartments);
+  const countryOptions = getCountryOptions(apartments);
 
   const totalPages = getTotalPages(filteredApartments.length);
   const currentApartments = getCurrentElements(filteredApartments, page);
@@ -34,13 +36,13 @@ const Apartments = () => {
     setPage(1);
   }
 
-  const handleEnvironment = (environment: string) => {
-    setEnvironment(environment);
+  const handleEnvironment = (option: string) => {
+    setEnvironment((prev) => toggleFilterValue(prev, option, environmentOptions.length));
     setPage(1);
   }
 
-  const handleCountry = (country: string) => {
-    setCountry(country);
+  const handleCountry = (option: string) => {
+    setCountry((prev) => toggleFilterValue(prev, option, countryOptions.length));
     setPage(1);
   }
 

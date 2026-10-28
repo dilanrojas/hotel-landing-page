@@ -31,7 +31,7 @@ export const ApartmentsFilters = ({ filters, apartments, onSearch, onEnvironment
         <FilterGroup
           label='ENVIRONMENT'
           filterName='environment'
-          value={filters.environment}
+          values={filters.environment}
           options={[ALL, ...environmentOptions]}
           onClick={onEnvironment}
         />
@@ -39,7 +39,7 @@ export const ApartmentsFilters = ({ filters, apartments, onSearch, onEnvironment
         <FilterGroup
           label='COUNTRY'
           filterName='country'
-          value={filters.country}
+          values={filters.country}
           options={[ALL, ...countriesOptions]}
           onClick={onCountry}
         />
