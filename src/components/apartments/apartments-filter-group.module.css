@@ -38,6 +38,7 @@
   border-color: var(--text-400);
 }
 
+
 .optionButton[aria-pressed='true'] {
   color: var(--bg-100, #fff);
   background-color: var(--text-100);

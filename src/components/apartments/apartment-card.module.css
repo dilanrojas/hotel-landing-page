@@ -136,10 +136,16 @@
   width: 3rem;
   height: 3rem;
   color: var(--text-300);
-  transition: color var(--ti-xl) ease;
+  transition:
+    color var(--ti-xl) ease,
+    transform var(--ti-xl) ease-in-out;
 
   &:hover {
     color: var(--text-100);
+  }
+
+  &:active {
+    transform: scale(0.70);
   }
 }
 
