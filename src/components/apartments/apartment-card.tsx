@@ -19,11 +19,8 @@ export const ApartmentCard = ({ apartment, isFavourite, onToggleFavourite }: Apa
     <article className={styles.card}>
 
       <div className={styles.cardMedia}>
-        <Link to={`/apartments/${id}`}>
-          <img src={image} alt={name} className={styles.cardImage} loading='lazy' />
-        </Link>
+        <img src={image} alt={name} className={styles.cardImage} loading='lazy' />
       </div>
-
 
       <div className={styles.cardBody}>
         <p className={styles.cardCaption}>
@@ -31,9 +28,11 @@ export const ApartmentCard = ({ apartment, isFavourite, onToggleFavourite }: Apa
         </p>
         <div className={styles.cardTitleRow}>
           <h2 className={styles.cardTitle}>
-            <Link to={`/apartments/${id}`}>
-              {name}
-              <ChevronRight size={18} strokeWidth={3} className={styles.cardArrow} aria-hidden="true" />
+            <Link className={styles.cardTitleLink} to={`/apartments/${id}`}>
+              <span>
+                {name}
+                <ChevronRight size={18} strokeWidth={3} className={styles.cardArrow} aria-hidden="true" />
+              </span>
             </Link>
           </h2>
         </div>
@@ -65,7 +64,7 @@ export const ApartmentCard = ({ apartment, isFavourite, onToggleFavourite }: Apa
             onClick={onToggleFavourite}
           >
             <Heart
-              size={32}
+              size={28}
               strokeWidth={1.5}
               fill={isFavourite ? 'black' : 'none'}
               aria-hidden="true"
@@ -73,17 +72,7 @@ export const ApartmentCard = ({ apartment, isFavourite, onToggleFavourite }: Apa
           </button>
         </div>
       </div>
-
-
     </article>
-
-
-
-
-
-
-
-
   )
 }
 
