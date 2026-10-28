@@ -192,10 +192,6 @@
 /* Tablet */
 
 @media (max-width: 1050px) {
-  .featuredSection {
-    padding: 80px 6%;
-  }
-
   .gridItem {
     flex-basis: calc((100% - 28px) / 2);
   }
@@ -204,10 +200,6 @@
 /* Mobile */
 
 @media (max-width: 650px) {
-  .featuredSection {
-    padding: 70px 5%;
-  }
-
   .apartmentsGrid {
     gap: 24px;
   }
