@@ -1,7 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import Button from '../ui/button';
 import styles from './error-404.module.css';
 
 export default function Error404() {
+  const navigate = useNavigate();
+
   return (
     <div className='wrapper'>
       <div className={styles.errorWrapper}>
@@ -16,6 +19,7 @@ export default function Error404() {
           variant='primary'
           scheme='light'
           chevron
+          onClick={() => navigate('/')}
         >
           <span>Back to home</span>
         </Button>
