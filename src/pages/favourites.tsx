@@ -1,5 +1,5 @@
 import styles from './favourites.module.css'
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useFavouritesContext } from "../context/favourite-context";
 import { useApartments } from "../hooks/use-apartments"
 import { useState } from 'react';
@@ -9,6 +9,7 @@ import { Pagination } from '../components/apartments/apartments-pagination';
 import { SummaryBar } from '../components/favourites/favourites-summary-bar';
 import { DATA_URL } from "../constants/apartments.ts";
 import { getCurrentElements, getPageNumbers, getTotalPages } from '../utils/pagination';
+import SectionHeader from '../components/section-header.tsx';
 
 export default function Favourites() {
   const { apartments, error, retry } = useApartments(DATA_URL);
@@ -43,17 +44,13 @@ export default function Favourites() {
   const isEmpty = favouritesApartments.length === 0
   return (
 
-    <main className={`wrapper ${styles.favouritesPage}`}>
-      <header className={styles.header}>
-        <Link to={'/favourites'}>
-          <h2 className={styles.headerTitle}>Favourites.</h2>
-        </Link>
-
-        {isEmpty
-          ? <p className={styles.headerDescription}>Your personal selection of the minimalist apartments and pavilions, gathered here for closer comparison.</p>
-          : <div className={styles.summaryBar}><SummaryBar savedCount={favouritesCount} locationsCount={locationsCount} onClear={clearFavourites} ></SummaryBar></div>
-        }
-      </header>
+    <div className={`wrapper ${styles.favouritesPage}`}>
+      <SectionHeader
+        title='Favourites'
+        desc='Your personal selection of the minimalist apartments and pavilions, gathered here for closer comparison.'
+      >
+        <div className={styles.summaryBar}><SummaryBar savedCount={favouritesCount} locationsCount={locationsCount} onClear={clearFavourites} ></SummaryBar></div>
+      </SectionHeader>
 
       <section className={styles.body}>
 
@@ -92,7 +89,7 @@ export default function Favourites() {
 
             )}
       </section>
-    </main>
+    </div>
 
   )
 }

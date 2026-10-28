@@ -11,6 +11,7 @@
   font-size: var(--fs-5xl);
   font-family: var(--ff-heading);
   margin-bottom: .8rem;
+  font-weight: 500;
 }
 
 .desc {
