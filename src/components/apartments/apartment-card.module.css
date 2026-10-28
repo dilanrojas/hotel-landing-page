@@ -107,10 +107,10 @@
 }
 
 .cardPriceUnit {
-  font-size: var(--fs-xs);
+  font-size: var(--fs-2xs);
   font-weight: 300;
   color: var(--text-300);
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 0.05em;
 }
 
@@ -136,10 +136,16 @@
   width: 3rem;
   height: 3rem;
   color: var(--text-300);
-  transition: color var(--ti-xl) ease;
+  transition:
+    color var(--ti-xl) ease,
+    transform var(--ti-xl) ease-in-out;
 
   &:hover {
     color: var(--text-100);
+  }
+
+  &:active {
+    transform: scale(0.70);
   }
 }
 

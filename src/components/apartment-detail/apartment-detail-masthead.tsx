@@ -22,9 +22,8 @@ export default function ApartmentDetailMasthead({
   return (
     <header
       ref={ref}
-      className={`${styles.masthead} ${styles.reveal} ${
-        isVisible ? styles.revealVisible : ''
-      }`}
+      className={`${styles.masthead} ${styles.reveal} ${isVisible ? styles.revealVisible : ''
+        }`}
     >
       <div className={styles.intro}>
         <p className={styles.eyebrow}>
@@ -89,7 +88,7 @@ export default function ApartmentDetailMasthead({
             onClick={() => toggleFavourite(apartment.id)}
           >
             <Heart
-              size={20}
+              size={30}
               strokeWidth={1.8}
               aria-hidden="true"
               fill={favourite ? 'currentColor' : 'none'}

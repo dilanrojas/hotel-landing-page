@@ -45,7 +45,7 @@
 
 .head th.rateHeader,
 .head th.actionsHeader {
-  text-align: right;
+  text-align: left;
 }
 
 .row {
@@ -94,10 +94,9 @@
 }
 
 .environment {
-  color: var(--accent-700);
+  color: var(--text-400);
   font-size: var(--fs-3xs);
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
@@ -157,7 +156,7 @@
 
 .rateCell {
   width: 11%;
-  text-align: right;
+  text-align: left;
 }
 
 .rate {
@@ -177,13 +176,14 @@
 }
 
 .actionsCell {
-  width: 14%;
+  width: 1%;
+  white-space: nowrap;
 }
 
 .actions {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 0.65rem;
 }
 
@@ -199,7 +199,15 @@
   width: 3rem;
   height: 3rem;
   color: var(--text-300);
-  transition: color var(--ti-xl) ease;
+  transition:
+    color var(--ti-xl) ease,
+    transform var(--ti-xl) ease-in;
+
+
+  &:active {
+    transform: scale(0.70);
+
+  }
 }
 
 .mobileLabel {
@@ -299,7 +307,7 @@
   }
 
   .actions {
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 }
 
