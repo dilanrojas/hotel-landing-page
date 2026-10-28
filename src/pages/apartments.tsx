@@ -81,7 +81,7 @@ const Apartments = () => {
   return (
     <main className={`wrapper ${styles.apartmentsPage}`}>
       <SectionHeader
-        title='Apartments'
+        title='Available Residences'
         desc='A curated index of minimalist apartments, pavilions and architectural monographs selected for their spatial purity and terrain resonance.'
       />
 
