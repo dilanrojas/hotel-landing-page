@@ -99,6 +99,8 @@
 }
 
 .counter {
+
+  --size: 18px;
   position: absolute;
   top: 0;
   right: 0;
@@ -106,15 +108,14 @@
   color: white;
   margin: 0px -4px;
 
-  --size: 18px;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
-  font-size: var(--fs-2xs);
+  font-weight: 700;
+  font-size: var(--fs-3xs);
 }
 
 .pmNavList {

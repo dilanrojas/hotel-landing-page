@@ -1,13 +1,10 @@
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useFavouritesContext } from '../context/favourite-context'
 import { useApartments } from '../hooks/use-apartments'
 import { ApartmentStatus } from '../components/apartments/apartment-status'
-import { Pagination } from '../components/apartments/apartments-pagination'
 import { FavouritesTable } from '../components/favourites/favourites-table'
 import { SummaryBar } from '../components/favourites/favourites-summary-bar'
 import { DATA_URL } from '../constants/apartments'
-import { getCurrentElements, getPageNumbers, getTotalPages } from '../utils/pagination'
 import SectionHeader from '../components/section-header'
 import styles from './favourites.module.css'
 
@@ -15,35 +12,13 @@ export default function Favourites() {
   const { apartments, error, retry } = useApartments(DATA_URL)
   const { favourites, clearFavourites } = useFavouritesContext()
   const navigate = useNavigate()
-  const [page, setPage] = useState(1)
 
   const favouritesApartments = apartments.filter((apartment) => favourites.includes(apartment.id))
-  const totalPages = getTotalPages(favouritesApartments.length)
-  const currentPage = Math.min(page, totalPages)
-  const currentFavourites = getCurrentElements(favouritesApartments, currentPage)
-  const pageNumbers = getPageNumbers(totalPages)
 
   const favouritesCount = favouritesApartments.length
   const locationsCount = new Set(
     favouritesApartments.map((apartment) => apartment.location.country),
   ).size
-
-  const handleScroll = () => window.scrollTo({ top: 0 })
-
-  const handlePrevious = () => {
-    setPage(Math.max(1, currentPage - 1))
-    handleScroll()
-  }
-
-  const handleNext = () => {
-    setPage(Math.min(totalPages, currentPage + 1))
-    handleScroll()
-  }
-
-  const handlePageChange = (nextPage: number) => {
-    setPage(nextPage)
-    handleScroll()
-  }
 
   const isEmpty = favouritesApartments.length === 0
 
@@ -78,18 +53,7 @@ export default function Favourites() {
             onClick={() => navigate('/apartments')}
           />
         ) : (
-          <>
-            <FavouritesTable apartments={currentFavourites} />
-
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              pages={pageNumbers}
-              onPrevious={handlePrevious}
-              onNext={handleNext}
-              onPageChange={handlePageChange}
-            />
-          </>
+          <FavouritesTable apartments={favouritesApartments} />
         )}
       </section>
     </main>

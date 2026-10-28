@@ -1,7 +1,8 @@
-import { ArrowUpRight, Heart } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Heart } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { useFavouritesContext } from '../../context/favourite-context';
 import type { Apartment } from '../../types/apartment';
+import Button from '../ui/button';
 import styles from './favourites-table.module.css';
 
 interface FavouritesTableProps {
@@ -17,6 +18,7 @@ const formatPrice = (price: number) =>
 
 export const FavouritesTable = ({ apartments }: FavouritesTableProps) => {
   const { toggleFavourite } = useFavouritesContext();
+  const navigate = useNavigate();
 
   return (
     <div className={styles.tableWrap}>
@@ -111,26 +113,29 @@ export const FavouritesTable = ({ apartments }: FavouritesTableProps) => {
 
               <td className={`${styles.cell} ${styles.actionsCell}`} role="cell">
                 <div className={styles.actions}>
-                  <Link
-                    className={styles.viewLink}
-                    to={`/apartments/${apartment.id}`}
+                  <Button
+                    type="button"
+                    variant="secondary"
+                    chevron
+                    chevronSize={15}
+                    className={styles.viewButton}
                     aria-label={`View ${apartment.name}`}
+                    onClick={() => navigate(`/apartments/${apartment.id}`)}
                   >
                     View
-                    <ArrowUpRight size={15} strokeWidth={2} aria-hidden="true" />
-                  </Link>
+                  </Button>
 
                   <button
                     type="button"
-                    className={styles.removeButton}
+                    className={styles.favouriteButton}
                     aria-label={`Remove ${apartment.name} from favourites`}
                     aria-pressed="true"
                     onClick={() => toggleFavourite(apartment.id)}
                   >
                     <Heart
-                      size={18}
-                      strokeWidth={1.8}
-                      fill="currentColor"
+                      size={28}
+                      strokeWidth={1.5}
+                      fill="black"
                       aria-hidden="true"
                     />
                   </button>
