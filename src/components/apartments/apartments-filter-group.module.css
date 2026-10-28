@@ -12,7 +12,7 @@
 
 .options {
   display: flex;
-  gap: 0.8rem;
+  gap: 0.4rem;
   justify-content: start;
   flex-wrap: wrap;
 }
@@ -26,9 +26,9 @@
   border: 1px solid var(--bg-400);
   border-radius: var(--rounded-md);
   transition:
-    color var(--ti-xl) ease,
-    background-color var(--ti-xl) ease,
-    border-color var(--ti-xl) ease;
+    color var(--ti-md) ease,
+    background-color var(--ti-md) ease,
+    border-color var(--ti-md) ease;
 }
 
 .optionButton:hover {
@@ -37,6 +37,7 @@
   background-color: var(--text-100);
   border-color: var(--text-400);
 }
+
 
 .optionButton[aria-pressed='true'] {
   color: var(--bg-100, #fff);

@@ -1,15 +1,18 @@
+import { ALL } from '../../constants/filters'
 import styles from './apartments-filter-group.module.css'
 
 interface FilterGroupProps {
   label: string
   filterName: string
-  value: string
+  values: string[]
   options: string[]
   onClick: (value: string) => void
 
 }
 
-export const FilterGroup = ({ label, filterName, value, options, onClick }: FilterGroupProps) => {
+export const FilterGroup = ({ label, filterName, values, options, onClick }: FilterGroupProps) => {
+  const totalOptions = options.length - 1
+  const allSelected = values.length === 0 || values.length === totalOptions
   return (
     <nav className={styles.group} aria-label={`${filterName} filters`}>
 
@@ -25,7 +28,10 @@ export const FilterGroup = ({ label, filterName, value, options, onClick }: Filt
             <button
               type='button'
               className={styles.optionButton}
-              aria-pressed={value === option}
+              aria-pressed={option === ALL
+                ? allSelected
+                : !allSelected && values.includes(option)
+              }
               onClick={() => onClick(option)}
             >
               {option}

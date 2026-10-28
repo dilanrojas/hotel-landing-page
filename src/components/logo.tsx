@@ -15,7 +15,7 @@ export default function Logo(props: Props) {
           styles[`size_${props.size}`]
         )}
       >
-        Hotelry
+        Harly
       </span>
     </Link>
   )

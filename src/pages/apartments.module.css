@@ -2,6 +2,11 @@
   padding-block: 11rem 5rem;
 }
 
+@media (width <=768px) {
+  .apartmentsPage {
+    padding-block: 10rem 3rem;
+  }
+}
 
 .header {
   display: flex;
