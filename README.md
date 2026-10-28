@@ -1,75 +1,48 @@
-# React + TypeScript + Vite
+# Harly
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Responsive web and Android application for promoting luxury apartments. Users can browse and filter properties, view apartment details, save favourites, and request information through a contact form.
 
-Currently, two official plugins are available:
+Apartment data is loaded from a local JSON file using fetch. Favourites persist through localStorage and are shared using Context API. Contact submissions are simulated; no messages are sent to a server.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Technologies
 
-## React Compiler
+- React, TypeScript and Vite.
+- React Router.
+- CSS Modules and Lucide React.
+- Capacitor for Android.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Installation
 
-## Expanding the ESLint configuration
+Requirements: Node.js and pnpm. Android Studio is required to run the Android application.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone https://github.com/dilanrojas/hotel-landing-page.git
+cd hotel-landing-page
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Commands
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+pnpm dev      # Start the development server
+pnpm build    # Generate the production build in dist/
+pnpm preview  # Preview the production build locally
+pnpm lint     # Run ESLint checks
 ```
+
+## Android
+
+Build the web application, synchronize the Android project, and open it in Android Studio:
+
+```bash
+pnpm build
+pnpm exec cap sync android
+pnpm exec cap open android
+```
+
+In Android Studio, select an emulator or connected Android device and run the application.
+
+## Links
+
+- [Live website](https://hotel-landing-page-ashy-ten.vercel.app/)
+- [GitHub repository](https://github.com/dilanrojas/hotel-landing-page)
