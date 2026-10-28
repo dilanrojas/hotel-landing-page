@@ -2,7 +2,7 @@ import { Heart } from 'lucide-react';
 import Logo from '../logo';
 import styles from './header.module.css';
 import { useEffect, useRef, useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useFavouritesContext } from '../../context/favourite-context';
 
 export default function Header() {
@@ -44,15 +44,22 @@ export default function Header() {
               <NavLink
                 to={'/contact'}
                 className={({ isActive }) => (isActive ? styles.active : '')}
+                end
               >
                 <span>Contact</span>
               </NavLink>
             </li>
           </ul>
-          <Link className={styles.heart} to={'/favourites'}>
+          <NavLink
+            to="/favourites"
+            className={({ isActive }: { isActive: boolean }) =>
+              `${styles.heart} ${isActive ? styles.active : ''}`
+            }
+            end
+          >
             <span><Heart size={24} /></span>
             <span className={styles.counter} aria-hidden={true}>{favourites.length}</span>
-          </Link>
+          </NavLink>
         </nav>
       </div>
     </header>

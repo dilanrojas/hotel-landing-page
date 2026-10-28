@@ -1,26 +1,28 @@
 .favouritesPage {
-  padding-block: 11rem 5rem;
-}
-
-.summaryBar {
-  width: 100%;
-  min-width: 0;
+  padding-block: 11rem 9rem;
 }
 
 .body {
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
 }
 
-@media (width >=1021px) {
-  .summaryBar {
-    width: auto;
+@media (width <=768px) {
+  .body {
+    margin-top: 3rem;
   }
 }
 
 @media (width <=1100px) {
   .body {
     gap: 2rem;
+  }
+}
+
+@media (width <=768px) {
+  .summaryBar {
+    width: 100%;
   }
 }
