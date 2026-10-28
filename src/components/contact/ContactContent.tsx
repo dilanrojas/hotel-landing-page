@@ -3,18 +3,20 @@ import type { ReactNode } from 'react'
 import styles from './contactContent.module.css'
 
 interface ContactContentProps {
-    children: ReactNode
+  children: ReactNode
 }
 
 export default function ContactContent({
-    children
+  children
 }: ContactContentProps) {
-    return (
-        <section
-            className={styles.contactSection}
-            aria-label="Contact information and message form"
-        >
-            {children}
-        </section>
-    )
+  return (
+    <section
+      className={styles.contactSection}
+      aria-label="Contact information and message form"
+    >
+      <div className='wrapper'>
+        {children}
+      </div>
+    </section>
+  )
 }

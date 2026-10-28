@@ -49,11 +49,6 @@
   --anim-dropdown-in: dropdown-in var(--ti-md) ease both;
   --anim-dropdown-out: dropdown-out var(--ti-md) ease both;
 
-  /* Box shadow */
-  --bs-sm: 0 2px 2px rgba(0 0 0 / 0.04);
-  --bs-md: 0 3px 8px rgba(0 0 0 / 0.23);
-  --bs-lg: 0 7px 13px rgba(0 0 0 / 0.39);
-
   --accent-100: rgb(15, 12, 2);
   --accent-200: rgb(25, 20, 4);
   --accent-300: rgb(35, 28, 7);
