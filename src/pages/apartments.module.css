@@ -1,14 +1,19 @@
 .apartmentsPage {
-  margin-top: 5rem;
-  padding-top: 7rem;
-  padding-bottom: 5rem;
+  padding-block: 11rem 5rem;
+}
+
+@media (width <=768px) {
+  .apartmentsPage {
+    padding-block: 10rem 3rem;
+  }
 }
 
 .header {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-around;
-  gap: 10rem;
+  gap: 1rem;
   width: 100%;
 }
 
@@ -20,7 +25,7 @@
 }
 
 .headerDescription {
-  max-width: 55ch;
+  max-width: 70ch;
   font-size: var(--fs-lg);
   line-height: 1.6;
   color: var(--text-100);
@@ -28,8 +33,6 @@
 }
 
 .body {
-  margin-top: 3rem;
-  margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;

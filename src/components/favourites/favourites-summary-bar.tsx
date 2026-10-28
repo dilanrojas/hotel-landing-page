@@ -1,13 +1,12 @@
-import Button from "../ui/button";
+import { Trash2 } from 'lucide-react';
+import Button from '../ui/button';
 import styles from './favourites-summary-bar.module.css';
 
 interface SummaryBarProps {
   savedCount: number,
   locationsCount: number,
   onClear: () => void
-
 }
-
 
 export const SummaryBar = ({ savedCount, locationsCount, onClear }: SummaryBarProps) => {
   return (
@@ -26,10 +25,19 @@ export const SummaryBar = ({ savedCount, locationsCount, onClear }: SummaryBarPr
 
       </ul>
 
-      <Button variant="primary" chevron chevronSize={15} onClick={onClear}>Clear Selection</Button>
-
-
-
+      <Button
+        type="button"
+        variant="secondary"
+        className={styles.clearBtn}
+        onClick={onClear}
+        disabled={savedCount === 0}
+        aria-label="Clear all favourites"
+      >
+        <span className={styles.clearLabel}>
+          <Trash2 size={15} strokeWidth={1.8} aria-hidden="true" />
+          Clear
+        </span>
+      </Button>
     </section>
   )
 }

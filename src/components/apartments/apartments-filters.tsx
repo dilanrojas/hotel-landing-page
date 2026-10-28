@@ -1,10 +1,11 @@
 import styles from './apartments-filters.module.css'
 import type { Apartment } from "../../types/apartment"
-import { ALL, type ApartmentFilters, type PriceRange } from "../../types/filters"
+import { type ApartmentFilters, type PriceRange } from "../../types/filters"
 import { countActiveFilters, getCountryOptions, getEnvironmentOptions, getPriceBounds } from "../../utils/filter-apartments"
 import SearchBar from './apartments-search-bar'
 import { FilterGroup } from './apartments-filter-group'
 import { FilterPrice } from './apartments-filter-price'
+import { ALL } from '../../constants/filters'
 
 interface ApartmentsFiltersProps {
   filters: ApartmentFilters
@@ -25,6 +26,33 @@ export const ApartmentsFilters = ({ filters, apartments, onSearch, onEnvironment
 
   return (
     <div className={styles.filters} aria-label="Apartments Filters Bar">
+
+      <div className={styles.groups}>
+        <FilterGroup
+          label='ENVIRONMENT'
+          filterName='environment'
+          values={filters.environment}
+          options={[ALL, ...environmentOptions]}
+          onClick={onEnvironment}
+        />
+
+        <FilterGroup
+          label='COUNTRY'
+          filterName='country'
+          values={filters.country}
+          options={[ALL, ...countriesOptions]}
+          onClick={onCountry}
+        />
+
+
+        <FilterPrice
+          price={filters.price}
+          priceBounds={priceBounds}
+          onChange={onPrice}
+        />
+
+      </div>
+
       <div className={styles.filterBar}>
         <SearchBar
           value={filters.search}
@@ -41,34 +69,6 @@ export const ApartmentsFilters = ({ filters, apartments, onSearch, onEnvironment
           CLEAR({activeFilters})
         </button>
       </div>
-
-
-      <div className={styles.groups}>
-        <FilterGroup
-          label='ENVIRONMENT'
-          filterName='environment'
-          value={filters.environment}
-          options={[ALL, ...environmentOptions]}
-          onClick={onEnvironment}
-        />
-
-        <FilterGroup
-          label='COUNTRY'
-          filterName='country'
-          value={filters.country}
-          options={[ALL, ...countriesOptions]}
-          onClick={onCountry}
-        />
-
-
-        <FilterPrice
-          price={filters.price}
-          priceBounds={priceBounds}
-          onChange={onPrice}
-        />
-
-      </div>
-
     </div>
   )
 }

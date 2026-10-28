@@ -1,5 +1,7 @@
+import { ALL } from "../constants/filters";
 import type { Apartment } from "../types/apartment";
-import { ALL, type ApartmentFilters } from "../types/filters";
+import { type ApartmentFilters } from "../types/filters";
+
 
 
 const normalize = (text: string): string => text.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim()
@@ -9,10 +11,11 @@ export const filterApartments = (apartments: Apartment[], filters: ApartmentFilt
   const { search, environment, country } = filters;
   const { min, max } = filters.price;
 
+  const searchTerm = normalize(search)
   return apartments.filter((apartment) => {
-    const matchesSearch = [apartment.name, apartment.location.country].some((filter) => normalize(filter).includes(search))
-    const matchesEnvironment = environment === ALL || environment === apartment.environment
-    const matchesCountry = country === ALL || country === apartment.location.country
+    const matchesSearch = [apartment.name, apartment.location.country].some((filter) => normalize(filter).includes(searchTerm))
+    const matchesEnvironment = environment.length === 0 || environment.includes(apartment.environment)
+    const matchesCountry = country.length === 0 || country.includes(apartment.location.country)
     const matchesPriceBounds = (min === null || apartment.price >= min) && (max === null || apartment.price <= max)
 
     return matchesSearch && matchesCountry && matchesEnvironment && matchesPriceBounds
@@ -48,13 +51,23 @@ export const getPriceBounds = (apartments: Apartment[]): { min: number, max: num
 export const countActiveFilters = (filters: ApartmentFilters): number => {
   const active: boolean[] = [
     filters.search.trim() !== '',
-    filters.environment !== ALL,
-    filters.country !== ALL,
+    filters.environment.length > 0,
+    filters.country.length > 0,
     filters.price.min !== null || filters.price.max !== null,
   ]
 
-  return active.filter((value) => value).length;
+  return active.filter(Boolean).length;
 }
+
+export const toggleFilterValue = (selected: string[], value: string, total: number): string[] => {
+  if (value === ALL) return [];
+
+  const next = selected.includes(value)
+    ? selected.filter((item) => item !== value)
+    : [...selected, value];
+
+  return next.length === total ? [] : next;
+};
 
 
 

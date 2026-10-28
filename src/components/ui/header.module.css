@@ -84,16 +84,39 @@
   display: flex;
 }
 
-.heartBtn {
+.heart {
   border-radius: 50%;
   background-color: white;
   color: black;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid var(--bg-400);
+  position: relative;
 
   height: 38px;
   width: 38px;
+}
+
+
+.counter {
+  --size: 18px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  color: white;
+  margin: 0px -4px;
+
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--fs-3xs);
 }
 
 .pmNavList {
@@ -107,13 +130,14 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   font-size: 1.08rem;
+  border-radius: var(--rounded-sm);
 
   &::before {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -.21rem;
     width: 0%;
     height: 2px;
     background-color: currentColor;
@@ -121,6 +145,7 @@
   }
 }
 
+.pmNavList a.active::before,
 .pmNavList a:hover::before {
-  width: 100%;
+  width: 40px;
 }
