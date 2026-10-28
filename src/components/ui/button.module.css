@@ -1,16 +1,27 @@
+/* Shared button */
+
 .button {
   display: flex;
   align-items: center;
+  font-family: inherit;
   font-weight: 500;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
+.content {
+  padding-inline: 0.7rem;
+  transition: transform var(--ti-xl) ease;
+}
+
+/* Primary */
+
 .button.variant_primary {
+  position: relative;
+  padding: 0.4rem;
   background-color: black;
   color: white;
   border-radius: var(--rounded-4xl);
-  position: relative;
-  padding: .4rem;
 }
 
 .button.size_lg {
@@ -19,36 +30,26 @@
   padding-inline: 1.2rem;
 }
 
-.button.variant_primary {
-  background-color: black;
-  color: white;
-}
-
 .button.variant_primary .chevron {
   --size: 40px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
+  width: var(--size);
+  height: var(--size);
   background-color: white;
   color: black;
   border-radius: 50%;
-  width: var(--size);
-  height: var(--size);
+  transition: opacity var(--ti-lg) ease, transform var(--ti-lg) ease;
 }
 
 .button.variant_primary.scheme_dark .chevron {
   background-color: black;
   color: white;
-
 }
 
-.button.variant_primary .chevron {
-  transition: opacity var(--ti-lg) ease, transform var(--ti-lg) ease;
-}
-
-.button.button.variant_primary.scheme_dark {
+.button.variant_primary.scheme_dark {
   background-color: white;
   color: black;
 }
@@ -59,41 +60,35 @@
 }
 
 .button.variant_primary .chevron:first-child {
-  display: flex;
   position: absolute;
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--ti-xl) ease, transform var(--ti-xl) ease;
 }
 
-.content {
-  transition: transform var(--ti-xl) ease;
-  padding-inline: .7rem;
+.button.variant_primary:has(.chevron):hover .chevron:first-child {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-.button.variant_primary:has(.chevron):hover {
-  & .chevron:first-child {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  & .content {
-    transform: translateX(calc(40px))
-  }
-
-  & .chevron:last-child {
-    transform: translateX(-40px);
-    opacity: 0;
-  }
+.button.variant_primary:has(.chevron):hover .content {
+  transform: translateX(40px);
 }
+
+.button.variant_primary:has(.chevron):hover .chevron:last-child {
+  transform: translateX(-40px);
+  opacity: 0;
+}
+
+/* Secondary */
 
 .button.variant_secondary {
-  gap: .1rem;
+  gap: 0.1rem;
   border-radius: var(--rounded);
+}
 
-  &:focus-visible {
-    outline-offset: 3px;
-  }
+.button.variant_secondary:focus-visible {
+  outline-offset: 3px;
 }
 
 .button.variant_secondary .content {
@@ -104,25 +99,72 @@
   display: flex;
   position: relative;
   overflow: hidden;
-
-  & .chevron:first-child {
-    position: absolute;
-    left: -100%;
-
-    transition: left var(--ti-xl) ease;
-  }
-
-  & .chevron:last-child {
-    transition: transform var(--ti-xl) ease;
-  }
 }
 
-.button.variant_secondary:has(.secondaryChevrons):hover {
-  & .chevron:first-child {
-    left: 0;
-  }
+.button.variant_secondary .secondaryChevrons .chevron:first-child {
+  position: absolute;
+  left: -100%;
+  transition: left var(--ti-xl) ease;
+}
 
-  & .chevron:last-child {
-    transform: translateX(100%);
-  }
+.button.variant_secondary .secondaryChevrons .chevron:last-child {
+  transition: transform var(--ti-xl) ease;
+}
+
+.button.variant_secondary:has(.secondaryChevrons):hover
+  .secondaryChevrons .chevron:first-child {
+  left: 0;
+}
+
+.button.variant_secondary:has(.secondaryChevrons):hover
+  .secondaryChevrons .chevron:last-child {
+  transform: translateX(100%);
+}
+
+/* Tertiary: fixed black style. Reveal animation lives in Featured CSS. */
+
+.button.variant_tertiary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  width: max-content;
+  min-height: 58px;
+  padding: 1rem 1.75rem;
+
+  background-color: #000000;
+  color: #ffffff;
+  border: 0;
+  border-radius: 999px;
+
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.button.variant_tertiary .content {
+  padding-inline: 0;
+  transform: none;
+  transition: none;
+}
+
+.button.variant_tertiary .tertiaryChevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: none;
+  transition: none;
+}
+
+.button.variant_tertiary:hover {
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.button.variant_tertiary:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
 }

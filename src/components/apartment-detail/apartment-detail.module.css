@@ -103,11 +103,9 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 0.55rem 0.85rem;
-  color: var(--accent-700);
-  font-size: var(--fs-2xs);
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  color: var(--text-300);
+  font-size: var(--fs-sm);
+  font-weight: 400;
 }
 
 .eyebrowDot {
@@ -180,17 +178,17 @@
   color: var(--text-300);
   font-size: var(--fs-sm);
   font-weight: 400;
+  text-transform: uppercase;
   letter-spacing: 0;
 }
 
 .actions {
-  display: grid;
+  display: flex;
   gap: 0.6rem;
   margin-top: 1.5rem;
 }
 
 .requestButton {
-  width: 100%;
   min-height: 58px;
   justify-content: space-between;
   font-size: var(--fs-2xs);
@@ -201,12 +199,10 @@
   display: grid;
   place-items: center;
   justify-self: end;
-  width: 58px;
   height: 58px;
+  width: 58px;
   padding: 0;
-  border: 1px solid var(--bg-450);
   border-radius: 50%;
-  color: var(--text-300);
   transition:
     border-color var(--ti-md) ease,
     background-color var(--ti-md) ease,
@@ -218,9 +214,7 @@
 }
 
 .favouriteAction[aria-pressed='true'] {
-  border-color: var(--accent-600);
-  background-color: var(--bg-150);
-  color: var(--accent-700);
+  color: black;
 }
 
 /* Walkthrough */
@@ -265,7 +259,7 @@
   border-bottom: 0;
 }
 
-.scene > .sceneCopy {
+.scene>.sceneCopy {
   opacity: 0;
   transform: translateX(-60px);
   transition:
@@ -273,7 +267,7 @@
     transform 1.05s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.scene > .sceneFigure {
+.scene>.sceneFigure {
   opacity: 0;
   transform: translateY(56px);
   transition:
@@ -281,13 +275,13 @@
     transform 1.05s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.scene.sceneVisible > .sceneCopy,
-.scene.sceneVisible > .sceneFigure {
+.scene.sceneVisible>.sceneCopy,
+.scene.sceneVisible>.sceneFigure {
   opacity: 1;
   transform: translate(0);
 }
 
-.scene.sceneVisible > .sceneFigure {
+.scene.sceneVisible>.sceneFigure {
   transition-delay: 0.12s;
 }
 
@@ -470,11 +464,6 @@
   .backLink:hover svg {
     transform: translateX(-4px);
   }
-
-  .favouriteAction:hover {
-    border-color: var(--accent-600);
-    color: var(--accent-700);
-  }
 }
 
 .favouriteAction:focus-visible {
@@ -579,18 +568,19 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .backLink,
   .backLink svg,
   .favouriteAction,
   .reveal,
-  .scene > .sceneCopy,
-  .scene > .sceneFigure {
+  .scene>.sceneCopy,
+  .scene>.sceneFigure {
     transition: none;
   }
 
   .reveal,
-  .scene > .sceneCopy,
-  .scene > .sceneFigure {
+  .scene>.sceneCopy,
+  .scene>.sceneFigure {
     opacity: 1;
     transform: none;
   }

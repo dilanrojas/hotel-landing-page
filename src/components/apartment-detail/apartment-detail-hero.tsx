@@ -18,12 +18,6 @@ export default function ApartmentDetailHero({
         loading="eager"
         fetchPriority="high"
       />
-
-      <figcaption className={styles.heroCaption}>
-        <span>Exterior</span>
-        <span aria-hidden="true">/</span>
-        <span>{apartment.environment}</span>
-      </figcaption>
     </figure>
   );
 }

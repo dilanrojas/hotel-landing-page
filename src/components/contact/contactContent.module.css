@@ -3,8 +3,14 @@
 
   isolation: isolate;
   position: relative;
-  padding-block: 12rem;
+  padding-block: 11rem 9rem;
   overflow: hidden;
+}
+
+@media (width <=768px) {
+  .contactSection {
+    padding-block: 10rem 3rem;
+  }
 }
 
 .contactSection>div {
@@ -63,13 +69,12 @@
 /* Tablet */
 
 @media (max-width: 1050px) {
-  .contactSection {
+  .contactSection>div {
     grid-template-columns: minmax(0, 1fr);
     gap: 50px;
-    padding: 100px 6% 70px;
   }
 
-  .contactSection>* {
+  .contactSection>div>* {
     width: 100%;
     max-width: 720px;
     margin-inline: auto;
@@ -83,10 +88,8 @@
 }
 
 /* Mobile */
-
 @media (max-width: 600px) {
-  .contactSection {
-    padding: 90px 5% 50px;
+  .contactSection>div {
     gap: 40px;
   }
 }
