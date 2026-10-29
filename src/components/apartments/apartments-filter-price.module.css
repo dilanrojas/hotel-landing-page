@@ -1,0 +1,30 @@
+.filterPrice {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: fit-content;
+}
+
+.title {
+  font-size: var(--fs-md);
+  font-weight: 500;
+  color: var(--text-100);
+}
+
+.fields {
+  display: flex;
+  gap: clamp(1rem, 20vh, 2rem);
+  flex-wrap: wrap;
+}
+
+.field {
+  border-bottom: 1px solid var(--bg-400);
+  padding-bottom: .2em;
+}
+
+
+.input {
+  margin-top: .5rem;
+  width: 50px;
+  margin-left: .5rem;
+}

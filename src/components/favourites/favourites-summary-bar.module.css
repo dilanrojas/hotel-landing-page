@@ -1,0 +1,84 @@
+.bar {
+  --gaps: 3.5rem;
+
+  display: flex;
+  align-items: center;
+  border-radius: var(--rounded);
+  gap: var(--gaps);
+  flex-wrap: wrap;
+}
+
+.stats {
+  display: flex;
+  gap: var(--gaps);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.40rem;
+  white-space: nowrap;
+}
+
+.label {
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  color: var(--text-100);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+.value {
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  color: var(--text-100);
+}
+
+.clearBtn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--bg-500);
+  border-radius: var(--rounded);
+  color: var(--text-300);
+  font-size: var(--fs-2xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  transition:
+    color var(--ti-sm) ease,
+    border-color var(--ti-sm) ease,
+    background-color var(--ti-sm) ease;
+}
+
+.clearBtn:not(:disabled):hover {
+  border-color: var(--bg-700);
+  background-color: var(--bg-150);
+  color: var(--text-100);
+}
+
+.clearBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.clearLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+
+@media(width <=575px) {
+  .bar {
+    --gaps: 2rem;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .stats {
+    flex-direction: column;
+  }
+}

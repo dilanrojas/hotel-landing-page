@@ -1,0 +1,43 @@
+.errorWrapper {
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 50ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.fourOfour {
+  font-size: 18rem;
+  letter-spacing: -.8rem;
+  color: #94d596;
+  font-weight: 300;
+  font-family: var(--ff-heading);
+  line-height: 1;
+}
+
+.article {
+  margin-bottom: 2rem;
+}
+
+.article h1 {
+  font-size: var(--fs-6xl);
+  font-weight: 600;
+  margin-bottom: .2rem;
+}
+
+.article p {
+  font-weight: 400;
+}
+
+@media (width <=768px) {
+  .fourOfour {
+    font-size: 14rem;
+  }
+
+  .article h1 {
+    font-size: var(--fs-4xl);
+  }
+}

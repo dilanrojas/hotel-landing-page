@@ -1,0 +1,95 @@
+.contactSection {
+  background-color: #ffffff;
+
+  isolation: isolate;
+  position: relative;
+  padding-block: 11rem 9rem;
+  overflow: hidden;
+}
+
+@media (width <=768px) {
+  .contactSection {
+    padding-block: 10rem 3rem;
+  }
+}
+
+.contactSection>div {
+  gap: 60px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  align-items: start;
+  overflow: hidden;
+}
+
+/* Decorative leaves */
+
+.contactSection::before,
+.contactSection::after {
+  content: "";
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  background-image: url("/decorative-leaf.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  opacity: 1;
+  filter: none;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Upper-right leaves */
+.contactSection::before {
+  top: -40px;
+  right: -80px;
+}
+
+/* Lower-left leaves */
+.contactSection::after {
+  bottom: -80px;
+  left: -80px;
+  transform: rotate(180deg);
+}
+
+
+/* Keep content above decorative elements */
+
+.contactSection>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* Tablet */
+
+@media (max-width: 1050px) {
+  .contactSection>div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 50px;
+  }
+
+  .contactSection>div>* {
+    width: 100%;
+    max-width: 720px;
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
+  .contactSection::before,
+  .contactSection::after {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .contactSection>div {
+    gap: 40px;
+  }
+}

@@ -16,21 +16,21 @@
 .picture img {
   border-radius: calc(var(--rounded) - .15rem);
   width: 134px;
-  height: 100%;
-  min-height: 118px;
   object-fit: cover;
 }
 
 .content h4 {
   font-weight: 400;
   font-size: var(--fs-lg);
+  font-weight: 500;
+  margin-bottom: .15rem;
 }
 
 .content p {
   font-size: var(--fs-sm);
   opacity: .7;
-  max-width: 20ch;
-  margin-bottom: .4rem;
+  max-width: 25ch;
+  margin-bottom: .8rem;
 }
 
 @media (width <=768px) {

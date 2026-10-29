@@ -1,0 +1,66 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2rem;
+
+}
+
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border: 1px solid var(--bg-400);
+  border-radius: var(--rounded);
+  transition: border-color var(--ti-sm) ease;
+  padding: .3rem;
+
+}
+
+.filterBar:hover {
+  border-color: var(--text-100);
+}
+
+
+.groups {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 2rem;
+  border: 1px solid var(--bg-400);
+  border-radius: var(--rounded);
+}
+
+.clearButton {
+
+  padding: 0.9rem;
+  font-size: var(--fs-md);
+  font-weight: 500;
+  margin-right: .1rem;
+  letter-spacing: 0.12em;
+  color: var(--text-100);
+  border-radius: 10px;
+  transition:
+    color var(--ti-sm) ease,
+    background-color var(--ti-sm) ease;
+}
+
+.clearButton:hover:not(:disabled) {
+  background-color: var(--text-100);
+  color: var(--bg-400);
+}
+
+.clearButton:disabled {
+  border-color: var(--bg-400);
+  color: var(--text-400);
+  cursor: default;
+}
+
+
+@media(width <=575px) {
+  .clearButton {
+    padding: 0.6rem 0.8rem;
+    font-size: var(--fs-2xs);
+  }
+}

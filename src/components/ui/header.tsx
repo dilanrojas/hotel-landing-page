@@ -2,12 +2,16 @@ import { Heart } from 'lucide-react';
 import Logo from '../logo';
 import styles from './header.module.css';
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
+import { useFavouritesContext } from '../../context/favourite-context';
 
 export default function Header() {
   const [open, setOpen] = useState<boolean>(false);
-  const [hasInteracted, setHasInteracted] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const { pathname } = useLocation();
+  const { favourites } = useFavouritesContext();
+
+  const isHome = pathname === '/';
 
   useEffect(() => {
     if (!open) return;
@@ -23,30 +27,40 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className={styles.header}>
-      <div className='wrapper' ref={containerRef} >
+    <header className={`${styles.header} ${isHome ? styles.onHome : styles.offHome}`}>
+      <div ref={containerRef} >
         <nav className={styles.pmNav}>
-          <div className={styles.pmNavPill}>
-            <Logo size='xl' />
-            <button className={styles.pmNavPillBtn} onClick={() => { setHasInteracted(true); setOpen((prev) => !prev); }} aria-expanded={open} aria-label={open ? 'Close menu' : 'Open menu'}>
-              <img src='/close.svg' alt='X' aria-hidden={!open} width={15} className={`${open ? styles.iconVisible : styles.iconHidden}${hasInteracted ? '' : ` ${styles.noAnim}`}`} />
-              <img src='/menu-line-horizontal.svg' alt='Hamburger menu' aria-hidden={open} className={`${open ? styles.iconHidden : styles.iconVisible}${hasInteracted ? '' : ` ${styles.noAnim}`}`} />
-            </button>
-          </div>
-          <Link to={'/favourites'} className={styles.heartBtn}>
+          <Logo size='xl' />
+          <ul className={styles.pmNavList}>
+            <li>
+              <NavLink
+                to={'/apartments'}
+                className={({ isActive }) => (isActive ? styles.active : '')}
+              >
+                <span>Apartments</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to={'/contact'}
+                className={({ isActive }) => (isActive ? styles.active : '')}
+                end
+              >
+                <span>Contact</span>
+              </NavLink>
+            </li>
+          </ul>
+          <NavLink
+            to="/favourites"
+            className={({ isActive }: { isActive: boolean }) =>
+              `${styles.heart} ${isActive ? styles.active : ''}`
+            }
+            end
+          >
             <span><Heart size={24} /></span>
-          </Link>
+            <span className={styles.counter} aria-hidden={true}>{favourites.length}</span>
+          </NavLink>
         </nav>
-        <div className={`${styles.dropdown} ${open ? styles.dropdownOpen : hasInteracted ? styles.dropdownClosed : ''}`}>
-          <nav className={styles.dropdownNav} aria-hidden={!open}>
-            <ul className={styles.dropdownNavList}>
-              <h3>PAGES</h3>
-              <li><Link to={'/apartments'}><span>Apartments</span></Link></li>
-              <li><Link to={'/contact'}><span>Contact</span></Link></li>
-            </ul>
-            <img src='/header-dropdown-image.jpg' alt='Upstairs house' width={256} />
-          </nav>
-        </div>
       </div>
     </header>
   )

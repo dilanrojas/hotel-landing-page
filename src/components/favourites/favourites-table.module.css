@@ -1,0 +1,350 @@
+.tableWrap {
+  width: 100%;
+  min-width: 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.head th {
+  padding: 0 1rem 1rem;
+  border-bottom: 1px solid var(--bg-500);
+  color: var(--text-300);
+  font-size: var(--fs-2xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.head th:first-child,
+.row .cell:first-child {
+  padding-left: 0;
+}
+
+.head th:last-child,
+.row .cell:last-child {
+  padding-right: 0;
+}
+
+.head th.rateHeader,
+.head th.actionsHeader {
+  text-align: left;
+}
+
+.row {
+  transition: background-color var(--ti-md) ease;
+}
+
+.cell {
+  padding: 1.35rem 1rem;
+  border-bottom: 1px solid var(--bg-300);
+  vertical-align: middle;
+}
+
+.propertyCell {
+  width: 34%;
+  font-weight: 400;
+}
+
+.property {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.thumbnailWrap {
+  flex-shrink: 0;
+  width: 112px;
+  height: 78px;
+  overflow: hidden;
+  border-radius: var(--rounded-sm);
+  background-color: var(--bg-200);
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--ti-xl) ease;
+}
+
+.propertyCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.environment {
+  color: var(--text-400);
+  font-size: var(--fs-3xs);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.name {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.locationCell {
+  width: 21%;
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+}
+
+.locationPrimary {
+  display: block;
+  color: var(--text-200);
+}
+
+.locationMeta {
+  display: block;
+  color: var(--text-300);
+  font-size: var(--fs-xs);
+}
+
+.layoutCell {
+  width: 20%;
+}
+
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 0.75rem;
+  color: var(--text-300);
+  font-size: var(--fs-sm);
+  white-space: nowrap;
+}
+
+.layoutGroup {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55rem;
+}
+
+.layout strong {
+  color: var(--text-100);
+  font-weight: 600;
+}
+
+.divider {
+  color: var(--bg-700);
+}
+
+.rateCell {
+  width: 11%;
+  text-align: left;
+}
+
+.rate {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.rateUnit {
+  color: var(--text-300);
+  font-size: var(--fs-3xs);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.actionsCell {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.65rem;
+}
+
+.viewButton {
+  min-height: 44px;
+  font-size: var(--fs-md);
+}
+
+.favouriteButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  color: var(--text-300);
+  transition: color var(--ti-xl) ease;
+}
+
+@keyframes favouritePulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.85);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.favouritePulse {
+  animation: favouritePulse 350ms ease-in-out;
+}
+
+.mobileLabel {
+  display: none;
+}
+
+@media (hover: hover) {
+  .row:hover {
+    background-color: var(--bg-150);
+  }
+
+  .row:hover .thumbnail {
+    transform: scale(1.04);
+  }
+
+  .favouriteButton:hover {
+    color: var(--text-100);
+  }
+}
+
+@media (width <=1020px) {
+  .head {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .table,
+  .table tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'property property'
+      'location location'
+      'layout layout'
+      'rate actions';
+    gap: 1.15rem 1.5rem;
+    padding-block: 1.5rem;
+    border-bottom: 1px solid var(--bg-300);
+  }
+
+  .cell {
+    display: block;
+    width: auto;
+    padding: 0;
+    border: 0;
+  }
+
+  .propertyCell {
+    grid-area: property;
+  }
+
+  .locationCell {
+    grid-area: location;
+  }
+
+  .layoutCell {
+    grid-area: layout;
+  }
+
+  .rateCell {
+    grid-area: rate;
+    text-align: left;
+  }
+
+  .actionsCell {
+    grid-area: actions;
+  }
+
+  .mobileLabel {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--text-300);
+    font-size: var(--fs-3xs);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .layout {
+    white-space: normal;
+  }
+
+  .rate {
+    font-size: var(--fs-lg);
+  }
+
+  .actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (width <=528px) {
+  .property {
+    gap: 0.9rem;
+  }
+
+  .thumbnailWrap {
+    width: 88px;
+    height: 64px;
+  }
+
+  .name {
+    font-size: var(--fs-lg);
+  }
+
+  .row {
+    gap: 0.9rem 1rem;
+  }
+
+  .actions {
+    gap: 0.5rem;
+  }
+
+  .favouriteButton {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}

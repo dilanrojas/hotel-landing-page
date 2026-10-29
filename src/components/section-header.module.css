@@ -1,0 +1,20 @@
+.header {
+  margin-bottom: 2.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: var(--fs-5xl);
+  font-family: var(--ff-heading);
+  margin-bottom: .8rem;
+  font-weight: 500;
+}
+
+.desc {
+  opacity: .7;
+  max-width: 50ch;
+}

@@ -1,0 +1,190 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  min-width: 0;
+  flex: 1;
+  transition: box-shadow var(--ti-md) ease-in-out;
+  border-radius: var(--rounded);
+  border: 1px solid var(--bg-300);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.cardMedia {
+  overflow: hidden;
+  aspect-ratio: 8/10;
+
+
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--ti-xl) ease-in-out;
+  overflow: hidden;
+
+
+}
+
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  padding: .75rem 1.8rem 1.8rem;
+}
+
+
+.cardCaption {
+  font-size: var(--fs-sm);
+  color: var(--text-300);
+  text-transform: capitalize;
+}
+
+.cardTitleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cardBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.cardTitle {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-3xl);
+  font-weight: 600;
+
+
+  & span {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+  }
+
+
+}
+
+.cardTitleLink {
+  display: inline-flex;
+}
+
+.cardTitleLink::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: var(--rounded);
+}
+
+.cardTitleLink:focus-visible {
+  outline: none;
+}
+
+.cardTitleLink:focus-visible::after {
+  outline: 2px solid var(--accent-500);
+  outline-offset: -2px;
+}
+
+.cardArrow {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity var(--ti-md) ease, transform var(--ti-xl) ease;
+}
+
+.cardPrice {
+  font-size: var(--fs-lg);
+  color: var(--text-100);
+  font-weight: 500;
+}
+
+.cardPriceUnit {
+  font-size: var(--fs-2xs);
+  font-weight: 300;
+  color: var(--text-300);
+  text-transform: capitalize;
+  letter-spacing: 0.05em;
+}
+
+.cardSummaryRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cardSummary {
+  font-size: var(--fs-sm);
+  color: var(--text-300);
+  font-weight: 200;
+}
+
+.cardFavouriteButton {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  color: var(--text-300);
+  transition:
+    color var(--ti-xl) ease,
+    transform var(--ti-xl) ease-in-out;
+
+  &:hover {
+    color: var(--text-100);
+  }
+
+}
+
+
+@keyframes favouritePulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.85);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.favouritePulse {
+  animation: favouritePulse 350ms ease-in-out;
+}
+
+
+@media (hover: hover) {
+  .card:hover {
+    .cardArrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .cardImage {
+      transform: scale(1.02);
+    }
+
+    box-shadow: 0 8px 18px rgb(0 0 0 / 0.07);
+
+  }
+}
+
+@media (width <=528px) {
+  .cardFavouriteButton {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}

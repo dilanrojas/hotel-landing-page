@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
+  --ff-script: "Kaushan Script", cursive;
+  --ff-heading: "Montserrat", sans-serif;
+
   /* Rounding */
   --rounded-3xs: 2px;
   --rounded-2xs: 4px;
   --rounded-xs: 6px;
   --rounded-sm: 8px;
-  --rounded-md: 10px;
+  --rounded-md: 12px;
   --rounded-lg: 14px;
   --rounded-xl: 18px;
   --rounded-2xl: 20px;
@@ -43,11 +48,6 @@
   --anim-fade-out: fade-out var(--ti-sm) ease both;
   --anim-dropdown-in: dropdown-in var(--ti-md) ease both;
   --anim-dropdown-out: dropdown-out var(--ti-md) ease both;
-
-  /* Box shadow */
-  --bs-sm: 0 2px 2px rgba(0 0 0 / 0.04);
-  --bs-md: 0 3px 8px rgba(0 0 0 / 0.23);
-  --bs-lg: 0 7px 13px rgba(0 0 0 / 0.39);
 
   --accent-100: rgb(15, 12, 2);
   --accent-200: rgb(25, 20, 4);
@@ -107,7 +107,13 @@
   --text-400: var(--ink-slate-400);
   --text-500: var(--ink-slate-500);
 
+  --error-100: rgb(178 34 34);
+
   color-scheme: light;
+
+
+  /* Filters*/
+  --filter-label-w: 6.5rem;
 }
 
 * {

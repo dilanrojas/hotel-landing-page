@@ -1,0 +1,88 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.80rem;
+  margin-top: 2rem;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.navButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  height: 2.75rem;
+  font-size: var(--fs-sm);
+  color: var(--text-400);
+  transition: color var(--ti-md) ease;
+}
+
+.navButton:disabled {
+  opacity: 0.35;
+  color: var(--bg-500);
+  cursor: not-allowed;
+}
+
+.navButton[aria-current='page'] {
+
+  background-color: var(--text-100);
+  color: var(--bg-100);
+  font-weight: 700;
+  border-radius: var(--rounded-xs);
+}
+
+.navButton:hover:not(:disabled):not([aria-current='page']) {
+  color: var(--text-100);
+}
+
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--text-100);
+  border-radius: 50%;
+  transition: color var(--ti-md) ease;
+
+
+}
+
+
+.iconButton:hover:not(:disabled) {
+  color: var(--text-100);
+}
+
+.iconButton:disabled {
+
+  color: var(--bg-500);
+  cursor: not-allowed;
+}
+
+
+
+
+
+
+@media (width <=575px) {
+  .nav {
+    gap: .5rem;
+  }
+
+  .navList {
+    gap: .125rem;
+  }
+
+  .navButton {
+    min-width: 2.25rem;
+    height: 2.25rem;
+    font-size: var(--fs-xs);
+  }
+}
