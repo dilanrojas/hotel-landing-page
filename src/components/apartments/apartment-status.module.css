@@ -9,7 +9,7 @@
   border-radius: var(--rounded-xs);
 }
 
-.statusTitle {
+.statusTitle {  
   font-family: var(--ff-heading);
   font-size: var(--fs-6xl);
   line-height: 1.1;
@@ -22,4 +22,41 @@
   font-size: var(--fs-lg);
   line-height: 1.6;
   color: var(--text-100);
+}
+
+/* Tablet */
+@media (width <= 1100px) {
+  .status {
+    padding: 4rem 2rem;
+  }
+
+  .statusTitle {
+    font-size: 2rem;
+  }
+
+  .statusDescription {
+    font-size: 1rem;
+    max-width: 50ch;
+  }
+}
+
+/* Mobile */
+
+@media (width <= 768px) {
+  .status {
+    padding: 3rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .statusTitle {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .statusDescription {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    max-width: 40ch;
+    text-wrap: pretty;
+  }
 }

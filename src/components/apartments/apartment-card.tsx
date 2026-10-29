@@ -2,6 +2,7 @@ import styles from './apartment-card.module.css'
 import { ChevronRight, Heart } from "lucide-react"
 import { Link } from "react-router-dom"
 import type { Apartment } from "../../types/apartment"
+import { useState } from 'react';
 
 interface ApartmentCardProps {
   apartment: Apartment
@@ -11,6 +12,8 @@ interface ApartmentCardProps {
 
 
 export const ApartmentCard = ({ apartment, isFavourite, onToggleFavourite }: ApartmentCardProps) => {
+
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const { name, id, summary, price, environment, image, location } = apartment
 
@@ -52,24 +55,33 @@ export const ApartmentCard = ({ apartment, isFavourite, onToggleFavourite }: Apa
 
             <span className={styles.cardPriceUnit}> / NIGHT</span>
           </p>
-          <button
-            type="button"
-            className={styles.cardFavouriteButton}
-            aria-label={
-              isFavourite
-                ? `Remove ${name} from favourites`
-                : `Add ${name} to favourites`
-            }
-            aria-pressed={isFavourite}
-            onClick={onToggleFavourite}
-          >
-            <Heart
-              size={28}
-              strokeWidth={1.5}
-              fill={isFavourite ? 'black' : 'none'}
-              aria-hidden="true"
-            />
-          </button>
+
+          
+<button
+  type="button"
+  className={`${styles.cardFavouriteButton} ${
+    isAnimating ? styles.favouritePulse : ''
+  }`}
+  aria-label={
+    isFavourite
+      ? `Remove ${name} from favourites`
+      : `Add ${name} to favourites`
+  }
+  aria-pressed={isFavourite}
+  onClick={() => {
+    onToggleFavourite();
+    setIsAnimating(true);
+  }}
+  onAnimationEnd={() => setIsAnimating(false)}
+>
+  <Heart
+    size={28}
+    strokeWidth={1.5}
+    fill={isFavourite ? 'black' : 'none'}
+    aria-hidden="true"
+  />
+</button>
+
         </div>
       </div>
     </article>

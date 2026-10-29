@@ -25,7 +25,7 @@ export default function Favourites() {
   return (
     <main className={`wrapper ${styles.favouritesPage}`}>
       <SectionHeader
-        title="Favourites"
+        title="Residences You Love"
         desc="Your personal selection of the minimalist apartments and pavilions, gathered here for closer comparison."
       >
         <div className={styles.summaryBar}>

@@ -197,17 +197,43 @@
 
 .favouriteAction {
   display: grid;
+  
   place-items: center;
   justify-self: end;
   height: 58px;
   width: 58px;
   padding: 0;
   border-radius: 50%;
+  color: var(--text-300);
   transition:
-    border-color var(--ti-md) ease,
-    background-color var(--ti-md) ease,
-    color var(--ti-md) ease;
+    color var(--ti-xl) ease,
+    transform var(--ti-xl) ease-in-out;
+  
+  &:hover {
+    color: var(--text-100);
+  }
+
 }
+
+
+@keyframes favouritePulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.85);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.favouritePulse {
+  animation: favouritePulse 350ms ease-in-out;
+}
+
 
 .favouriteAction svg {
   flex-shrink: 0;

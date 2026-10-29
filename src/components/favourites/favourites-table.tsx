@@ -4,6 +4,7 @@ import { useFavouritesContext } from '../../context/favourite-context';
 import type { Apartment } from '../../types/apartment';
 import Button from '../ui/button';
 import styles from './favourites-table.module.css';
+import { useState } from 'react';
 
 interface FavouritesTableProps {
   apartments: Apartment[];
@@ -15,6 +16,54 @@ const formatPrice = (price: number) =>
     currency: 'USD',
     maximumFractionDigits: 0,
   });
+
+
+interface RemoveFavouriteButtonProps {
+  apartment: Apartment;
+  onRemove: (id: Apartment['id']) => void;
+}
+
+const RemoveFavouriteButton = ({
+  apartment,
+  onRemove,
+}: RemoveFavouriteButtonProps) => {
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleClick = () => {
+    if (isAnimating) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      onRemove(apartment.id);
+      return;
+    }
+
+    setIsAnimating(true);
+  };
+
+  return (
+    <button
+      type="button"
+      className={`${styles.favouriteButton} ${isAnimating ? styles.favouritePulse : ''
+        }`}
+      aria-label={`Remove ${apartment.name} from favourites`}
+      aria-pressed={true}
+      onClick={handleClick}
+      onAnimationEnd={(event) => {
+        if (event.target !== event.currentTarget || !isAnimating) return;
+
+        onRemove(apartment.id);
+      }}
+    >
+      <Heart
+        size={28}
+        strokeWidth={1.5}
+        fill="black"
+        aria-hidden="true"
+      />
+    </button>
+  );
+};
+
 
 export const FavouritesTable = ({ apartments }: FavouritesTableProps) => {
   const { toggleFavourite } = useFavouritesContext();
@@ -125,20 +174,12 @@ export const FavouritesTable = ({ apartments }: FavouritesTableProps) => {
                     View
                   </Button>
 
-                  <button
-                    type="button"
-                    className={styles.favouriteButton}
-                    aria-label={`Remove ${apartment.name} from favourites`}
-                    aria-pressed="true"
-                    onClick={() => toggleFavourite(apartment.id)}
-                  >
-                    <Heart
-                      size={28}
-                      strokeWidth={1.5}
-                      fill="black"
-                      aria-hidden="true"
-                    />
-                  </button>
+
+                  <RemoveFavouriteButton
+                    apartment={apartment}
+                    onRemove={toggleFavourite}
+                  />
+
                 </div>
               </td>
             </tr>
