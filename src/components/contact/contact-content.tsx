@@ -1,6 +1,6 @@
 
 import type { ReactNode } from 'react'
-import styles from './contactContent.module.css'
+import styles from './contact-content.module.css'
 
 interface ContactContentProps {
   children: ReactNode
