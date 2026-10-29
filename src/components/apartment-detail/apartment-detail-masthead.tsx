@@ -5,6 +5,7 @@ import { useReveal } from '../../hooks/use-reveal';
 import type { Apartment } from '../../types/apartment';
 import Button from '../ui/button';
 import styles from './apartment-detail.module.css';
+import { useState } from 'react';
 
 interface ApartmentDetailMastheadProps {
   apartment: Apartment;
@@ -18,6 +19,7 @@ export default function ApartmentDetailMasthead({
   const { isFavourite, toggleFavourite } = useFavouritesContext();
   const favourite = isFavourite(apartment.id);
   const { location } = apartment;
+  const [isAnimating, setIsAnimating] = useState(false);
 
   return (
     <header
@@ -76,24 +78,32 @@ export default function ApartmentDetailMasthead({
             Request information
           </Button>
 
-          <button
-            type="button"
-            className={styles.favouriteAction}
-            aria-label={
-              favourite
-                ? `Remove ${apartment.name} from saved apartments`
-                : `Save ${apartment.name} to favourites`
-            }
-            aria-pressed={favourite}
-            onClick={() => toggleFavourite(apartment.id)}
-          >
-            <Heart
-              size={30}
-              strokeWidth={1.8}
-              aria-hidden="true"
-              fill={favourite ? 'currentColor' : 'none'}
-            />
-          </button>
+          
+<button
+  type="button"
+  className={`${styles.favouriteAction} ${
+    isAnimating ? styles.favouritePulse : ''
+  }`}
+  aria-label={
+    favourite
+      ? `Remove ${apartment.name} from saved apartments`
+      : `Save ${apartment.name} to favourites`
+  }
+  aria-pressed={favourite}
+  onClick={() => {
+    toggleFavourite(apartment.id);
+    setIsAnimating(true);
+  }}
+  onAnimationEnd={() => setIsAnimating(false)}
+>
+  <Heart
+    size={30}
+    strokeWidth={1.8}
+    aria-hidden="true"
+    fill={favourite ? 'black' : 'none'}
+  />
+</button>
+
         </div>
       </div>
     </header>
