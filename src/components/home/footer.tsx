@@ -110,7 +110,7 @@ export default function Footer() {
         >
           {/* Copyright */}
           <p className={styles.footerCopy}>
-            &copy; 2026 Hotelry. All rights reserved.
+            &copy; 2026 Harly. All rights reserved.
           </p>
 
           {/* Back to top */}

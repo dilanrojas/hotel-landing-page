@@ -144,10 +144,27 @@
     color: var(--text-100);
   }
 
-  &:active {
-    transform: scale(0.70);
+}
+
+
+@keyframes favouritePulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.85);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
+
+.favouritePulse {
+  animation: favouritePulse 350ms ease-in-out;
+}
+
 
 @media (hover: hover) {
   .card:hover {
