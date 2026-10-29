@@ -1,7 +1,7 @@
 
-import ContactInfo from '../components/contact/ContactInfo'
-import ContactForm from '../components/contact/ContactForm'
-import ContactContent from '../components/contact/ContactContent'
+import ContactInfo from '../components/contact/contact-info'
+import ContactForm from '../components/contact/contact-form'
+import ContactContent from '../components/contact/contact-content'
 
 export default function Contact() {
   return (

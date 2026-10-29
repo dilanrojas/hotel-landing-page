@@ -4,13 +4,12 @@ import { useApartments } from '../../hooks/use-apartments'
 import Button from '../ui/button'
 import SectionHeader from '../section-header'
 import styles from './apartments-featured.module.css'
+import { DATA_URL } from '../../constants/apartments'
 
 export default function ApartmentsFeatured() {
   const navigate = useNavigate()
 
-  const { apartments, isLoading, error } = useApartments(
-    '/data/apartments.json'
-  )
+  const { apartments, isLoading, error } = useApartments(DATA_URL);
 
   const featuredApartments = apartments.filter(
     (apartment) => apartment.featured
