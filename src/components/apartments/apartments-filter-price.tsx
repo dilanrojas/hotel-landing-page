@@ -64,8 +64,8 @@ export const FilterPrice = ({ price, priceBounds, onChange }: FilterPriceProps) 
 
 
         <label className={styles.field}>
-          <span className={styles.fieldLabel} aria-hidden='true'>MAX</span>
-          <span className={styles.currency} aria-hidden='true'>$</span>
+          <span aria-hidden='true'>MAX</span>
+          <span aria-hidden='true'>$</span>
 
           <input
             className={styles.input}

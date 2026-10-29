@@ -1,6 +1,6 @@
 
 import SectionHeader from '../section-header'
-import styles from './contactInfo.module.css'
+import styles from './contact-info.module.css'
 import { Mail, MapPin, Clock3 } from 'lucide-react'
 
 export default function ContactInfo() {
